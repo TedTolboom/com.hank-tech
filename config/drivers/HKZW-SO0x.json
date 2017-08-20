@@ -72,18 +72,25 @@
 	"settings": [
 		{
 			"id": 20,
+			"zwave": {
+				"index": 20,
+				"size": 1
+			},
+			"type": "checkbox",
 			"value": true,
 			"label": {
 				"en": "Overcurrent protection"
 			},
 			"hint": {
 				"en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off."
-			},
-			"_size": 1,
-			"type": "checkbox"
+			}
     },
 		{
 			"id": 21,
+			"zwave": {
+				"index": 21,
+				"size": 1
+			},
 			"type": "dropdown",
 			"value": "0",
 			"label": {
@@ -92,7 +99,6 @@
 			"hint": {
 				"en": "Define how the Plug reacts after the power supply is back on."
 			},
-			"_size": 1,
 			"values": [{
 					"id": "0",
 					"label": {
@@ -115,15 +121,18 @@
     },
 		{
 			"id": 24,
-			"value": "1",
+			"zwave": {
+				"index": 24,
+				"size": 1
+			},
 			"type": "dropdown",
+			"value": "1",
 			"label": {
 				"en": "Notification when Load status change"
 			},
 			"hint": {
 				"en": "Smart Plug can send notifications to association device (Group Lifeline) when state of smart plug’s load change."
 			},
-			"_size": 1,
 			"values": [{
 					"id": "0",
 					"label": {
@@ -146,15 +155,18 @@
     },
 		{
 			"id": 27,
-			"value": "0",
+			"zwave": {
+				"index": 27,
+				"size": 1
+			},
 			"type": "dropdown",
+			"value": "0",
 			"label": {
 				"en": "Indicator modes"
 			},
 			"hint": {
 				"en": "After smart plug being included into a Z-Wave network, the RGB LED indicator will indicator the situation of load."
 			},
-			"_size": 1,
 			"values": [{
 					"id": "0",
 					"label": {
@@ -171,8 +183,12 @@
     },
 		{
 			"id": 151,
-			"value": 0,
+			"zwave": {
+				"index": 151,
+				"size": 2
+			},
 			"type": "number",
+			"value": 0,
 			"attr": {
 				"min": 0,
 				"max": 65535
@@ -182,13 +198,16 @@
 			},
 			"hint": {
 				"en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
-			},
-			"_size": 2
+			}
     },
 		{
 			"id": 152,
-			"value": 10,
+			"zwave": {
+				"index": 152,
+				"size": 1
+			},
 			"type": "number",
+			"value": 10,
 			"attr": {
 				"min": 0,
 				"max": 100
@@ -198,13 +217,16 @@
 			},
 			"hint": {
 				"en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
-			},
-			"_size": 1
+			}
     },
 		{
 			"id": 171,
-			"value": 30,
+			"zwave": {
+				"index": 171,
+				"size": 4
+			},
 			"type": "number",
+			"value": 30,
 			"attr": {
 				"min": 0,
 				"max": 2678400
@@ -214,13 +236,16 @@
 			},
 			"hint": {
 				"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline)."
-			},
-			"_size": 4
+			}
     },
 		{
 			"id": 172,
-			"value": 300,
+			"zwave": {
+				"index": 172,
+				"size": 4
+			},
 			"type": "number",
+			"value": 300,
 			"attr": {
 				"min": 0,
 				"max": 2678400
@@ -230,13 +255,16 @@
 			},
 			"hint": {
 				"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline)."
-			},
-			"_size": 4
+			}
     },
 		{
 			"id": 173,
-			"value": 0,
+			"zwave": {
+				"index": 173,
+				"size": 4
+			},
 			"type": "number",
+			"value": 0,
 			"attr": {
 				"min": 0,
 				"max": 2678400
@@ -246,13 +274,16 @@
 			},
 			"hint": {
 				"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline)."
-			},
-			"_size": 4
+			}
     },
 		{
 			"id": 174,
-			"value": 0,
+			"zwave": {
+				"index": 174,
+				"size": 4
+			},
 			"type": "number",
+			"value": 0,
 			"attr": {
 				"min": 0,
 				"max": 2678400
@@ -262,8 +293,7 @@
 			},
 			"hint": {
 				"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline)."
-			},
-			"_size": 4
+			}
     }
   ]
 }

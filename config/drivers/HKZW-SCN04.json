@@ -116,15 +116,18 @@
 	"settings": [
 		{
 			"id": 254,
+			"zwave": {
+				"index": 254,
+				"size": 1
+			},
+			"type": "checkbox",
 			"value": true,
 			"label": {
 				"en": "Enable/disable the configuration command"
 			},
 			"hint": {
 				"en": "Lock/unlock all configuration parameters."
-			},
-			"_size": 1,
-			"type": "checkbox"
+			}
     }
   ]
 }

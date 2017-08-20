@@ -51,30 +51,41 @@
 	"settings": [
 		{
 			"id": 14,
+			"zwave": {
+				"index": 14,
+				"size": 1
+			},
+			"type": "checkbox",
 			"value": true,
 			"label": {
 				"en": "Enable/Disable BASIC SET command"
 			},
 			"hint": {
 				"en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2."
-			},
-			"_size": 1,
-			"type": "checkbox"
+			}
     },
 		{
 			"id": 15,
+			"zwave": {
+				"index": 15,
+				"size": 1
+			},
+			"type": "checkbox",
 			"value": true,
 			"label": {
 				"en": "Reverse the BASIC SET command"
 			},
 			"hint": {
 				"en": "Door/Window Sensor can reverse its value of BASIC SET when the magnet is triggered."
-			},
-			"_size": 1,
-			"type": "checkbox"
+			}
     },
 		{
 			"id": 32,
+			"zwave": {
+				"index": 32,
+				"size": 1
+			},
+			"type": "number",
 			"value": 20,
 			"attr": {
 				"min": 10,
@@ -85,9 +96,7 @@
 			},
 			"hint": {
 				"en": "This parameter defines a battery level as the “low battery”."
-			},
-			"_size": 1,
-			"type": "number"
+			}
     }
   ]
 }
