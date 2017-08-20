@@ -12,7 +12,7 @@ class SmartPlug_SO0x extends ZwaveDevice {
 		// print the node's info to the console
 		this.printNode();
 
-		// register capabilities
+		// register capabilities for this device
 		this.registerCapability('onoff', 'BASIC');
 		this.registerCapability('meter_power', 'METER');
 		this.registerCapability('measure_power', 'METER');
