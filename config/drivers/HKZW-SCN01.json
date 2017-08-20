@@ -1,0 +1,100 @@
+{
+	"id": "HKZW-SCN01",
+	"name": {
+		"en": "Scene Controller 1"
+	},
+	"zwave": {
+		"manufacturerId": [520],
+		"productTypeId": [512],
+		"productId": [9],
+		"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1918/HKZW-SCN01_MANUL.pdf",
+		"pid": 1918,
+		"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085175",
+		"learnmode": {
+			"image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
+			"instruction": {
+				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+			}
+		},
+		"unlearnmode": {
+			"image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
+			"instruction": {
+				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+			}
+		},
+		"associationGroups": [
+			1
+		],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "Scene Controller will send Scene Controller sends the central scene notification command and battery report command to the associated nodes."
+				}
+			},
+			"2": {
+				"hint": {
+					"en": "Scene Controller will send Basic Set command to the associated nodes."
+				}
+			},
+			"3": {
+				"hint": {
+					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes."
+				}
+			}
+		}
+	},
+	"class": "zwavecontroller",
+	"capabilities": [
+		"measure_battery",
+		"alarm_battery"
+	],
+	"images": {
+		"large": "/drivers/HKZW-SCN01/assets/images/large.jpg",
+		"small": "/drivers/HKZW-SCN01/assets/images/small.jpg"
+	},
+	"mobile": {
+		"components": [
+			{
+				"id": "icon"
+			},
+			{
+				"id": "battery",
+				"capabilities": [
+					"measure_battery"
+				],
+				"options": {
+					"showTitle": true
+				}
+			},
+			{
+				"id": "sensor",
+				"capabilities": [
+					"alarm_battery"
+				],
+				"options": {
+					"icons": {
+						"Battery_Alarm": "/drivers/HKZW-SCN01/assets/alarm_battery.svg"
+					},
+					"Battery_Alarm": {
+						"noblink": false,
+						"invert": false
+					}
+				}
+			}
+		]
+	},
+	"settings": [
+		{
+			"id": 254,
+			"value": true,
+			"label": {
+				"en": "Enable/disable the configuration command"
+			},
+			"hint": {
+				"en": "Lock/unlock all configuration parameters."
+			},
+			"_size": 1,
+			"type": "checkbox"
+    }
+  ]
+}

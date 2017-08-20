@@ -1,0 +1,269 @@
+{
+	"id": "HKZW-SO0x",
+	"name": {
+		"en": "Smart Plug"
+	},
+	"zwave": {
+		"manufacturerId": [520],
+		"productTypeId": [256],
+		"productId": [10],
+		"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
+		"pid": 1891,
+		"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16075153",
+		"learnmode": {
+			"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
+			"instruction": {
+				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+			}
+		},
+		"unlearnmode": {
+			"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
+			"instruction": {
+				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+			}
+		},
+		"associationGroups": [
+			1
+		],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "Z-Wave Plus Lifeline"
+				}
+			}
+		}
+	},
+	"class": "socket",
+	"capabilities": [
+		"onoff",
+		"meter_power",
+		"measure_power",
+		"measure_current",
+		"measure_voltage"
+	],
+	"images": {
+		"large": "/drivers/HKZW-SO0x/assets/images/large.jpg",
+		"small": "/drivers/HKZW-SO0x/assets/images/small.jpg"
+	},
+	"mobile": {
+		"components": [{
+				"id": "icon",
+				"capabilities": [
+					"onoff"
+				]
+			},
+			{
+				"id": "sensor",
+				"capabilities": [
+					"meter_power",
+					"measure_power",
+					"measure_current",
+					"measure_voltage"
+				]
+			},
+			{
+				"id": "toggle",
+				"capabilities": [
+					"onoff"
+				]
+			}
+		]
+	},
+	"settings": [
+		{
+			"id": 20,
+			"value": true,
+			"label": {
+				"en": "Overcurrent protection"
+			},
+			"hint": {
+				"en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off."
+			},
+			"_size": 1,
+			"type": "checkbox"
+    },
+		{
+			"id": 21,
+			"type": "dropdown",
+			"value": "0",
+			"label": {
+				"en": "Setting Smart Plug’s load status after re-power on"
+			},
+			"hint": {
+				"en": "Define how the Plug reacts after the power supply is back on."
+			},
+			"_size": 1,
+			"values": [{
+					"id": "0",
+					"label": {
+						"en": "Smart plug memorizes its state after a power failure (default)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "Connected devices will be ON after a power failure"
+					}
+				},
+				{
+					"id": "2",
+					"label": {
+						"en": "Connected devices will be OFF after a power failure"
+					}
+				}
+			]
+    },
+		{
+			"id": 24,
+			"value": "1",
+			"type": "dropdown",
+			"label": {
+				"en": "Notification when Load status change"
+			},
+			"hint": {
+				"en": "Smart Plug can send notifications to association device (Group Lifeline) when state of smart plug’s load change."
+			},
+			"_size": 1,
+			"values": [{
+					"id": "0",
+					"label": {
+						"en": "This function is disabled (default)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "Send Basic report"
+					}
+				},
+				{
+					"id": "2",
+					"label": {
+						"en": "Send Basic report only when state is not changed by Z-wave command (ie. manual button)"
+					}
+				}
+			]
+    },
+		{
+			"id": 27,
+			"value": "0",
+			"type": "dropdown",
+			"label": {
+				"en": "Indicator modes"
+			},
+			"hint": {
+				"en": "After smart plug being included into a Z-Wave network, the RGB LED indicator will indicator the situation of load."
+			},
+			"_size": 1,
+			"values": [{
+					"id": "0",
+					"label": {
+						"en": "The smart plug will work in indicator mode (default)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "The smart plug will work in indicator mode for 5 seconds after a load change"
+					}
+				}
+			]
+    },
+		{
+			"id": 151,
+			"value": 0,
+			"type": "number",
+			"attr": {
+				"min": 0,
+				"max": 65535
+			},
+			"label": {
+				"en": "Threshold of change in wattage"
+			},
+			"hint": {
+				"en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+			},
+			"_size": 2
+    },
+		{
+			"id": 152,
+			"value": 10,
+			"type": "number",
+			"attr": {
+				"min": 0,
+				"max": 100
+			},
+			"label": {
+				"en": "Threshold of change in wattage percentage"
+			},
+			"hint": {
+				"en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+			},
+			"_size": 1
+    },
+		{
+			"id": 171,
+			"value": 30,
+			"type": "number",
+			"attr": {
+				"min": 0,
+				"max": 2678400
+			},
+			"label": {
+				"en": "Intervals of sending METER REPORT (for wattage)"
+			},
+			"hint": {
+				"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline)."
+			},
+			"_size": 4
+    },
+		{
+			"id": 172,
+			"value": 300,
+			"type": "number",
+			"attr": {
+				"min": 0,
+				"max": 2678400
+			},
+			"label": {
+				"en": "Intervals of sending METER REPORT (for kWh)"
+			},
+			"hint": {
+				"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline)."
+			},
+			"_size": 4
+    },
+		{
+			"id": 173,
+			"value": 0,
+			"type": "number",
+			"attr": {
+				"min": 0,
+				"max": 2678400
+			},
+			"label": {
+				"en": "Intervals of sending METER REPORT (for voltage)."
+			},
+			"hint": {
+				"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline)."
+			},
+			"_size": 4
+    },
+		{
+			"id": 174,
+			"value": 0,
+			"type": "number",
+			"attr": {
+				"min": 0,
+				"max": 2678400
+			},
+			"label": {
+				"en": "Intervals of sending METER REPORT (for current)."
+			},
+			"hint": {
+				"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline)."
+			},
+			"_size": 4
+    }
+  ]
+}

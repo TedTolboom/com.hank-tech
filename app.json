@@ -1,0 +1,927 @@
+{
+  "id": "com.hank-tech",
+  "sdk": 2,
+  "name": {
+    "en": "Hank tech Z-wave"
+  },
+  "description": {
+    "en": "Adds support for Hank tech Z-wave devices"
+  },
+  "version": "0.0.1",
+  "compatibility": ">=1.5.0",
+  "author": {
+    "name": "Ted Tolboom",
+    "email": "dTNL.Homey@gmail.com"
+  },
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "category": [
+    "appliances",
+    "lights",
+    "security"
+  ],
+  "tags": {
+    "en": [
+      "scene master",
+      "remote",
+      "remote control",
+      "central scene",
+      "scenes",
+      "multi sensor",
+      "socket",
+      "door sensor",
+      "window sensor"
+    ]
+  },
+  "flow": {
+    "triggers": [],
+    "actions": []
+  },
+  "drivers": [
+    {
+      "id": "HKZW-DWS01",
+      "name": {
+        "en": "Door/Window Sensor"
+      },
+      "zwave": {
+        "manufacturerId": [
+          520
+        ],
+        "productTypeId": [
+          512
+        ],
+        "productId": [
+          8
+        ],
+        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1896/HKZW-DWS01_Product%20Manual%20.pdf",
+        "pid": 1896,
+        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085158",
+        "learnmode": {
+          "image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
+          "instruction": {
+            "en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
+          "instruction": {
+            "en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Door/Window Sensor will send notification report and battery report to the associated nodes."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Sensor will send Basic Set to the associated nodes when the sensor body and magnet removed or combined."
+            }
+          }
+        }
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "images": {
+        "large": "/drivers/HKZW-DWS01/assets/images/large.jpg",
+        "small": "/drivers/HKZW-DWS01/assets/images/small.jpg"
+      },
+      "settings": [
+        {
+          "id": 14,
+          "value": true,
+          "label": {
+            "en": "Enable/Disable BASIC SET command"
+          },
+          "hint": {
+            "en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 15,
+          "value": true,
+          "label": {
+            "en": "Reverse the BASIC SET command"
+          },
+          "hint": {
+            "en": "Door/Window Sensor can reverse its value of BASIC SET when the magnet is triggered."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 32,
+          "value": 20,
+          "attr": {
+            "min": 10,
+            "max": 50
+          },
+          "label": {
+            "en": "Level of low battery"
+          },
+          "hint": {
+            "en": "This parameter defines a battery level as the “low battery”."
+          },
+          "_size": 1,
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "HKZW-MS01",
+      "name": {
+        "en": "Multisensor"
+      },
+      "zwave": {
+        "manufacturerId": [
+          520
+        ],
+        "productTypeId": [
+          512
+        ],
+        "productId": [
+          6
+        ],
+        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
+        "pid": 2305,
+        "imageRemotePath": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2305/HKZW-MS01%20MANUL.pdf",
+        "learnmode": {
+          "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
+          "instruction": {
+            "en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3. Press and hold the Z-button for 3 seconds to add the motion sensor in secure mode.\n4. If the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds, otherwise the LED will blink fast for 5 seconds and then turn off, in which you need to repeat the process from step 2.\r\n"
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
+          "instruction": {
+            "en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into removing mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button\r\n4) If the exclusion is successfull, the LED will keep on for 3 seconds.\r\n"
+          }
+        },
+        "wakeUpInterval": 0,
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "1. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Multisensor is removed or/and PIR is triggered.\r\n2. Sensor Multilevel Report.\r\nMultisensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n3. Battery Report.\r\nMultisensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n4. Device Reset Locally Notification.\r\n"
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "1. Basic Set\r\nMultisensor will send Basic Set to associated nodes when the PIR is triggered.\r\n"
+            }
+          }
+        }
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/HKZW-MS01/assets/images/large.jpg",
+        "small": "/drivers/HKZW-MS01/assets/images/small.jpg"
+      },
+      "settings": [
+        {
+          "id": 12,
+          "type": "number",
+          "value": 8,
+          "attr": {
+            "min": 0,
+            "max": 8
+          },
+          "label": {
+            "en": "MOTION SENSOR’S SENSITIVITY."
+          },
+          "hint": {
+            "en": "The higher the value is set, the more sensitive the PIR sensor are."
+          },
+          "_size": 1
+        },
+        {
+          "id": 13,
+          "value": 30,
+          "attr": {
+            "min": 3,
+            "max": 28800
+          },
+          "label": {
+            "en": "MOTION SENSOR’S BLIND TIME (INSENSITIVITY)"
+          },
+          "hint": {
+            "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. The longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
+          },
+          "_size": 2,
+          "type": "number"
+        },
+        {
+          "id": 14,
+          "value": false,
+          "label": {
+            "en": "ENABLE/DISABLE BASIC COMMAND"
+          },
+          "hint": {
+            "en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 15,
+          "value": false,
+          "label": {
+            "en": "Reverse BASIC COMMAND VALUE"
+          },
+          "hint": {
+            "en": "Multisensor can reverse the BASIC ON/OFF."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 32,
+          "value": 20,
+          "attr": {
+            "min": 10,
+            "max": 50
+          },
+          "label": {
+            "en": "LEVEL OF LOW BATTERY"
+          },
+          "hint": {
+            "en": "Define a battery level as the “low battery”."
+          },
+          "_size": 1,
+          "type": "number"
+        },
+        {
+          "id": 171,
+          "value": 1800,
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "label": {
+            "en": " BATTERY REPORT INTERVAL"
+          },
+          "hint": {
+            "en": "The interval of sending battery report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the battery level.\r\n"
+          },
+          "_size": 4,
+          "type": "number"
+        },
+        {
+          "id": 172,
+          "value": 1800,
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "label": {
+            "en": "TEMPERATURE REPORT INTERVAL"
+          },
+          "hint": {
+            "en": "The interval of sending temperature report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the temperature level."
+          },
+          "_size": 4,
+          "type": "number"
+        },
+        {
+          "id": 173,
+          "value": 1800,
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "label": {
+            "en": "HUMIDITY REPORT INTERVAL"
+          },
+          "hint": {
+            "en": "The interval of sending Humidity report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the humidity level.\r\n"
+          },
+          "_size": 4,
+          "type": "number"
+        },
+        {
+          "id": 174,
+          "value": 1800,
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "label": {
+            "en": "LUMINANCE REPORT INTERVAL"
+          },
+          "hint": {
+            "en": "The interval of sending luminance report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the luminance level.\r\n"
+          },
+          "_size": 4,
+          "type": "number"
+        },
+        {
+          "id": 181,
+          "value": 10,
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "label": {
+            "en": "BATTERY REPORT THRESHOLD"
+          },
+          "hint": {
+            "en": "The parameter determines the change in battery level resulting in battery report being sent to the main controller."
+          },
+          "_size": 1,
+          "type": "number"
+        },
+        {
+          "id": 182,
+          "value": 20,
+          "attr": {
+            "min": 0,
+            "max": 255
+          },
+          "label": {
+            "en": "TEMPERATURE REPORT THRESHOLD"
+          },
+          "hint": {
+            "en": "The parameter determines the change in temperature level resulting in temperature report being sent to the main controller.(Degrees Celsius)"
+          },
+          "_size": 1,
+          "type": "number"
+        },
+        {
+          "id": 183,
+          "value": 5,
+          "attr": {
+            "min": 0,
+            "max": 255
+          },
+          "label": {
+            "en": "HUMITIDY REPORT THRESHOLD"
+          },
+          "hint": {
+            "en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller."
+          },
+          "_size": 1,
+          "type": "number"
+        },
+        {
+          "id": 184,
+          "value": 200,
+          "attr": {
+            "min": 0,
+            "max": 65535
+          },
+          "label": {
+            "en": "LUMINANCE REPORT THRESHOLD"
+          },
+          "hint": {
+            "en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller."
+          },
+          "_size": 2,
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "HKZW-SCN01",
+      "name": {
+        "en": "Scene Controller 1"
+      },
+      "zwave": {
+        "manufacturerId": [
+          520
+        ],
+        "productTypeId": [
+          512
+        ],
+        "productId": [
+          9
+        ],
+        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1918/HKZW-SCN01_MANUL.pdf",
+        "pid": 1918,
+        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085175",
+        "learnmode": {
+          "image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
+          "instruction": {
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
+          "instruction": {
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Scene Controller will send Scene Controller sends the central scene notification command and battery report command to the associated nodes."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Scene Controller will send Basic Set command to the associated nodes."
+            }
+          },
+          "3": {
+            "hint": {
+              "en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes."
+            }
+          }
+        }
+      },
+      "class": "zwavecontroller",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "images": {
+        "large": "/drivers/HKZW-SCN01/assets/images/large.jpg",
+        "small": "/drivers/HKZW-SCN01/assets/images/small.jpg"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "battery",
+            "capabilities": [
+              "measure_battery"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_battery"
+            ],
+            "options": {
+              "icons": {
+                "Battery_Alarm": "/drivers/HKZW-SCN01/assets/alarm_battery.svg"
+              },
+              "Battery_Alarm": {
+                "noblink": false,
+                "invert": false
+              }
+            }
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": 254,
+          "value": true,
+          "label": {
+            "en": "Enable/disable the configuration command"
+          },
+          "hint": {
+            "en": "Lock/unlock all configuration parameters."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "id": "HKZW-SCN04",
+      "name": {
+        "en": "Scene Controller 4"
+      },
+      "zwave": {
+        "manufacturerId": [
+          520
+        ],
+        "productTypeId": [
+          512
+        ],
+        "productId": [
+          11
+        ],
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1968/HKZW-SCN04%20Manual.pdf",
+        "pid": 1968,
+        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16095219",
+        "learnmode": {
+          "image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
+          "instruction": {
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
+          "instruction": {
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Scene Controller will send the central scene notification command and battery report command to the associated nodes if any button is triggered."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Scene Controller will send Basic Set command to the associated nodes if button 1 is pressed."
+            }
+          },
+          "3": {
+            "hint": {
+              "en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 1 is pressed, hold and released, respectively."
+            }
+          },
+          "4": {
+            "hint": {
+              "en": "Scene Controller will send Basic Set command to the associated nodes if button 2 is pressed."
+            }
+          },
+          "5": {
+            "hint": {
+              "en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 2 is pressed, hold and released, respectively."
+            }
+          },
+          "6": {
+            "hint": {
+              "en": "Scene Controller will send Basic Set command to the associated nodes if button 3 is pressed."
+            }
+          },
+          "7": {
+            "hint": {
+              "en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 3 is pressed, hold and released, respectively."
+            }
+          },
+          "8": {
+            "hint": {
+              "en": "Scene Controller will send Basic Set command to the associated nodes if button 4 is pressed."
+            }
+          },
+          "9": {
+            "hint": {
+              "en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 4 is pressed, hold and released, respectively."
+            }
+          }
+        }
+      },
+      "class": "zwavecontroller",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "images": {
+        "large": "/drivers/HKZW-SCN04/assets/images/large.jpg",
+        "small": "/drivers/HKZW-SCN04/assets/images/small.jpg"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "battery",
+            "capabilities": [
+              "measure_battery"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_battery"
+            ],
+            "options": {
+              "icons": {
+                "Battery_Alarm": "/drivers/HKZW-SCN04/assets/alarm_battery.svg"
+              },
+              "Battery_Alarm": {
+                "noblink": false,
+                "invert": false
+              }
+            }
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": 254,
+          "value": true,
+          "label": {
+            "en": "Enable/disable the configuration command"
+          },
+          "hint": {
+            "en": "Lock/unlock all configuration parameters."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "id": "HKZW-SO0x",
+      "name": {
+        "en": "Smart Plug"
+      },
+      "zwave": {
+        "manufacturerId": [
+          520
+        ],
+        "productTypeId": [
+          256
+        ],
+        "productId": [
+          10
+        ],
+        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
+        "pid": 1891,
+        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16075153",
+        "learnmode": {
+          "image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
+          "instruction": {
+            "en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
+          "instruction": {
+            "en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline"
+            }
+          }
+        }
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "meter_power",
+        "measure_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "images": {
+        "large": "/drivers/HKZW-SO0x/assets/images/large.jpg",
+        "small": "/drivers/HKZW-SO0x/assets/images/small.jpg"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "meter_power",
+              "measure_power",
+              "measure_current",
+              "measure_voltage"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": 20,
+          "value": true,
+          "label": {
+            "en": "Overcurrent protection"
+          },
+          "hint": {
+            "en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off."
+          },
+          "_size": 1,
+          "type": "checkbox"
+        },
+        {
+          "id": 21,
+          "type": "dropdown",
+          "value": "0",
+          "label": {
+            "en": "Setting Smart Plug’s load status after re-power on"
+          },
+          "hint": {
+            "en": "Define how the Plug reacts after the power supply is back on."
+          },
+          "_size": 1,
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Smart plug memorizes its state after a power failure (default)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Connected devices will be ON after a power failure"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Connected devices will be OFF after a power failure"
+              }
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "value": "1",
+          "type": "dropdown",
+          "label": {
+            "en": "Notification when Load status change"
+          },
+          "hint": {
+            "en": "Smart Plug can send notifications to association device (Group Lifeline) when state of smart plug’s load change."
+          },
+          "_size": 1,
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "This function is disabled (default)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Send Basic report"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Send Basic report only when state is not changed by Z-wave command (ie. manual button)"
+              }
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "value": "0",
+          "type": "dropdown",
+          "label": {
+            "en": "Indicator modes"
+          },
+          "hint": {
+            "en": "After smart plug being included into a Z-Wave network, the RGB LED indicator will indicator the situation of load."
+          },
+          "_size": 1,
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "The smart plug will work in indicator mode (default)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "The smart plug will work in indicator mode for 5 seconds after a load change"
+              }
+            }
+          ]
+        },
+        {
+          "id": 151,
+          "value": 0,
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 65535
+          },
+          "label": {
+            "en": "Threshold of change in wattage"
+          },
+          "hint": {
+            "en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+          },
+          "_size": 2
+        },
+        {
+          "id": 152,
+          "value": 10,
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "label": {
+            "en": "Threshold of change in wattage percentage"
+          },
+          "hint": {
+            "en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+          },
+          "_size": 1
+        },
+        {
+          "id": 171,
+          "value": 30,
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 2678400
+          },
+          "label": {
+            "en": "Intervals of sending METER REPORT (for wattage)"
+          },
+          "hint": {
+            "en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline)."
+          },
+          "_size": 4
+        },
+        {
+          "id": 172,
+          "value": 300,
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 2678400
+          },
+          "label": {
+            "en": "Intervals of sending METER REPORT (for kWh)"
+          },
+          "hint": {
+            "en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline)."
+          },
+          "_size": 4
+        },
+        {
+          "id": 173,
+          "value": 0,
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 2678400
+          },
+          "label": {
+            "en": "Intervals of sending METER REPORT (for voltage)."
+          },
+          "hint": {
+            "en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline)."
+          },
+          "_size": 4
+        },
+        {
+          "id": 174,
+          "value": 0,
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 2678400
+          },
+          "label": {
+            "en": "Intervals of sending METER REPORT (for current)."
+          },
+          "hint": {
+            "en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline)."
+          },
+          "_size": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+	"id": "HKZW-SCN04",
+	"name": {
+		"en": "Scene Controller 4"
+	},
+	"zwave": {
+		"manufacturerId": [520],
+		"productTypeId": [512],
+		"productId": [11],
+		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1968/HKZW-SCN04%20Manual.pdf",
+		"pid": 1968,
+		"imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16095219",
+		"learnmode": {
+			"image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
+			"instruction": {
+				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+			}
+		},
+		"unlearnmode": {
+			"image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
+			"instruction": {
+				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+			}
+		},
+		"associationGroups": [
+			1
+		],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "Scene Controller will send the central scene notification command and battery report command to the associated nodes if any button is triggered."
+				}
+			},
+			"2": {
+				"hint": {
+					"en": "Scene Controller will send Basic Set command to the associated nodes if button 1 is pressed."
+				}
+			},
+			"3": {
+				"hint": {
+					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 1 is pressed, hold and released, respectively."
+				}
+			},
+			"4": {
+				"hint": {
+					"en": "Scene Controller will send Basic Set command to the associated nodes if button 2 is pressed."
+				}
+			},
+			"5": {
+				"hint": {
+					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 2 is pressed, hold and released, respectively."
+				}
+			},
+			"6": {
+				"hint": {
+					"en": "Scene Controller will send Basic Set command to the associated nodes if button 3 is pressed."
+				}
+			},
+			"7": {
+				"hint": {
+					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 3 is pressed, hold and released, respectively."
+				}
+			},
+			"8": {
+				"hint": {
+					"en": "Scene Controller will send Basic Set command to the associated nodes if button 4 is pressed."
+				}
+			},
+			"9": {
+				"hint": {
+					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 4 is pressed, hold and released, respectively."
+				}
+			}
+		}
+	},
+	"class": "zwavecontroller",
+	"capabilities": [
+		"measure_battery",
+		"alarm_battery"
+	],
+	"images": {
+		"large": "/drivers/HKZW-SCN04/assets/images/large.jpg",
+		"small": "/drivers/HKZW-SCN04/assets/images/small.jpg"
+	},
+	"mobile": {
+		"components": [
+			{
+				"id": "icon"
+			},
+			{
+				"id": "battery",
+				"capabilities": [
+					"measure_battery"
+				],
+				"options": {
+					"showTitle": true
+				}
+			},
+			{
+				"id": "sensor",
+				"capabilities": [
+					"alarm_battery"
+				],
+				"options": {
+					"icons": {
+						"Battery_Alarm": "/drivers/HKZW-SCN04/assets/alarm_battery.svg"
+					},
+					"Battery_Alarm": {
+						"noblink": false,
+						"invert": false
+					}
+				}
+			}
+		]
+	},
+	"settings": [
+		{
+			"id": 254,
+			"value": true,
+			"label": {
+				"en": "Enable/disable the configuration command"
+			},
+			"hint": {
+				"en": "Lock/unlock all configuration parameters."
+			},
+			"_size": 1,
+			"type": "checkbox"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+	"id": "HKZW-DWS01",
+	"name": {
+		"en": "Door/Window Sensor"
+	},
+	"zwave": {
+		"manufacturerId": [520],
+		"productTypeId": [512],
+		"productId": [8],
+		"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1896/HKZW-DWS01_Product%20Manual%20.pdf",
+		"pid": 1896,
+		"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085158",
+		"learnmode": {
+			"image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
+			"instruction": {
+				"en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+			}
+		},
+		"unlearnmode": {
+			"image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
+			"instruction": {
+				"en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+			}
+		},
+		"associationGroups": [
+			1
+		],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "Door/Window Sensor will send notification report and battery report to the associated nodes."
+				}
+			},
+			"2": {
+				"hint": {
+					"en": "Sensor will send Basic Set to the associated nodes when the sensor body and magnet removed or combined."
+				}
+			}
+		}
+	},
+	"class": "sensor",
+	"capabilities": [
+		"alarm_contact",
+		"measure_battery",
+		"alarm_battery"
+	],
+	"images": {
+		"large": "/drivers/HKZW-DWS01/assets/images/large.jpg",
+		"small": "/drivers/HKZW-DWS01/assets/images/small.jpg"
+	},
+	"settings": [
+		{
+			"id": 14,
+			"value": true,
+			"label": {
+				"en": "Enable/Disable BASIC SET command"
+			},
+			"hint": {
+				"en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2."
+			},
+			"_size": 1,
+			"type": "checkbox"
+    },
+		{
+			"id": 15,
+			"value": true,
+			"label": {
+				"en": "Reverse the BASIC SET command"
+			},
+			"hint": {
+				"en": "Door/Window Sensor can reverse its value of BASIC SET when the magnet is triggered."
+			},
+			"_size": 1,
+			"type": "checkbox"
+    },
+		{
+			"id": 32,
+			"value": 20,
+			"attr": {
+				"min": 10,
+				"max": 50
+			},
+			"label": {
+				"en": "Level of low battery"
+			},
+			"hint": {
+				"en": "This parameter defines a battery level as the “low battery”."
+			},
+			"_size": 1,
+			"type": "number"
+    }
+  ]
+}
