@@ -17,6 +17,7 @@ class MultiSensor_MS01 extends ZwaveDevice {
 		this.registerCapability('measure_luminance', 'SENSOR_MULTILEVEL');
 		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL');
 		this.registerCapability('measure_humidity', 'SENSOR_MULTILEVEL');
+		this.registerCapability('alarm_tamper', 'SENSOR_MULTILEVEL');
 		// this.registerCapability('alarm_battery', 'METER');
 		this.registerCapability('measure_battery', 'BATTERY');
 

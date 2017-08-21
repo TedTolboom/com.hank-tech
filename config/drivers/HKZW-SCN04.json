@@ -115,7 +115,7 @@
 	},
 	"settings": [
 		{
-			"id": 254,
+			"id": "enable_config",
 			"zwave": {
 				"index": 254,
 				"size": 1

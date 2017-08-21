@@ -41,8 +41,9 @@
 	"class": "sensor",
 	"capabilities": [
 		"alarm_contact",
-		"measure_battery",
-		"alarm_battery"
+		"alarm_tamper",
+		"alarm_battery",
+		"measure_battery"
 	],
 	"images": {
 		"large": "/drivers/HKZW-DWS01/assets/images/large.jpg",
@@ -50,13 +51,27 @@
 	},
 	"settings": [
 		{
-			"id": 14,
+			"id": "BASIC_SET_command",
 			"zwave": {
 				"index": 14,
 				"size": 1
 			},
-			"type": "checkbox",
-			"value": true,
+			"type": "dropdown",
+			"value": "0",
+			"values": [
+				{
+					"id": "0",
+					"label": {
+						"en": "BASIC_SET command is not send (default)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "BASIC_SET command is send during contectalarm"
+					}
+				}
+			],
 			"label": {
 				"en": "Enable/Disable BASIC SET command"
 			},
@@ -65,13 +80,27 @@
 			}
     },
 		{
-			"id": 15,
+			"id": "BASIC_SET_reversed",
 			"zwave": {
 				"index": 15,
 				"size": 1
 			},
-			"type": "checkbox",
-			"value": true,
+			"type": "dropdown",
+			"value": "0",
+			"values": [
+				{
+					"id": "0",
+					"label": {
+						"en": "Send ON when contact opened, OFF when closed (default)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "Send OFF when contact opened, ON when closed"
+					}
+				}
+			],
 			"label": {
 				"en": "Reverse the BASIC SET command"
 			},
@@ -80,7 +109,7 @@
 			}
     },
 		{
-			"id": 32,
+			"id": "low_battery",
 			"zwave": {
 				"index": 32,
 				"size": 1
