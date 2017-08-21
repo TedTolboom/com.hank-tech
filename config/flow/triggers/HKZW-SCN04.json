@@ -1,0 +1,80 @@
+[{
+		"id": "SCN04_scene",
+		"title": {
+			"en": "Scene is activated",
+			"nl": "Scene is geactiveerd"
+		},
+		"hint": {
+			"en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
+			"nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
+		},
+		"args": [
+			{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=HKZW-SCN04"
+		},
+			{
+				"name": "button",
+				"type": "dropdown",
+				"values": [
+					{
+						"id": "1",
+						"label": {
+							"en": "Button 1",
+							"nl": "Knop 1"
+						}
+				},
+					{
+						"id": "2",
+						"label": {
+							"en": "Button 2",
+							"nl": "Knop 2"
+						}
+				},
+					{
+						"id": "3",
+						"label": {
+							"en": "Button 3",
+							"nl": "Knop 3"
+						}
+				},
+					{
+						"id": "4",
+						"label": {
+							"en": "Button 4",
+							"nl": "Knop 4"
+						}
+				}
+			]
+			},
+			{
+				"name": "scene",
+				"type": "dropdown",
+				"values": [
+					{
+						"id": "Key Pressed 1 time",
+						"label": {
+							"en": "Pressed 1x",
+							"nl": "1x ingedrukt"
+						}
+					},
+					{
+						"id": "Key Held Down",
+						"label": {
+							"en": "Held Down (5x a second)",
+							"nl": "Lang ingedrukt (5x per seconde)"
+						}
+					},
+					{
+						"id": "Key Released",
+						"label": {
+							"en": "Released",
+							"nl": "Losgelaten"
+						}
+					}
+				]
+			}
+		]
+	}
+]
