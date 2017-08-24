@@ -21,29 +21,29 @@
 					{
 						"id": "1",
 						"label": {
-							"en": "Button 1",
-							"nl": "Knop 1"
+							"en": "Button 1 (Night)",
+							"nl": "Knop 1 (Nacht)"
 						}
 				},
 					{
 						"id": "2",
 						"label": {
-							"en": "Button 2",
-							"nl": "Knop 2"
+							"en": "Button 2 (People)",
+							"nl": "Knop 2 (Mensen)"
 						}
 				},
 					{
 						"id": "3",
 						"label": {
-							"en": "Button 3",
-							"nl": "Knop 3"
+							"en": "Button 3 (Circle)",
+							"nl": "Knop 3 (Cirkel)"
 						}
 				},
 					{
 						"id": "4",
 						"label": {
-							"en": "Button 4",
-							"nl": "Knop 4"
+							"en": "Button 4 (Power)",
+							"nl": "Knop 4 (Power)"
 						}
 				}
 			]
@@ -76,5 +76,43 @@
 				]
 			}
 		]
-	}
+	},
+	{
+		"id": "SCN04_button",
+		"title": {
+			"en": "A button has been pressed",
+			"nl": "Een knop is ingedrukt"
+		},
+		"hint": {
+			"en": "This card will trigger on any button pressed and provides the button and scene tokens.",
+			"nl": "Deze kaart wordt geactiveerd bij iedere knop die ingedrukt wordt en biedt de knop en scene tokens aan."
+		},
+		"args": [
+			{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=HKZW-SCN04"
+				}
+			],
+		"tokens": [
+			{
+				"name": "button",
+				"type": "string",
+				"title": {
+					"en": "button",
+					"nl": "knop"
+				},
+				"example": "0"
+				},
+			{
+				"name": "scene",
+				"type": "string",
+				"title": {
+					"en": "scene",
+					"nl": "scene"
+				},
+				"example": "Button pressed (test)"
+				}
+			]
+		}
 ]

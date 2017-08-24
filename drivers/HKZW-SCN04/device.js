@@ -33,19 +33,12 @@ class SceneController_SCN04 extends ZwaveDevice {
 				this.log(args, state);
 				return Promise.resolve(args.button === state.button && args.scene === state.scene);
 			})
-			.on('update', () => {
-				this.log('update')
-				triggerSCN04_scene
-					.getArgumentValues()
-					.then(args => {
-						/*
-								args = [{
-										"my_arg": "user_value"
-								}]
-						*/
-					});
-			})
 
+		let triggerSCN04_button = new Homey.FlowCardTriggerDevice('SCN04_button');
+		triggerSCN04_button
+			.register();
+
+		// OLD API reportListener used since new registerReportListener is not active without capability
 		this.node.CommandClass['COMMAND_CLASS_CENTRAL_SCENE'].on('report', (command, report) => {
 			this.log(command.name); // e.g. BASIC_REPORT
 			this.log(report); // e.g. { Value: true }
@@ -63,9 +56,9 @@ class SceneController_SCN04 extends ZwaveDevice {
 					PreviousSequenceNo = report['Sequence Number'];
 					this.log('remoteValue:', remoteValue, 'PreviousSequenceNo:', PreviousSequenceNo);
 					// Trigger the trigger card with 2 dropdown options
-					triggerSCN04_scene.trigger(this, triggerSCN04_scene.getArgumentValues, remoteValue)
+					triggerSCN04_scene.trigger(this, triggerSCN04_scene.getArgumentValues, remoteValue);
 					// Trigger the trigger card with tokens
-
+					triggerSCN04_button.trigger(this, remoteValue, null);
 				}
 			}
 		});
