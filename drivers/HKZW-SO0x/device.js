@@ -1,6 +1,5 @@
 'use strict';
 
-const Homey = require('homey');
 const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
 class SmartPlug_SO0x extends ZwaveDevice {
@@ -18,6 +17,7 @@ class SmartPlug_SO0x extends ZwaveDevice {
 		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('measure_current', 'METER');
 		this.registerCapability('measure_voltage', 'METER');
+
 	}
 }
 

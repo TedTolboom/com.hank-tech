@@ -13,13 +13,13 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds to add the device in secure mode. The RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds to add the device in secure mode. The RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
 			}
 		},
 		"associationGroups": [
@@ -71,7 +71,7 @@
 	},
 	"settings": [
 		{
-			"id": 20,
+			"id": "Overcurrent_protection",
 			"zwave": {
 				"index": 20,
 				"size": 1
@@ -86,7 +86,7 @@
 			}
     },
 		{
-			"id": 21,
+			"id": "Power_off_status",
 			"zwave": {
 				"index": 21,
 				"size": 1
@@ -120,7 +120,7 @@
 			]
     },
 		{
-			"id": 24,
+			"id": "Load_notification",
 			"zwave": {
 				"index": 24,
 				"size": 1
@@ -154,7 +154,7 @@
 			]
     },
 		{
-			"id": 27,
+			"id": "Indicator_mode",
 			"zwave": {
 				"index": 27,
 				"size": 1
@@ -182,10 +182,11 @@
 			]
     },
 		{
-			"id": 151,
+			"id": "Power_Threshold_W",
 			"zwave": {
 				"index": 151,
-				"size": 2
+				"size": 2,
+				"signed": false
 			},
 			"type": "number",
 			"value": 0,
@@ -194,14 +195,14 @@
 				"max": 65535
 			},
 			"label": {
-				"en": "Threshold of change in wattage"
+				"en": "Power (W) report threshold (W)"
 			},
 			"hint": {
-				"en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+				"en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 50, Range: 5 - 65535, 0 = disabled (W)"
 			}
     },
 		{
-			"id": 152,
+			"id": "Power_Threshold_pro",
 			"zwave": {
 				"index": 152,
 				"size": 1
@@ -213,14 +214,14 @@
 				"max": 100
 			},
 			"label": {
-				"en": "Threshold of change in wattage percentage"
+				"en": "Power (W) report threshold (%)"
 			},
 			"hint": {
-				"en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+				"en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 10, Range: 0 - 100, 0 = disabled (%)"
 			}
     },
 		{
-			"id": 171,
+			"id": "Power_interval",
 			"zwave": {
 				"index": 171,
 				"size": 4
@@ -232,14 +233,14 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Intervals of sending METER REPORT (for wattage)"
+				"en": "Power (W) report interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline)."
+				"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline). \nDefault: 30, Range: 5 - 2678400, 0 = disabled (s)"
 			}
     },
 		{
-			"id": 172,
+			"id": "Meter_interval",
 			"zwave": {
 				"index": 172,
 				"size": 4
@@ -251,14 +252,14 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Intervals of sending METER REPORT (for kWh)"
+				"en": "Meter (kWh) report interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline)."
+				"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline).\nDefault: 300, Range: 5 - 2678400, 0 = disabled (s)"
 			}
     },
 		{
-			"id": 173,
+			"id": "Voltage_interval",
 			"zwave": {
 				"index": 173,
 				"size": 4
@@ -270,14 +271,14 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Intervals of sending METER REPORT (for voltage)."
+				"en": "Voltage (V) report interval (s)."
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline)."
+				"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)"
 			}
     },
 		{
-			"id": 174,
+			"id": "Current_interval",
 			"zwave": {
 				"index": 174,
 				"size": 4
@@ -289,10 +290,10 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Intervals of sending METER REPORT (for current)."
+				"en": "Current (A) report interval (s)."
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline)."
+				"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)"
 			}
     }
   ]
