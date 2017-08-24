@@ -13,13 +13,13 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Press and hold the O button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Press and hold the O button for 3 seconds.\n4. if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
 			}
 		},
 		"associationGroups": [
