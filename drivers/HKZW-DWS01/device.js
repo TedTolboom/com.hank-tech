@@ -10,21 +10,11 @@ class DoorWindowSensor_DWS01 extends ZwaveDevice {
 		// print the node's info to the console
 		// this.printNode();
 
+		// register device capabilities
 		this.registerCapability('alarm_contact', 'NOTIFICATION');
 		this.registerCapability('alarm_tamper', 'NOTIFICATION');
-		// this.registerCapability('alarm_battery', 'METER');
+		this.registerCapability('alarm_battery', 'BATTERY');
 		this.registerCapability('measure_battery', 'BATTERY');
-
-		// register a settings parser
-		this.registerSetting('BASIC_SET_command', value => {
-			return new Buffer([value])
-		});
-		this.registerSetting('BASIC_SET_reversed', value => {
-			return new Buffer([value])
-		});
-		this.registerSetting('low_battery', value => {
-			return new Buffer([value])
-		});
 	}
 }
 

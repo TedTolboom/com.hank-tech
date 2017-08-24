@@ -13,13 +13,13 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+				"en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\r\n4.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+				"en": "1.\tInsert the battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tPress and hold the Z-button for more than 3 seconds.\r\n4.\tIf the exclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
 			}
 		},
 		"associationGroups": [
@@ -62,18 +62,18 @@
 				{
 					"id": "0",
 					"label": {
-						"en": "BASIC_SET command is not send (default)"
+						"en": "BASIC_SET is not send during alarm (default)"
 					}
 				},
 				{
 					"id": "1",
 					"label": {
-						"en": "BASIC_SET command is send during contectalarm"
+						"en": "BASIC_SET is send during alarm"
 					}
 				}
 			],
 			"label": {
-				"en": "Enable/Disable BASIC SET command"
+				"en": "Enable BASIC SET command"
 			},
 			"hint": {
 				"en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2."
@@ -102,7 +102,7 @@
 				}
 			],
 			"label": {
-				"en": "Reverse the BASIC SET command"
+				"en": "Reverse BASIC SET command"
 			},
 			"hint": {
 				"en": "Door/Window Sensor can reverse its value of BASIC SET when the magnet is triggered."
@@ -121,7 +121,7 @@
 				"max": 50
 			},
 			"label": {
-				"en": "Level of low battery"
+				"en": "Low battery warning level"
 			},
 			"hint": {
 				"en": "This parameter defines a battery level as the “low battery”."

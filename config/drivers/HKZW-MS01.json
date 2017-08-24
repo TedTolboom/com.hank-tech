@@ -13,13 +13,13 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-MS01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3. Press and hold the Z-button for 3 seconds to add the motion sensor in secure mode.\n4. If the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds, otherwise the LED will blink fast for 5 seconds and then turn off, in which you need to repeat the process from step 2.\r\n"
+				"en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3. Press and hold the Z-button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds, otherwise the LED will blink fast for 5 seconds and then turn off, in which you need to repeat the process from step 2.\r\n"
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-MS01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into removing mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button\r\n4) If the exclusion is successfull, the LED will keep on for 3 seconds.\r\n"
+				"en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into removing mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for more than 3 seconds\r\n4) If the exclusion is successfull, the LED will keep on for 3 seconds.\r\n"
 			}
 		},
 		"wakeUpInterval": 0,
@@ -67,7 +67,7 @@
 				"max": 8
 			},
 			"label": {
-				"en": "MOTION SENSOR’S SENSITIVITY."
+				"en": "Motion sensor sensitivity."
 			},
 			"hint": {
 				"en": "The higher the value is set, the more sensitive the PIR sensor are."
@@ -86,7 +86,7 @@
 				"max": 28800
 			},
 			"label": {
-				"en": "MOTION SENSOR’S BLIND TIME (INSENSITIVITY)"
+				"en": "Motion sensor blind time (Insensitivity)"
 			},
 			"hint": {
 				"en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. The longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
@@ -103,7 +103,7 @@
 			"type": "checkbox",
 			"value": false,
 			"label": {
-				"en": "ENABLE/DISABLE BASIC COMMAND"
+				"en": "Enable BASIC_SET command"
 			},
 			"hint": {
 				"en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2."
@@ -118,7 +118,7 @@
 			"type": "checkbox",
 			"value": false,
 			"label": {
-				"en": "Reverse BASIC COMMAND VALUE"
+				"en": "Reverse BASIC_SET command"
 			},
 			"hint": {
 				"en": "Multisensor can reverse the BASIC ON/OFF."
@@ -137,7 +137,7 @@
 				"max": 50
 			},
 			"label": {
-				"en": "LEVEL OF LOW BATTERY"
+				"en": "LOW Battery level"
 			},
 			"hint": {
 				"en": "Define a battery level as the “low battery”."
@@ -156,7 +156,7 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": " BATTERY REPORT INTERVAL"
+				"en": " Battery report interval (s)"
 			},
 			"hint": {
 				"en": "The interval of sending battery report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the battery level.\r\n"
@@ -175,7 +175,7 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "TEMPERATURE REPORT INTERVAL"
+				"en": "Temperature report interval (s)"
 			},
 			"hint": {
 				"en": "The interval of sending temperature report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the temperature level."
@@ -194,7 +194,7 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "HUMIDITY REPORT INTERVAL"
+				"en": "Humidity report interval (s)"
 			},
 			"hint": {
 				"en": "The interval of sending Humidity report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the humidity level.\r\n"
@@ -213,7 +213,7 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "LUMINANCE REPORT INTERVAL"
+				"en": "Luminance report interval (s)"
 			},
 			"hint": {
 				"en": "The interval of sending luminance report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the luminance level.\r\n"
@@ -232,7 +232,7 @@
 				"max": 100
 			},
 			"label": {
-				"en": "BATTERY REPORT THRESHOLD"
+				"en": "Battery report threshold (%)"
 			},
 			"hint": {
 				"en": "The parameter determines the change in battery level resulting in battery report being sent to the main controller."
@@ -251,7 +251,7 @@
 				"max": 255
 			},
 			"label": {
-				"en": "TEMPERATURE REPORT THRESHOLD"
+				"en": "Temperature report threshold (°C)"
 			},
 			"hint": {
 				"en": "The parameter determines the change in temperature level resulting in temperature report being sent to the main controller.(Degrees Celsius)"
@@ -270,7 +270,7 @@
 				"max": 255
 			},
 			"label": {
-				"en": "HUMITIDY REPORT THRESHOLD"
+				"en": "Humidity report threshold (%)"
 			},
 			"hint": {
 				"en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller."
@@ -289,7 +289,7 @@
 				"max": 65535
 			},
 			"label": {
-				"en": "LUMINANCE REPORT THRESHOLD"
+				"en": "Lreport threshold (LUX)"
 			},
 			"hint": {
 				"en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller."

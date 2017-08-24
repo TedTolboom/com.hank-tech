@@ -13,35 +13,30 @@ class SceneController_SCN04 extends ZwaveDevice {
 		// print the node's info to the console
 		this.printNode();
 
-		// this.registerCapability('alarm_battery', 'METER');
+		// register device capabilities
+		this.registerCapability('alarm_battery', 'BATTERY');
 		this.registerCapability('measure_battery', 'BATTERY');
 
-		// register a settings parser
-		this.registerSetting('enable_config', value => {
-			return new Buffer([value])
-		});
-
-		// register a report listener
-		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (rawReport, parsedReport) => {
-			this.log('registerReportListener', rawReport, parsedReport);
-		});
-
+		// define and register FlowCardTriggers
 		let triggerSCN04_scene = new Homey.FlowCardTriggerDevice('SCN04_scene');
 		triggerSCN04_scene
 			.register()
 			.registerRunListener((args, state) => {
 				this.log(args, state);
 				return Promise.resolve(args.button === state.button && args.scene === state.scene);
-			})
+			});
 
-		let triggerSCN04_button = new Homey.FlowCardTriggerDevice('SCN04_button');
-		triggerSCN04_button
+		let triggerSCN_button = new Homey.FlowCardTriggerDevice('SCN_button');
+		triggerSCN_button
 			.register();
+
+		// register a report listener (SDK2 style not yet operational)
+		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (rawReport, parsedReport) => {
+			this.log('registerReportListener', rawReport, parsedReport);
+		});
 
 		// OLD API reportListener used since new registerReportListener is not active without capability
 		this.node.CommandClass['COMMAND_CLASS_CENTRAL_SCENE'].on('report', (command, report) => {
-			this.log(command.name); // e.g. BASIC_REPORT
-			this.log(report); // e.g. { Value: true }
 			if (command.name === 'CENTRAL_SCENE_NOTIFICATION' &&
 				report &&
 				report.hasOwnProperty('Properties1') &&
@@ -54,11 +49,10 @@ class SceneController_SCN04 extends ZwaveDevice {
 						scene: report.Properties1['Key Attributes'],
 					};
 					PreviousSequenceNo = report['Sequence Number'];
-					this.log('remoteValue:', remoteValue, 'PreviousSequenceNo:', PreviousSequenceNo);
 					// Trigger the trigger card with 2 dropdown options
 					triggerSCN04_scene.trigger(this, triggerSCN04_scene.getArgumentValues, remoteValue);
 					// Trigger the trigger card with tokens
-					triggerSCN04_button.trigger(this, remoteValue, null);
+					triggerSCN_button.trigger(this, remoteValue, null);
 				}
 			}
 		});

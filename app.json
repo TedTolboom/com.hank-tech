@@ -38,86 +38,7 @@
   "flow": {
     "triggers": [
       {
-        "id": "SCN04_scene",
-        "title": {
-          "en": "Scene is activated",
-          "nl": "Scene is geactiveerd"
-        },
-        "hint": {
-          "en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
-          "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=HKZW-SCN04"
-          },
-          {
-            "name": "button",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Button 1",
-                  "nl": "Knop 1"
-                }
-              },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Button 2",
-                  "nl": "Knop 2"
-                }
-              },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Button 3",
-                  "nl": "Knop 3"
-                }
-              },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Button 4",
-                  "nl": "Knop 4"
-                }
-              }
-            ]
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed 1x",
-                  "nl": "1x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Held Down (5x a second)",
-                  "nl": "Lang ingedrukt (5x per seconde)"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Released",
-                  "nl": "Losgelaten"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "SCN04_button",
+        "id": "SCN_button",
         "title": {
           "en": "A button has been pressed",
           "nl": "Een knop is ingedrukt"
@@ -130,7 +51,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=HKZW-SCN04"
+            "filter": "driver_id=HKZW-SCN01|HKZW-SCN04"
           }
         ],
         "tokens": [
@@ -153,9 +74,165 @@
             "example": "Button pressed (test)"
           }
         ]
+      },
+      {
+        "id": "SCN01_scene",
+        "title": {
+          "en": "Scene is activated",
+          "nl": "Scene is geactiveerd"
+        },
+        "hint": {
+          "en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
+          "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=HKZW-SCN01"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1 (Night)",
+                  "nl": "Knop 1 (Nacht)"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed 1x",
+                  "nl": "1x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Held Down",
+                  "nl": "Lang ingedrukt"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Released",
+                  "nl": "Losgelaten"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SCN04_scene",
+        "title": {
+          "en": "Scene is activated",
+          "nl": "Scene is geactiveerd"
+        },
+        "hint": {
+          "en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
+          "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=HKZW-SCN04"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1 (Night)",
+                  "nl": "Knop 1 (Nacht)"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2 (People)",
+                  "nl": "Knop 2 (Mensen)"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3 (Circle)",
+                  "nl": "Knop 3 (Cirkel)"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4 (Power)",
+                  "nl": "Knop 4 (Power)"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed 1x",
+                  "nl": "1x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Held Down",
+                  "nl": "Lang ingedrukt"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Released",
+                  "nl": "Losgelaten"
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
-    "actions": []
+    "actions": [
+      {
+        "id": "SO0x_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=HKZW-SO0x"
+          }
+        ]
+      }
+    ]
   },
   "drivers": [
     {
@@ -179,13 +256,13 @@
         "learnmode": {
           "image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
           "instruction": {
-            "en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+            "en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\r\n4.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
           "instruction": {
-            "en": "1.\tInsert the AAA battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tTriple or single short press the Z-button.\r\n4.\tIf the add for inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
+            "en": "1.\tInsert the battery.\r\n2.\tSet the Z-Wave network main controller into learning mode.\r\n3.\tPress and hold the Z-button for more than 3 seconds.\r\n4.\tIf the exclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds. Otherwise, the LED will blink 5 seconds and then turn off, in which case you need to repeat the process from step 2.\r\n"
           }
         },
         "associationGroups": [
@@ -228,18 +305,18 @@
             {
               "id": "0",
               "label": {
-                "en": "BASIC_SET command is not send (default)"
+                "en": "BASIC_SET is not send during alarm (default)"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "BASIC_SET command is send during contectalarm"
+                "en": "BASIC_SET is send during alarm"
               }
             }
           ],
           "label": {
-            "en": "Enable/Disable BASIC SET command"
+            "en": "Enable BASIC SET command"
           },
           "hint": {
             "en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2."
@@ -268,7 +345,7 @@
             }
           ],
           "label": {
-            "en": "Reverse the BASIC SET command"
+            "en": "Reverse BASIC SET command"
           },
           "hint": {
             "en": "Door/Window Sensor can reverse its value of BASIC SET when the magnet is triggered."
@@ -287,7 +364,7 @@
             "max": 50
           },
           "label": {
-            "en": "Level of low battery"
+            "en": "Low battery warning level"
           },
           "hint": {
             "en": "This parameter defines a battery level as the “low battery”."
@@ -316,13 +393,13 @@
         "learnmode": {
           "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
           "instruction": {
-            "en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3. Press and hold the Z-button for 3 seconds to add the motion sensor in secure mode.\n4. If the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds, otherwise the LED will blink fast for 5 seconds and then turn off, in which you need to repeat the process from step 2.\r\n"
+            "en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3. Press and hold the Z-button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds, otherwise the LED will blink fast for 5 seconds and then turn off, in which you need to repeat the process from step 2.\r\n"
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
           "instruction": {
-            "en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into removing mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button\r\n4) If the exclusion is successfull, the LED will keep on for 3 seconds.\r\n"
+            "en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into removing mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for more than 3 seconds\r\n4) If the exclusion is successfull, the LED will keep on for 3 seconds.\r\n"
           }
         },
         "wakeUpInterval": 0,
@@ -370,7 +447,7 @@
             "max": 8
           },
           "label": {
-            "en": "MOTION SENSOR’S SENSITIVITY."
+            "en": "Motion sensor sensitivity."
           },
           "hint": {
             "en": "The higher the value is set, the more sensitive the PIR sensor are."
@@ -389,7 +466,7 @@
             "max": 28800
           },
           "label": {
-            "en": "MOTION SENSOR’S BLIND TIME (INSENSITIVITY)"
+            "en": "Motion sensor blind time (Insensitivity)"
           },
           "hint": {
             "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. The longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
@@ -406,7 +483,7 @@
           "type": "checkbox",
           "value": false,
           "label": {
-            "en": "ENABLE/DISABLE BASIC COMMAND"
+            "en": "Enable BASIC_SET command"
           },
           "hint": {
             "en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2."
@@ -421,7 +498,7 @@
           "type": "checkbox",
           "value": false,
           "label": {
-            "en": "Reverse BASIC COMMAND VALUE"
+            "en": "Reverse BASIC_SET command"
           },
           "hint": {
             "en": "Multisensor can reverse the BASIC ON/OFF."
@@ -440,7 +517,7 @@
             "max": 50
           },
           "label": {
-            "en": "LEVEL OF LOW BATTERY"
+            "en": "LOW Battery level"
           },
           "hint": {
             "en": "Define a battery level as the “low battery”."
@@ -459,7 +536,7 @@
             "max": 2678400
           },
           "label": {
-            "en": " BATTERY REPORT INTERVAL"
+            "en": " Battery report interval (s)"
           },
           "hint": {
             "en": "The interval of sending battery report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the battery level.\r\n"
@@ -478,7 +555,7 @@
             "max": 2678400
           },
           "label": {
-            "en": "TEMPERATURE REPORT INTERVAL"
+            "en": "Temperature report interval (s)"
           },
           "hint": {
             "en": "The interval of sending temperature report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the temperature level."
@@ -497,7 +574,7 @@
             "max": 2678400
           },
           "label": {
-            "en": "HUMIDITY REPORT INTERVAL"
+            "en": "Humidity report interval (s)"
           },
           "hint": {
             "en": "The interval of sending Humidity report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the humidity level.\r\n"
@@ -516,7 +593,7 @@
             "max": 2678400
           },
           "label": {
-            "en": "LUMINANCE REPORT INTERVAL"
+            "en": "Luminance report interval (s)"
           },
           "hint": {
             "en": "The interval of sending luminance report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the luminance level.\r\n"
@@ -535,7 +612,7 @@
             "max": 100
           },
           "label": {
-            "en": "BATTERY REPORT THRESHOLD"
+            "en": "Battery report threshold (%)"
           },
           "hint": {
             "en": "The parameter determines the change in battery level resulting in battery report being sent to the main controller."
@@ -554,7 +631,7 @@
             "max": 255
           },
           "label": {
-            "en": "TEMPERATURE REPORT THRESHOLD"
+            "en": "Temperature report threshold (°C)"
           },
           "hint": {
             "en": "The parameter determines the change in temperature level resulting in temperature report being sent to the main controller.(Degrees Celsius)"
@@ -573,7 +650,7 @@
             "max": 255
           },
           "label": {
-            "en": "HUMITIDY REPORT THRESHOLD"
+            "en": "Humidity report threshold (%)"
           },
           "hint": {
             "en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller."
@@ -592,7 +669,7 @@
             "max": 65535
           },
           "label": {
-            "en": "LUMINANCE REPORT THRESHOLD"
+            "en": "Lreport threshold (LUX)"
           },
           "hint": {
             "en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller."
@@ -621,13 +698,13 @@
         "learnmode": {
           "image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
           "instruction": {
-            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Press and hold the O button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
           "instruction": {
-            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Press and hold the O button for 3 seconds.\n4. if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
           }
         },
         "associationGroups": [
@@ -730,13 +807,13 @@
         "learnmode": {
           "image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
           "instruction": {
-            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Pressing and holding the Z-button for 3 seconds.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Press and hold the Z-button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
           "instruction": {
-            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Triple click the Z-button, if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+            "en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Press and hold the Z-button for 3 seconds.\n4. if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
           }
         },
         "associationGroups": [
@@ -869,13 +946,13 @@
         "learnmode": {
           "image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
           "instruction": {
-            "en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+            "en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds to add the device in secure mode. The RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
           "instruction": {
-            "en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Triple click the Z-button or power up the device , RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+            "en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds to add the device in secure mode. The RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
           }
         },
         "associationGroups": [
@@ -928,7 +1005,7 @@
       },
       "settings": [
         {
-          "id": 20,
+          "id": "Overcurrent_protection",
           "zwave": {
             "index": 20,
             "size": 1
@@ -943,7 +1020,7 @@
           }
         },
         {
-          "id": 21,
+          "id": "Power_off_status",
           "zwave": {
             "index": 21,
             "size": 1
@@ -978,7 +1055,7 @@
           ]
         },
         {
-          "id": 24,
+          "id": "Load_notification",
           "zwave": {
             "index": 24,
             "size": 1
@@ -1013,7 +1090,7 @@
           ]
         },
         {
-          "id": 27,
+          "id": "Indicator_mode",
           "zwave": {
             "index": 27,
             "size": 1
@@ -1042,10 +1119,11 @@
           ]
         },
         {
-          "id": 151,
+          "id": "Power_Threshold_W",
           "zwave": {
             "index": 151,
-            "size": 2
+            "size": 2,
+            "signed": false
           },
           "type": "number",
           "value": 0,
@@ -1054,14 +1132,14 @@
             "max": 65535
           },
           "label": {
-            "en": "Threshold of change in wattage"
+            "en": "Power (W) report threshold (W)"
           },
           "hint": {
-            "en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+            "en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 50, Range: 5 - 65535, 0 = disabled (W)"
           }
         },
         {
-          "id": 152,
+          "id": "Power_Threshold_pro",
           "zwave": {
             "index": 152,
             "size": 1
@@ -1073,14 +1151,14 @@
             "max": 100
           },
           "label": {
-            "en": "Threshold of change in wattage percentage"
+            "en": "Power (W) report threshold (%)"
           },
           "hint": {
-            "en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline)."
+            "en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 10, Range: 0 - 100, 0 = disabled (%)"
           }
         },
         {
-          "id": 171,
+          "id": "Power_interval",
           "zwave": {
             "index": 171,
             "size": 4
@@ -1092,14 +1170,14 @@
             "max": 2678400
           },
           "label": {
-            "en": "Intervals of sending METER REPORT (for wattage)"
+            "en": "Power (W) report interval (s)"
           },
           "hint": {
-            "en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline)."
+            "en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline). \nDefault: 30, Range: 5 - 2678400, 0 = disabled (s)"
           }
         },
         {
-          "id": 172,
+          "id": "Meter_interval",
           "zwave": {
             "index": 172,
             "size": 4
@@ -1111,14 +1189,14 @@
             "max": 2678400
           },
           "label": {
-            "en": "Intervals of sending METER REPORT (for kWh)"
+            "en": "Meter (kWh) report interval (s)"
           },
           "hint": {
-            "en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline)."
+            "en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline).\nDefault: 300, Range: 5 - 2678400, 0 = disabled (s)"
           }
         },
         {
-          "id": 173,
+          "id": "Voltage_interval",
           "zwave": {
             "index": 173,
             "size": 4
@@ -1130,14 +1208,14 @@
             "max": 2678400
           },
           "label": {
-            "en": "Intervals of sending METER REPORT (for voltage)."
+            "en": "Voltage (V) report interval (s)."
           },
           "hint": {
-            "en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline)."
+            "en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)"
           }
         },
         {
-          "id": 174,
+          "id": "Current_interval",
           "zwave": {
             "index": 174,
             "size": 4
@@ -1149,10 +1227,10 @@
             "max": 2678400
           },
           "label": {
-            "en": "Intervals of sending METER REPORT (for current)."
+            "en": "Current (A) report interval (s)."
           },
           "hint": {
-            "en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline)."
+            "en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)"
           }
         }
       ]
