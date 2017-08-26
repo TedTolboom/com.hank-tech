@@ -6,7 +6,6 @@
 	"requires": true,
 	"dependencies": {
 		"homey-log": "^1.0.1",
-		"homey-meshdriver": "^1.0.0",
 		"homey-meshdriver": "git+https://github.com/athombv/node-homey-meshdriver.git"
 	},
 	"devDependencies": {},
