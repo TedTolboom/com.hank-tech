@@ -1,12 +1,12 @@
 {
 	"name": "com.hank-tech",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "This app adds support for the Z-wave devices made by [HANK](http://www.hank-tech.com).",
 	"main": "app.js",
 	"dependencies": {
 		"homey-log": "^1.0.1",
 		"homey-meshdriver": "^1.0.0",
-		"homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git"
+		"homey-meshdriver": "git+https://github.com/athombv/node-homey-meshdriver.git"
 	},
 	"devDependencies": {},
 	"scripts": {
