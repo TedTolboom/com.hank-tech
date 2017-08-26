@@ -66,7 +66,7 @@ This app and driver development has been supported by:
   <img src="https://www.robbshop.nl/skin/frontend/robbshop/default/images/logo.svg" width="25%">
 
 ## Feedback:
-Any requests please post them in the [Hank app topic on the Athom Forum](https://forum.athom.com/discussion/3113/) or contact me on [Slack](https://athomcommunity.slack.com/team/tedtolboom)    
+Any requests please post them in the [Hank app topic on the Athom Forum](https://forum.athom.com/discussion/3708/) or contact me on [Slack](https://athomcommunity.slack.com/team/tedtolboom)    
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ### Donate:
