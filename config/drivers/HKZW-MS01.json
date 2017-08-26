@@ -5,7 +5,7 @@
 	},
 	"zwave": {
 		"manufacturerId": [520],
-		"productTypeId": [512],
+		"productTypeId": [512, 513],
 		"productId": [6],
 		"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
 		"pid": 2305,
@@ -13,13 +13,15 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-MS01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3. Press and hold the Z-button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds, otherwise the LED will blink fast for 5 seconds and then turn off, in which you need to repeat the process from step 2.\r\n"
+				"en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2. \tIf the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds. \n\totherwise the LED will blink fast for 5 seconds and then turn off",
+				"nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-MS01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Power on the device.\r\n2) Set the Z-Wave network main controller into removing mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for more than 3 seconds\r\n4) If the exclusion is successfull, the LED will keep on for 3 seconds.\r\n"
+				"en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+				"nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
 			}
 		},
 		"wakeUpInterval": 0,
@@ -29,12 +31,14 @@
 		"associationGroupsOptions": {
 			"1": {
 				"hint": {
-					"en": "1. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Multisensor is removed or/and PIR is triggered.\r\n2. Sensor Multilevel Report.\r\nMultisensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n3. Battery Report.\r\nMultisensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n4. Device Reset Locally Notification.\r\n"
+					"en": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Multisensor is removed or/and PIR is triggered.\r\n3. Sensor Multilevel Report.\r\nMultisensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n4. Battery Report.\r\nMultisensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n5. Device Reset Locally Notification.\r\n",
+					"nl": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor stuurt het Notification report naar de gekoppelde nodes wanneer de Multisensor verplaatst wordt en or de PIR geactiveerd wordt.\r\n3. Sensor Multilevel Report.\r\nMultisensor stuur het Sensor Multilevel Report naar de gekoppelde nodes op de ingestelde intervallen.\r\n4. Battery Report.\r\nMultisensor stuurt het Battery Report wanneer het battery niveau te laag is.\r\n5. Device Reset Locally Notification.\r\n"
 				}
 			},
 			"2": {
 				"hint": {
-					"en": "1. Basic Set\r\nMultisensor will send Basic Set to associated nodes when the PIR is triggered.\r\n"
+					"en": "1. Basic Set\r\nMultisensor will send Basic Set to associated nodes when the PIR is triggered.",
+					"nl": "1. Basic Set\r\nMultisensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
 				}
 			}
 		}
@@ -55,7 +59,7 @@
 	},
 	"settings": [
 		{
-			"id": 12,
+			"id": "PIR_sensitivity",
 			"zwave": {
 				"index": 12,
 				"size": 1
@@ -67,15 +71,17 @@
 				"max": 8
 			},
 			"label": {
-				"en": "Motion sensor sensitivity."
+				"en": "Motion sensor sensitivity.",
+				"nl": "Motion sensor gevoeligheid."
 			},
 			"hint": {
-				"en": "The higher the value is set, the more sensitive the PIR sensor are."
+				"en": "The higher the value is set, the more sensitive the PIR sensor is.\nDefault: 8\nRange 0 (disabled), 1 - 8",
+				"en": "Hoe hoger de waarde is, hoe gevoeliger de PIR sensor reageert.\nStandaard: 8\nBereik: 0 (uitgeschakeld), 1 - 8"
 			},
 			"_size": 1
 	    },
 		{
-			"id": 13,
+			"id": "blind_time",
 			"zwave": {
 				"index": 13,
 				"size": 2
@@ -86,16 +92,19 @@
 				"max": 28800
 			},
 			"label": {
-				"en": "Motion sensor blind time (Insensitivity)"
+				"en": "Motion sensor blind time (s)",
+				"en": "Motion sensor blinde tijd (s)"
 			},
 			"hint": {
-				"en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. The longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
+				"en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. \nThe longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)",
+				"nl": "Tijdsperiode waarin de PIR 'blind' (ongevoelig) is voor beweging. Na deze tijdsperiode is de PIR sensor weer in staat om beweging te detecteren. \nDe levensduur van de batterij neemt toe bij een hogere ongevoeligheid. Wanneer het nodig is dat de sensor beweging snel detecteert kan de tijdsperiode verkort worden\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
+
 			},
 			"_size": 2,
 			"type": "number"
 	    },
 		{
-			"id": 14,
+			"id": "BASIC_SET_command",
 			"zwave": {
 				"index": 14,
 				"size": 1
@@ -103,29 +112,49 @@
 			"type": "checkbox",
 			"value": false,
 			"label": {
-				"en": "Enable BASIC_SET command"
+				"en": "Enable BASIC_SET command",
+				"nl": "BASIC SET command inschakelen"
 			},
 			"hint": {
-				"en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2."
+				"en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2.",
+				"nl": "Multisensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
 			}
 	  },
 		{
-			"id": 15,
+			"id": "BASIC_SET_reversed",
 			"zwave": {
 				"index": 15,
 				"size": 1
 			},
-			"type": "checkbox",
-			"value": false,
+			"type": "dropdown",
+			"value": "0",
+			"values": [
+				{
+					"id": "0",
+					"label": {
+						"en": "ON when motion alarm triggered, OFF when canceled (default)",
+						"nl": "AAN bij bewegingsdetectie, UIT bij annulering (standaard)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "OFF when motion alarm triggered, ON when canceled (default)",
+						"nl": "UIT bij bewegingsdetectie, AAN bij annulering (standaard)"
+					}
+				}
+			],
 			"label": {
-				"en": "Reverse BASIC_SET command"
+				"en": "Reverse BASIC SET command",
+				"nl": "BASIC SET command logica"
 			},
 			"hint": {
-				"en": "Multisensor can reverse the BASIC ON/OFF."
+				"en": "Multisensor can reverse its value of BASIC SET when the alarm is triggered.",
+				"nl": "Multisensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
 			}
-	    },
+    },
 		{
-			"id": 32,
+			"id": "low_battery",
 			"zwave": {
 				"index": 32,
 				"size": 1
@@ -137,14 +166,16 @@
 				"max": 50
 			},
 			"label": {
-				"en": "LOW Battery level"
+				"en": "LOW Battery level",
+				"nl": "Waarschuwingsniveau batterij"
 			},
 			"hint": {
-				"en": "Define a battery level as the “low battery”."
+				"en": "Define a battery level as the “low battery”.",
+				"nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt."
 			}
 		},
 		{
-			"id": 171,
+			"id": "battery_interval",
 			"zwave": {
 				"index": 171,
 				"size": 4
@@ -156,14 +187,16 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": " Battery report interval (s)"
+				"en": " Battery report interval (s)",
+				"en": " Batterij rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending battery report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the battery level.\r\n"
+				"en": "The interval of sending battery report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the battery level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+				"nl": "Het interval waarop batterij reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer het batterijniveau ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
 			}
 	    },
 		{
-			"id": 172,
+			"id": "temperature_interval",
 			"zwave": {
 				"index": 172,
 				"size": 4
@@ -175,14 +208,16 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Temperature report interval (s)"
+				"en": "Temperature report interval (s)",
+				"nl": "Temperature rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending temperature report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the temperature level."
+				"en": "The interval of sending temperature report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the temperature level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+				"nl": "Het interval waarop temperatuur reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de temperatuur ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
 			}
 	    },
 		{
-			"id": 173,
+			"id": "humidity_interval",
 			"zwave": {
 				"index": 173,
 				"size": 4
@@ -194,14 +229,16 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Humidity report interval (s)"
+				"en": "Humidity report interval (s)",
+				"nl": "Luchtvochtigheids rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending Humidity report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the humidity level.\r\n"
+				"en": "The interval of sending Humidity report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the humidity level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+				"nl": "Het interval waarop luchtvochtigheid reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de luchtvochtigheid ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
 			}
 	    },
 		{
-			"id": 174,
+			"id": "luminance_interval",
 			"zwave": {
 				"index": 174,
 				"size": 4
@@ -213,14 +250,16 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Luminance report interval (s)"
+				"en": "Luminance report interval (s)",
+				"nl": "Lichtsterkte rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending luminance report to association device (Group Lifeline). The reports\r\nare sent even if there are no changes in the luminance level.\r\n"
+				"en": "The interval of sending luminance report to association device (Group Lifeline). The reports are sent even if there are no changes in the luminance level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+				"nl": "Het interval waarop luchtvochtigheid reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de luchtvochtigheid ongewijzigd is.\n Standaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
 			}
 	    },
 		{
-			"id": 181,
+			"id": "battery_threshold",
 			"zwave": {
 				"index": 181,
 				"size": 1
@@ -232,14 +271,16 @@
 				"max": 100
 			},
 			"label": {
-				"en": "Battery report threshold (%)"
+				"en": "Battery report threshold (%)",
+				"nl": "Battery report drempelwaarde (%)"
 			},
 			"hint": {
-				"en": "The parameter determines the change in battery level resulting in battery report being sent to the main controller."
+				"en": "Change in battery level resulting in battery report being sent to the main controller.\nDefault: 10 %, Range: 0  = disabled, 1 - 100 %",
+				"nl": "Verandering van batterijniveau dat resulteert in een batterij rapportage naar de hoofd controller.\nStandaard: 10 %, Bereik: 0  = uitgeschakeld, 1 - 100 %"
 			}
 		},
 		{
-			"id": 182,
+			"id": "temperature_threshold",
 			"zwave": {
 				"index": 182,
 				"size": 1
@@ -251,14 +292,16 @@
 				"max": 255
 			},
 			"label": {
-				"en": "Temperature report threshold (°C)"
+				"en": "Temperature report threshold (°C)",
+				"nl": "Temperatuur rapportage drempelwaarde (°C)"
 			},
 			"hint": {
-				"en": "The parameter determines the change in temperature level resulting in temperature report being sent to the main controller.(Degrees Celsius)"
+				"en": "Change in temperature level resulting in battery report being sent to the main controller.\nDefault: 20 (2,0 °C), Range: 0  = disabled, 1 - 255 (0.1 - 25,5 °C)",
+				"nl": "Verandering van temperatuur dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 20 (2,0 °C), Bereik: 0  = uitgeschakeld, 1 - 255 (0.1 - 25,5 °C)"
 			}
 	    },
 		{
-			"id": 183,
+			"id": "humidity_threshold",
 			"zwave": {
 				"index": 183,
 				"size": 1
@@ -270,14 +313,16 @@
 				"max": 255
 			},
 			"label": {
-				"en": "Humidity report threshold (%)"
+				"en": "Humidity report threshold (%)",
+				"nl": "Luchtvochtigheids rapportage drempelwaarde (%)"
 			},
 			"hint": {
-				"en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller."
+				"en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller.\nDefault: 5 %, Range: 0 = disabled, 1 - 255 %",
+				"nl": "Verandering van luchtvochtigheid dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 5 %, Bereik: 0  = uitgeschakeld, 1 - 255 %"
 			}
 	    },
 		{
-			"id": 184,
+			"id": "illumination_threshold",
 			"zwave": {
 				"index": 184,
 				"size": 2
@@ -289,10 +334,12 @@
 				"max": 65535
 			},
 			"label": {
-				"en": "Lreport threshold (LUX)"
+				"en": "Illumination report threshold (LUX)",
+				"nl": "Lichtsterkte rapportage drempelwaarde (LUX)"
 			},
 			"hint": {
-				"en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller."
+				"en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller.\nDefault: 200 Lux, Range: 0 = disabled, 1 - 65535 Lux",
+				"nl": "Verandering van lichtsterkte dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 200 Lux, Bereik: 0  = uitgeschakeld, 1 - 65535 Lux"
 			}
 	    }
 	  ]

@@ -5,7 +5,7 @@
 	},
 	"zwave": {
 		"manufacturerId": [520],
-		"productTypeId": [512],
+		"productTypeId": [512, 513],
 		"productId": [11],
 		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1968/HKZW-SCN04%20Manual.pdf",
 		"pid": 1968,
@@ -13,13 +13,15 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
 			"instruction": {
-				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).\n3. Press and hold the Z-button for 3 seconds to add the device in secure mode.\n4. If the inclusion is successful, the LED will blink in green less than for 5 seconds and then keep on for 15 seconds."
+				"en": "1.\tPress and hold the O button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
+				"nl": "1.\tHou de O knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
 			"instruction": {
-				"en": "1. Insert the LIR2450 battery.\n2. Set the Z-Wave network main controller into remove mode (see Z-Wave controller operating manual).\n3. Press and hold the Z-button for 3 seconds.\n4. if the exclusion is successful, LED will blink in orange for less than 5 seconds and then keep on for 3 seconds."
+				"en": "1.\tTriple clicking the  Obutton.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+				"nl": "1.\tDruk de O-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
 			}
 		},
 		"associationGroups": [
@@ -28,47 +30,56 @@
 		"associationGroupsOptions": {
 			"1": {
 				"hint": {
-					"en": "Scene Controller will send the central scene notification command and battery report command to the associated nodes if any button is triggered."
+					"en": "Scene Controller sends the central scene notification command and battery report command to the associated nodes.",
+					"nl": "Scene Controller stuurt decentral scene notification command en battery reportage naar de gekoppelde nodes."
 				}
 			},
 			"2": {
 				"hint": {
-					"en": "Scene Controller will send Basic Set command to the associated nodes if button 1 is pressed."
+					"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 1 is pressed.",
+					"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 1 ingedrukt is."
 				}
 			},
 			"3": {
 				"hint": {
-					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 1 is pressed, hold and released, respectively."
+					"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 1 is pressed, hold and released, respectively.",
+					"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 1 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
 				}
 			},
 			"4": {
 				"hint": {
-					"en": "Scene Controller will send Basic Set command to the associated nodes if button 2 is pressed."
+					"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 2 is pressed.",
+					"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 2 ingedrukt is."
 				}
 			},
 			"5": {
 				"hint": {
-					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 2 is pressed, hold and released, respectively."
+					"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 2 is pressed, hold and released, respectively.",
+					"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 2 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
 				}
 			},
 			"6": {
 				"hint": {
-					"en": "Scene Controller will send Basic Set command to the associated nodes if button 3 is pressed."
+					"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 3 is pressed.",
+					"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 3 ingedrukt is."
 				}
 			},
 			"7": {
 				"hint": {
-					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 3 is pressed, hold and released, respectively."
+					"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 3 is pressed, hold and released, respectively.",
+					"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 3 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
 				}
 			},
 			"8": {
 				"hint": {
-					"en": "Scene Controller will send Basic Set command to the associated nodes if button 4 is pressed."
+					"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 4 is pressed.",
+					"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 4 ingedrukt is."
 				}
 			},
 			"9": {
 				"hint": {
-					"en": "Scene Controller will send  switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes if button 4 is pressed, hold and released, respectively."
+					"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 3 is pressed, hold and released, respectively.",
+					"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 3 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
 				}
 			}
 		}
@@ -115,7 +126,7 @@
 	},
 	"settings": [
 		{
-			"id": "enable_config",
+			"id": "enable_configuration",
 			"zwave": {
 				"index": 254,
 				"size": 1
@@ -123,11 +134,13 @@
 			"type": "checkbox",
 			"value": true,
 			"label": {
-				"en": "Enable/disable the configuration command"
+				"en": "Enable configuration command",
+				"nl": "Configuration command inschakelen"
 			},
 			"hint": {
-				"en": "Lock/unlock all configuration parameters."
+				"en": "Lock/unlock all configuration parameters.",
+				"nl": "In or uitschakelen van alle configuratie parameters."
 			}
-    }
+		}
   ]
 }

@@ -5,7 +5,7 @@
 	},
 	"zwave": {
 		"manufacturerId": [520],
-		"productTypeId": [256],
+		"productTypeId": [256, 257],
 		"productId": [10],
 		"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
 		"pid": 1891,
@@ -13,13 +13,15 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds to add the device in secure mode. The RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+				"en": "1) \tPress and hold the Z-button for 3 seconds to add the device in secure mode. \r\n\tThe RGB LED indicator should blink fast in blue.\r\n2) \tSmart Plug should be recognized and included into the Z-Wave network.",
+				"nl": "1) \tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen. \r\n\tThe RGB LED indicator moet nu snel blauw knipperen.\r\n2) \tSmart Plug zou nu herkend moeten worden en toegevoegd worden aan het Z-Wave network."
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
 			"instruction": {
-				"en": "1) Connect the power supply.\r\n2) Set the Z-Wave network main controller into inclusion mode (see Z-Wave network controller operating manual).\r\n3) Press and hold the Z-button for 3 seconds to add the device in secure mode. The RGB LED indicator should blink fast in blue.\r\n4) Smart Plug should be recognized and included into the Z-Wave network.\r\n"
+				"en": "1) \tPress the Z-button 3 times to remove the device. \r\n\tThe RGB LED indicator should blink fast in blue.\r\n2) \tSmart Plug should be removed from the Z-Wave network.",
+				"nl": "1) \tDruk de Z-button drie kee in om het apparaat te verwijderen. \r\n\tThe RGB LED indicator moet nu snel blauw knipperen.\r\n2) \tSmart Plug zou nu verwijderd moeten worden uit het Z-Wave network."
 			}
 		},
 		"associationGroups": [
@@ -79,10 +81,12 @@
 			"type": "checkbox",
 			"value": true,
 			"label": {
-				"en": "Overcurrent protection"
+				"en": "Overcurrent protection",
+				"nl": "Overspannings beveiliging"
 			},
 			"hint": {
-				"en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off."
+				"en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off.",
+				"nl": "Smart Plug houdt actief de belasting in de gaten, wanneer de belasting 16.5A overschrijd wordt de smart plug preventief uitgeschakeld."
 			}
     },
 		{
@@ -94,27 +98,32 @@
 			"type": "dropdown",
 			"value": "0",
 			"label": {
-				"en": "Setting Smart Plug’s load status after re-power on"
+				"en": "State after power loss",
+				"nl": "Toestand na spanningsuitval"
 			},
 			"hint": {
-				"en": "Define how the Plug reacts after the power supply is back on."
+				"en": "Define how the Plug reacts after the power supply is back on.",
+				"nl": "Bepaal hoe de Plug reageert na een spanningsuitval."
 			},
 			"values": [{
 					"id": "0",
 					"label": {
-						"en": "Smart plug memorizes its state after a power failure (default)"
+						"en": "Restores state after a power failure (default)",
+						"nl": "Herstelt toestand na spanningsuitval (default)"
 					}
 				},
 				{
 					"id": "1",
 					"label": {
-						"en": "Connected devices will be ON after a power failure"
+						"en": "ON after a power failure",
+						"nl": "AAN na spanningsuitval"
 					}
 				},
 				{
 					"id": "2",
 					"label": {
-						"en": "Connected devices will be OFF after a power failure"
+						"en": "OFF after a power failure",
+						"nl": "UIT na spanningsuitval"
 					}
 				}
 			]
@@ -128,27 +137,32 @@
 			"type": "dropdown",
 			"value": "1",
 			"label": {
-				"en": "Notification when Load status change"
+				"en": "Notification when Load status change",
+				"nl": "Notificatie bij wijziging belasting"
 			},
 			"hint": {
-				"en": "Smart Plug can send notifications to association device (Group Lifeline) when state of smart plug’s load change."
+				"en": "Smart Plug sends notifications to association device (Group Lifeline) when state of smart plug’s load change.",
+				"nl": "Smart Plug stuurt notifications naar de gekoppelde nodes (Group Lifeline) wanner de belastingstoestand veranderd."
 			},
 			"values": [{
 					"id": "0",
 					"label": {
-						"en": "This function is disabled (default)"
+						"en": "Disabled (default)",
+						"nl": "Uitgeschakeld (standaard)"
 					}
 				},
 				{
 					"id": "1",
 					"label": {
-						"en": "Send Basic report"
+						"en": "Send BASIC report",
+						"nl": "Stuur BASIC reportage"
 					}
 				},
 				{
 					"id": "2",
 					"label": {
-						"en": "Send Basic report only when state is not changed by Z-wave command (ie. manual button)"
+						"en": "Send BASIC report only when state is not changed by Z-wave command (ie. manual button)",
+						"en": "Stuur BASIC report alleen wanneer de toestand handmatig is aangepast (knop ingedrukt ipv Z-wave commando)"
 					}
 				}
 			]
@@ -162,21 +176,25 @@
 			"type": "dropdown",
 			"value": "0",
 			"label": {
-				"en": "Indicator modes"
+				"en": "RGB indicator modes",
+				"nl": "RGB indicator modus"
 			},
 			"hint": {
-				"en": "After smart plug being included into a Z-Wave network, the RGB LED indicator will indicator the situation of load."
+				"en": "RGB LED indicator will indicate the situation of load.",
+				"nl": "RGB LED indicator geeft belastingstoestand aan."
 			},
 			"values": [{
 					"id": "0",
 					"label": {
-						"en": "The smart plug will work in indicator mode (default)"
+						"en": "Smart plug will work in indicator mode (default)",
+						"nl": "Smart plug werkt indicator modus (default)"
 					}
 				},
 				{
 					"id": "1",
 					"label": {
-						"en": "The smart plug will work in indicator mode for 5 seconds after a load change"
+						"en": "Smart plug will work in indicator mode for 5 seconds after a load change",
+						"nl": "Smart plug werkt in indicator mode voor 5 seconds na een wijziging van de belasting"
 					}
 				}
 			]
@@ -195,10 +213,12 @@
 				"max": 65535
 			},
 			"label": {
-				"en": "Power (W) report threshold (W)"
+				"en": "Power report threshold (W)",
+				"nl": "Vermogen rapportage drempelwaarde (W)"
 			},
 			"hint": {
-				"en": "Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 50, Range: 5 - 65535, 0 = disabled (W)"
+				"en": "Change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 50, Range: 5 - 65535, 0 = disabled (W)",
+				"nl": "Minimale Veranderingvan vermogen overschrijd de ingestelde drempelwaarde, de smart plug stuurt een meter raport naar de gekoppelde nodes (Group Lifeline).\nStandaard: 50, Bereik: 5 - 65535, 0 = uitgeschakeld (W)"
 			}
     },
 		{
@@ -214,10 +234,12 @@
 				"max": 100
 			},
 			"label": {
-				"en": "Power (W) report threshold (%)"
+				"en": "Power report threshold (%)",
+				"nl": "Vermogen rapportage drempelwaarde (%)"
 			},
 			"hint": {
-				"en": "Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 10, Range: 0 - 100, 0 = disabled (%)"
+				"en": "Change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 10, Range: 5 - 100, 0 = disabled (%)",
+				"nl": "Minimale Veranderingvan vermogen overschrijd de ingestelde drempelwaarde, de smart plug stuurt een meter raport naar de gekoppelde nodes (Group Lifeline).\nStandaard: 10, Bereik: 5 - 100, 0 = uitgeschakeld (%)"
 			}
     },
 		{
@@ -233,10 +255,12 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Power (W) report interval (s)"
+				"en": "Power report interval (s)",
+				"nl": "Vermogen rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline). \nDefault: 30, Range: 5 - 2678400, 0 = disabled (s)"
+				"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline). \nDefault: 30, Range: 5 - 2678400, 0 = disabled (s)",
+				"nl": "Het interval voor het versturen van meter report (in termen van wattage) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 30, Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
 			}
     },
 		{
@@ -252,10 +276,12 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Meter (kWh) report interval (s)"
+				"en": "Meter report interval (s)",
+				"nl": "Meter rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline).\nDefault: 300, Range: 5 - 2678400, 0 = disabled (s)"
+				"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline).\nDefault: 300, Range: 5 - 2678400, 0 = disabled (s)",
+				"nl": "Het interval voor het versturen van meter report (in termen van kWh) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 300, Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
 			}
     },
 		{
@@ -271,10 +297,12 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Voltage (V) report interval (s)."
+				"en": "Voltage report interval (s).",
+				"nl": "Voltage rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)"
+				"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)",
+				"nl": "Het interval voor het versturen van meter report (in termen van voltage) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 0 (uitgeschakeld), Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
 			}
     },
 		{
@@ -290,10 +318,12 @@
 				"max": 2678400
 			},
 			"label": {
-				"en": "Current (A) report interval (s)."
+				"en": "Current report interval (s).",
+				"nl": "Stroom rapportage interval (s)"
 			},
 			"hint": {
-				"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)"
+				"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)",
+				"nl": "Het interval voor het versturen van meter report (in termen van stroom) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 0 (uitgeschakeld), Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
 			}
     }
   ]
