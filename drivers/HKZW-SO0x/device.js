@@ -19,14 +19,16 @@ class SmartPlug_SO0x extends ZwaveDevice {
 		this.registerCapability('measure_current', 'METER');
 		this.registerCapability('measure_voltage', 'METER');
 
+		// define FlowCardAction to reset meter_power
+		let SO0x_reset_meter_run_listener = async(args) => {
+			let result = await args.device.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({})
+			if (result !== 'TRANSMIT_COMPLETE_OK') throw new Error(result);
+		};
+
 		let actionSO0x_reset_meter = new Homey.FlowCardAction('SO0x_reset_meter');
 		actionSO0x_reset_meter
 			.register()
-			.registerRunListener(args => {
-				args.device.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({})
-					.then(result => this.result === 'TRANSMIT_COMPLETE_OK')
-					.catch(() => false);
-			});
+			.registerRunListener(SO0x_reset_meter_run_listener);
 	}
 }
 
