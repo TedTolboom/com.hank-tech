@@ -50,8 +50,8 @@
 		"measure_battery"
 	],
 	"images": {
-		"large": "/drivers/HKZW-DWS01/assets/images/large.jpg",
-		"small": "/drivers/HKZW-DWS01/assets/images/small.jpg"
+		"large": "/drivers/HKZW-DWS01/assets/images/large.png",
+		"small": "/drivers/HKZW-DWS01/assets/images/small.png"
 	},
 	"settings": [
 		{

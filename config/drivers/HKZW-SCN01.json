@@ -54,8 +54,8 @@
 		"alarm_battery"
 	],
 	"images": {
-		"large": "/drivers/HKZW-SCN01/assets/images/large.jpg",
-		"small": "/drivers/HKZW-SCN01/assets/images/small.jpg"
+		"large": "/drivers/HKZW-SCN01/assets/images/large.png",
+		"small": "/drivers/HKZW-SCN01/assets/images/small.png"
 	},
 	"mobile": {
 		"components": [

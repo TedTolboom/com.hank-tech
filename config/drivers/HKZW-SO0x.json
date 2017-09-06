@@ -44,8 +44,8 @@
 		"measure_voltage"
 	],
 	"images": {
-		"large": "/drivers/HKZW-SO0x/assets/images/large.jpg",
-		"small": "/drivers/HKZW-SO0x/assets/images/small.jpg"
+		"large": "/drivers/HKZW-SO0x/assets/images/large.png",
+		"small": "/drivers/HKZW-SO0x/assets/images/small.png"
 	},
 	"mobile": {
 		"components": [{
