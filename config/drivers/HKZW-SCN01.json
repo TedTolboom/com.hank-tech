@@ -48,7 +48,7 @@
 			}
 		}
 	},
-	"class": "zwavecontroller",
+	"class": "sensor",
 	"capabilities": [
 		"measure_battery",
 		"alarm_battery"
