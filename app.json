@@ -1,25 +1,25 @@
 {
-  "id": "com.hank-tech",
-  "sdk": 2,
-  "name": {
-    "en": "Hank tech Z-wave"
-  },
-  "version": "1.0.0",
-  "compatibility": ">=1.5.0",
-  "author": {
-    "name": "Ted Tolboom",
-    "email": "dTNL.Homey@gmail.com"
-  },
-  "description": {
-    "en": "Support for Hank Z-wave devices",
-    "nl": "Ondersteuning voor Hank Z-wave apparaten"
-  },
-  "images": {
-    "large": "/assets/images/large.jpg",
-    "small": "/assets/images/small.jpg"
-  },
-  "tags": {
-    "en": [
+	"id": "com.hank-tech",
+	"sdk": 2,
+	"name": {
+		"en": "Hank tech Z-wave"
+	},
+	"version": "1.0.1",
+	"compatibility": ">=1.5.0",
+	"author": {
+		"name": "Ted Tolboom",
+		"email": "dTNL.Homey@gmail.com"
+	},
+	"description": {
+		"en": "Support for Hank Z-wave devices",
+		"nl": "Ondersteuning voor Hank Z-wave apparaten"
+	},
+	"images": {
+		"large": "/assets/images/large.jpg",
+		"small": "/assets/images/small.jpg"
+	},
+	"tags": {
+		"en": [
       "scene controller",
       "remote",
       "remote control",
@@ -35,7 +35,7 @@
       "smart plug",
       "USB"
     ],
-    "nl": [
+		"nl": [
       "scene controller",
       "afstandsbediening",
       "central scene",
@@ -49,418 +49,432 @@
       "schakelaar",
       "USB"
     ]
-  },
-  "category": [
+	},
+	"category": [
     "appliances",
     "lights",
     "security"
   ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "SCN_button",
-        "title": {
-          "en": "A button has been pressed",
-          "nl": "Een knop is ingedrukt"
-        },
-        "hint": {
-          "en": "This card will trigger on any button pressed and provides the button and scene tokens.",
-          "nl": "Deze kaart wordt geactiveerd bij iedere knop die ingedrukt wordt en biedt de knop en scene tokens aan."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=HKZW-SCN01|HKZW-SCN04"
+	"flow": {
+		"triggers": [
+			{
+				"id": "SCN_button",
+				"title": {
+					"en": "A button has been pressed",
+					"nl": "Een knop is ingedrukt"
+				},
+				"hint": {
+					"en": "This card will trigger on any button pressed and provides the button and scene tokens.",
+					"nl": "Deze kaart wordt geactiveerd bij iedere knop die ingedrukt wordt en biedt de knop en scene tokens aan."
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=HKZW-SCN01|HKZW-SCN04"
           }
         ],
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "button",
-              "nl": "knop"
-            },
-            "example": "0"
+				"tokens": [
+					{
+						"name": "button",
+						"type": "string",
+						"title": {
+							"en": "button",
+							"nl": "knop"
+						},
+						"example": "0"
           },
-          {
-            "name": "scene",
-            "type": "string",
-            "title": {
-              "en": "scene",
-              "nl": "scene"
-            },
-            "example": "Button pressed (test)"
+					{
+						"name": "scene",
+						"type": "string",
+						"title": {
+							"en": "scene",
+							"nl": "scene"
+						},
+						"example": "Button pressed (test)"
           }
         ]
       },
-      {
-        "id": "SCN01_scene",
-        "title": {
-          "en": "Scene is activated",
-          "nl": "Scene is geactiveerd"
-        },
-        "hint": {
-          "en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
-          "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=HKZW-SCN01"
+			{
+				"id": "battery_alarm",
+				"title": {
+					"en": "The battery alarm turned on",
+					"nl": "De batterijwaarschuwing gaat aan"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=HKZW-SCN01|HKZW-SCN04"
+          }
+        ]
+      },
+			{
+				"id": "SCN01_scene",
+				"title": {
+					"en": "Scene is activated",
+					"nl": "Scene is geactiveerd"
+				},
+				"hint": {
+					"en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
+					"nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=HKZW-SCN01"
           },
-          {
-            "name": "button",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Button 1 (Night)",
-                  "nl": "Knop 1 (Nacht)"
-                }
+					{
+						"name": "button",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "1",
+								"label": {
+									"en": "Button 1 (Night)",
+									"nl": "Knop 1 (Nacht)"
+								}
               }
             ]
           },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed 1x",
-                  "nl": "1x ingedrukt"
-                }
+					{
+						"name": "scene",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "Key Pressed 1 time",
+								"label": {
+									"en": "Pressed 1x",
+									"nl": "1x ingedrukt"
+								}
               },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Held Down",
-                  "nl": "Lang ingedrukt"
-                }
+							{
+								"id": "Key Held Down",
+								"label": {
+									"en": "Held Down",
+									"nl": "Lang ingedrukt"
+								}
               },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Released",
-                  "nl": "Losgelaten"
-                }
+							{
+								"id": "Key Released",
+								"label": {
+									"en": "Released",
+									"nl": "Losgelaten"
+								}
               }
             ]
           }
         ]
       },
-      {
-        "id": "SCN04_scene",
-        "title": {
-          "en": "Scene is activated",
-          "nl": "Scene is geactiveerd"
-        },
-        "hint": {
-          "en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
-          "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=HKZW-SCN04"
+			{
+				"id": "SCN04_scene",
+				"title": {
+					"en": "Scene is activated",
+					"nl": "Scene is geactiveerd"
+				},
+				"hint": {
+					"en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
+					"nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=HKZW-SCN04"
           },
-          {
-            "name": "button",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Button 1 (Night)",
-                  "nl": "Knop 1 (Nacht)"
-                }
+					{
+						"name": "button",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "1",
+								"label": {
+									"en": "Button 1 (Night)",
+									"nl": "Knop 1 (Nacht)"
+								}
               },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Button 2 (People)",
-                  "nl": "Knop 2 (Mensen)"
-                }
+							{
+								"id": "2",
+								"label": {
+									"en": "Button 2 (People)",
+									"nl": "Knop 2 (Mensen)"
+								}
               },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Button 3 (Circle)",
-                  "nl": "Knop 3 (Cirkel)"
-                }
+							{
+								"id": "3",
+								"label": {
+									"en": "Button 3 (Circle)",
+									"nl": "Knop 3 (Cirkel)"
+								}
               },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Button 4 (Power)",
-                  "nl": "Knop 4 (Power)"
-                }
+							{
+								"id": "4",
+								"label": {
+									"en": "Button 4 (Power)",
+									"nl": "Knop 4 (Power)"
+								}
               }
             ]
           },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed 1x",
-                  "nl": "1x ingedrukt"
-                }
+					{
+						"name": "scene",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "Key Pressed 1 time",
+								"label": {
+									"en": "Pressed 1x",
+									"nl": "1x ingedrukt"
+								}
               },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Held Down",
-                  "nl": "Lang ingedrukt"
-                }
+							{
+								"id": "Key Held Down",
+								"label": {
+									"en": "Held Down",
+									"nl": "Lang ingedrukt"
+								}
               },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Released",
-                  "nl": "Losgelaten"
-                }
+							{
+								"id": "Key Released",
+								"label": {
+									"en": "Released",
+									"nl": "Losgelaten"
+								}
               }
             ]
           }
         ]
       }
     ],
-    "actions": [
-      {
-        "id": "SO0x_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=HKZW-SO0x"
+		"actions": [
+			{
+				"id": "SO0x_reset_meter",
+				"title": {
+					"en": "Reset meter values",
+					"nl": "Meter waarden resetten"
+				},
+				"hint": {
+					"en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=HKZW-SO0x"
           }
         ]
       }
     ]
-  },
-  "drivers": [
-    {
-      "id": "HKZW-DWS01",
-      "name": {
-        "en": "Door/Window Sensor"
-      },
-      "zwave": {
-        "manufacturerId": [
+	},
+	"drivers": [
+		{
+			"id": "HKZW-DWS01",
+			"name": {
+				"en": "Door/Window Sensor"
+			},
+			"zwave": {
+				"manufacturerId": [
           520
         ],
-        "productTypeId": [
+				"productTypeId": [
           512,
           513
         ],
-        "productId": [
+				"productId": [
           8
         ],
-        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1896/HKZW-DWS01_Product%20Manual%20.pdf",
-        "pid": 1896,
-        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085158",
-        "learnmode": {
-          "image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
-            "nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
-          }
-        },
-        "unlearnmode": {
-          "image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
-            "nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
-          }
-        },
-        "associationGroups": [
+				"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1896/HKZW-DWS01_Product%20Manual%20.pdf",
+				"pid": 1896,
+				"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085158",
+				"learnmode": {
+					"image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
+						"nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
+					}
+				},
+				"unlearnmode": {
+					"image": "/drivers/HKZW-DWS01/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+						"nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
+					}
+				},
+				"associationGroups": [
           1
         ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "Door/Window Sensor will send notification report and battery report to the associated nodes. (Z-wave lifeline)",
-              "nl": "Door/Window Sensor stuurt notification report en battery report naar de gekoppelde nodes. (Z-wave lifeline)"
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Door/Window Sensor will send Basic Set command to the associated nodes when the sensor body and magnet removed or combined.",
-              "nl": "Door/Window Sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer het contact alarm af gaat of reset."
-            }
-          }
-        }
-      },
-      "class": "sensor",
-      "capabilities": [
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "Door/Window Sensor will send notification report and battery report to the associated nodes. (Z-wave lifeline)",
+							"nl": "Door/Window Sensor stuurt notification report en battery report naar de gekoppelde nodes. (Z-wave lifeline)"
+						}
+					},
+					"2": {
+						"hint": {
+							"en": "Door/Window Sensor will send Basic Set command to the associated nodes when the sensor body and magnet removed or combined.",
+							"nl": "Door/Window Sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer het contact alarm af gaat of reset."
+						}
+					}
+				}
+			},
+			"class": "sensor",
+			"capabilities": [
         "alarm_contact",
         "alarm_tamper",
         "alarm_battery",
         "measure_battery"
       ],
-      "images": {
-        "large": "/drivers/HKZW-DWS01/assets/images/large.jpg",
-        "small": "/drivers/HKZW-DWS01/assets/images/small.jpg"
-      },
-      "settings": [
-        {
-          "id": "BASIC_SET_command",
-          "zwave": {
-            "index": 14,
-            "size": 1
-          },
-          "type": "dropdown",
-          "value": "0",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "BASIC_SET is not send during alarm (default)",
-                "nl": "BASIC_SET wordt niet gestuurd tijdens een alarm (standaard)"
-              }
+			"images": {
+				"large": "/drivers/HKZW-DWS01/assets/images/large.jpg",
+				"small": "/drivers/HKZW-DWS01/assets/images/small.jpg"
+			},
+			"settings": [
+				{
+					"id": "BASIC_SET_command",
+					"zwave": {
+						"index": 14,
+						"size": 1
+					},
+					"type": "dropdown",
+					"value": "0",
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "BASIC_SET is not send during alarm (default)",
+								"nl": "BASIC_SET wordt niet gestuurd tijdens een alarm (standaard)"
+							}
             },
-            {
-              "id": "1",
-              "label": {
-                "en": "BASIC_SET is send during alarm",
-                "nl": "BASIC_SET wordt gestuurd tijdens een alarm"
-              }
+						{
+							"id": "1",
+							"label": {
+								"en": "BASIC_SET is send during alarm",
+								"nl": "BASIC_SET wordt gestuurd tijdens een alarm"
+							}
             }
           ],
-          "label": {
-            "en": "Enable BASIC SET command",
-            "nl": "BASIC SET command inschakelen"
-          },
-          "hint": {
-            "en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2.",
-            "nl": "Door/Window Sensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
-          }
+					"label": {
+						"en": "Enable BASIC SET command",
+						"nl": "BASIC SET command inschakelen"
+					},
+					"hint": {
+						"en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2.",
+						"nl": "Door/Window Sensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
+					}
         },
-        {
-          "id": "BASIC_SET_reversed",
-          "zwave": {
-            "index": 15,
-            "size": 1
-          },
-          "type": "dropdown",
-          "value": "0",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "ON when contact opened, OFF when closed (default)",
-                "nl": "AAN bij open contact, UIT bij gesloten (standaard)"
-              }
+				{
+					"id": "BASIC_SET_reversed",
+					"zwave": {
+						"index": 15,
+						"size": 1
+					},
+					"type": "dropdown",
+					"value": "0",
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "ON when contact opened, OFF when closed (default)",
+								"nl": "AAN bij open contact, UIT bij gesloten (standaard)"
+							}
             },
-            {
-              "id": "1",
-              "label": {
-                "en": "OFF when contact opened, ON when closed",
-                "nl": "UIT bij open contact, AAN bij gesloten"
-              }
+						{
+							"id": "1",
+							"label": {
+								"en": "OFF when contact opened, ON when closed",
+								"nl": "UIT bij open contact, AAN bij gesloten"
+							}
             }
           ],
-          "label": {
-            "en": "Reverse BASIC SET command",
-            "nl": "BASIC SET command logica"
-          },
-          "hint": {
-            "en": "Door/Window Sensor can reverse its value of BASIC SET when the alarm is triggered.",
-            "nl": "Door/Window Sensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
-          }
+					"label": {
+						"en": "Reverse BASIC SET command",
+						"nl": "BASIC SET command logica"
+					},
+					"hint": {
+						"en": "Door/Window Sensor can reverse its value of BASIC SET when the alarm is triggered.",
+						"nl": "Door/Window Sensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
+					}
         },
-        {
-          "id": "low_battery",
-          "zwave": {
-            "index": 32,
-            "size": 1
-          },
-          "type": "number",
-          "value": 20,
-          "attr": {
-            "min": 10,
-            "max": 50
-          },
-          "label": {
-            "en": "Low battery warning level",
-            "nl": "Waarschuwingsniveau batterij"
-          },
-          "hint": {
-            "en": "This parameter defines a battery level to trigger the battery alarm.\nDefault: 20 %, Range: 10 - 50 %",
-            "nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt.\nStandaard: 20 %, Bereik: 10 - 50 %"
-          }
+				{
+					"id": "low_battery",
+					"zwave": {
+						"index": 32,
+						"size": 1
+					},
+					"type": "number",
+					"value": 20,
+					"attr": {
+						"min": 10,
+						"max": 50
+					},
+					"label": {
+						"en": "Low battery warning level",
+						"nl": "Waarschuwingsniveau batterij"
+					},
+					"hint": {
+						"en": "This parameter defines a battery level to trigger the battery alarm.\nDefault: 20 %, Range: 10 - 50 %",
+						"nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt.\nStandaard: 20 %, Bereik: 10 - 50 %"
+					}
         }
       ]
     },
-    {
-      "id": "HKZW-MS01",
-      "name": {
-        "en": "Multisensor"
-      },
-      "zwave": {
-        "manufacturerId": [
+		{
+			"id": "HKZW-MS01",
+			"name": {
+				"en": "Multisensor"
+			},
+			"zwave": {
+				"manufacturerId": [
           520
         ],
-        "productTypeId": [
+				"productTypeId": [
           512,
           513
         ],
-        "productId": [
+				"productId": [
           6
         ],
-        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
-        "pid": 2305,
-        "imageRemotePath": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2305/HKZW-MS01%20MANUL.pdf",
-        "learnmode": {
-          "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2. \tIf the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds. \n\totherwise the LED will blink fast for 5 seconds and then turn off",
-            "nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
-          }
-        },
-        "unlearnmode": {
-          "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
-            "nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
-          }
-        },
-        "wakeUpInterval": 0,
-        "associationGroups": [
+				"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
+				"pid": 2305,
+				"imageRemotePath": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2305/HKZW-MS01%20MANUL.pdf",
+				"learnmode": {
+					"image": "/drivers/HKZW-MS01/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2. \tIf the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds. \n\totherwise the LED will blink fast for 5 seconds and then turn off",
+						"nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
+					}
+				},
+				"unlearnmode": {
+					"image": "/drivers/HKZW-MS01/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+						"nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
+					}
+				},
+				"wakeUpInterval": 0,
+				"associationGroups": [
           1
         ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Multisensor is removed or/and PIR is triggered.\r\n3. Sensor Multilevel Report.\r\nMultisensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n4. Battery Report.\r\nMultisensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n5. Device Reset Locally Notification.\r\n",
-              "nl": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor stuurt het Notification report naar de gekoppelde nodes wanneer de Multisensor verplaatst wordt en or de PIR geactiveerd wordt.\r\n3. Sensor Multilevel Report.\r\nMultisensor stuur het Sensor Multilevel Report naar de gekoppelde nodes op de ingestelde intervallen.\r\n4. Battery Report.\r\nMultisensor stuurt het Battery Report wanneer het battery niveau te laag is.\r\n5. Device Reset Locally Notification.\r\n"
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "1. Basic Set\r\nMultisensor will send Basic Set to associated nodes when the PIR is triggered.",
-              "nl": "1. Basic Set\r\nMultisensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
-            }
-          }
-        }
-      },
-      "class": "sensor",
-      "capabilities": [
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Multisensor is removed or/and PIR is triggered.\r\n3. Sensor Multilevel Report.\r\nMultisensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n4. Battery Report.\r\nMultisensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n5. Device Reset Locally Notification.\r\n",
+							"nl": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor stuurt het Notification report naar de gekoppelde nodes wanneer de Multisensor verplaatst wordt en or de PIR geactiveerd wordt.\r\n3. Sensor Multilevel Report.\r\nMultisensor stuur het Sensor Multilevel Report naar de gekoppelde nodes op de ingestelde intervallen.\r\n4. Battery Report.\r\nMultisensor stuurt het Battery Report wanneer het battery niveau te laag is.\r\n5. Device Reset Locally Notification.\r\n"
+						}
+					},
+					"2": {
+						"hint": {
+							"en": "1. Basic Set\r\nMultisensor will send Basic Set to associated nodes when the PIR is triggered.",
+							"nl": "1. Basic Set\r\nMultisensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
+						}
+					}
+				}
+			},
+			"class": "sensor",
+			"capabilities": [
         "alarm_motion",
         "measure_luminance",
         "measure_temperature",
@@ -469,900 +483,900 @@
         "alarm_battery",
         "measure_battery"
       ],
-      "images": {
-        "large": "/drivers/HKZW-MS01/assets/images/large.jpg",
-        "small": "/drivers/HKZW-MS01/assets/images/small.jpg"
-      },
-      "settings": [
-        {
-          "id": "PIR_sensitivity",
-          "zwave": {
-            "index": 12,
-            "size": 1
-          },
-          "type": "number",
-          "value": 8,
-          "attr": {
-            "min": 0,
-            "max": 8
-          },
-          "label": {
-            "en": "Motion sensor sensitivity.",
-            "nl": "Motion sensor gevoeligheid."
-          },
-          "hint": {
-            "en": "Hoe hoger de waarde is, hoe gevoeliger de PIR sensor reageert.\nStandaard: 8\nBereik: 0 (uitgeschakeld), 1 - 8"
-          },
-          "_size": 1
+			"images": {
+				"large": "/drivers/HKZW-MS01/assets/images/large.jpg",
+				"small": "/drivers/HKZW-MS01/assets/images/small.jpg"
+			},
+			"settings": [
+				{
+					"id": "PIR_sensitivity",
+					"zwave": {
+						"index": 12,
+						"size": 1
+					},
+					"type": "number",
+					"value": 8,
+					"attr": {
+						"min": 0,
+						"max": 8
+					},
+					"label": {
+						"en": "Motion sensor sensitivity.",
+						"nl": "Motion sensor gevoeligheid."
+					},
+					"hint": {
+						"en": "Hoe hoger de waarde is, hoe gevoeliger de PIR sensor reageert.\nStandaard: 8\nBereik: 0 (uitgeschakeld), 1 - 8"
+					},
+					"_size": 1
         },
-        {
-          "id": "blind_time",
-          "zwave": {
-            "index": 13,
-            "size": 2
-          },
-          "value": 30,
-          "attr": {
-            "min": 3,
-            "max": 28800
-          },
-          "label": {
-            "en": "Motion sensor blinde tijd (s)"
-          },
-          "hint": {
-            "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. \nThe longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)",
-            "nl": "Tijdsperiode waarin de PIR 'blind' (ongevoelig) is voor beweging. Na deze tijdsperiode is de PIR sensor weer in staat om beweging te detecteren. \nDe levensduur van de batterij neemt toe bij een hogere ongevoeligheid. Wanneer het nodig is dat de sensor beweging snel detecteert kan de tijdsperiode verkort worden\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
-          },
-          "_size": 2,
-          "type": "number"
+				{
+					"id": "blind_time",
+					"zwave": {
+						"index": 13,
+						"size": 2
+					},
+					"value": 30,
+					"attr": {
+						"min": 3,
+						"max": 28800
+					},
+					"label": {
+						"en": "Motion sensor blinde tijd (s)"
+					},
+					"hint": {
+						"en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. \nThe longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened.\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)",
+						"nl": "Tijdsperiode waarin de PIR 'blind' (ongevoelig) is voor beweging. Na deze tijdsperiode is de PIR sensor weer in staat om beweging te detecteren. \nDe levensduur van de batterij neemt toe bij een hogere ongevoeligheid. Wanneer het nodig is dat de sensor beweging snel detecteert kan de tijdsperiode verkort worden\ntime (seconds) = value (3-60), time (minutes) = value/60 (61-28800)"
+					},
+					"_size": 2,
+					"type": "number"
         },
-        {
-          "id": "BASIC_SET_command",
-          "zwave": {
-            "index": 14,
-            "size": 1
-          },
-          "type": "checkbox",
-          "value": false,
-          "label": {
-            "en": "Enable BASIC_SET command",
-            "nl": "BASIC SET command inschakelen"
-          },
-          "hint": {
-            "en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2.",
-            "nl": "Multisensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
-          }
+				{
+					"id": "BASIC_SET_command",
+					"zwave": {
+						"index": 14,
+						"size": 1
+					},
+					"type": "checkbox",
+					"value": false,
+					"label": {
+						"en": "Enable BASIC_SET command",
+						"nl": "BASIC SET command inschakelen"
+					},
+					"hint": {
+						"en": "Multisensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2.",
+						"nl": "Multisensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
+					}
         },
-        {
-          "id": "BASIC_SET_reversed",
-          "zwave": {
-            "index": 15,
-            "size": 1
-          },
-          "type": "dropdown",
-          "value": "0",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "ON when motion alarm triggered, OFF when canceled (default)",
-                "nl": "AAN bij bewegingsdetectie, UIT bij annulering (standaard)"
-              }
+				{
+					"id": "BASIC_SET_reversed",
+					"zwave": {
+						"index": 15,
+						"size": 1
+					},
+					"type": "dropdown",
+					"value": "0",
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "ON when motion alarm triggered, OFF when canceled (default)",
+								"nl": "AAN bij bewegingsdetectie, UIT bij annulering (standaard)"
+							}
             },
-            {
-              "id": "1",
-              "label": {
-                "en": "OFF when motion alarm triggered, ON when canceled (default)",
-                "nl": "UIT bij bewegingsdetectie, AAN bij annulering (standaard)"
-              }
+						{
+							"id": "1",
+							"label": {
+								"en": "OFF when motion alarm triggered, ON when canceled (default)",
+								"nl": "UIT bij bewegingsdetectie, AAN bij annulering (standaard)"
+							}
             }
           ],
-          "label": {
-            "en": "Reverse BASIC SET command",
-            "nl": "BASIC SET command logica"
-          },
-          "hint": {
-            "en": "Multisensor can reverse its value of BASIC SET when the alarm is triggered.",
-            "nl": "Multisensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
-          }
+					"label": {
+						"en": "Reverse BASIC SET command",
+						"nl": "BASIC SET command logica"
+					},
+					"hint": {
+						"en": "Multisensor can reverse its value of BASIC SET when the alarm is triggered.",
+						"nl": "Multisensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
+					}
         },
-        {
-          "id": "low_battery",
-          "zwave": {
-            "index": 32,
-            "size": 1
-          },
-          "type": "number",
-          "value": 20,
-          "attr": {
-            "min": 10,
-            "max": 50
-          },
-          "label": {
-            "en": "LOW Battery level",
-            "nl": "Waarschuwingsniveau batterij"
-          },
-          "hint": {
-            "en": "Define a battery level as the “low battery”.",
-            "nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt."
-          }
+				{
+					"id": "low_battery",
+					"zwave": {
+						"index": 32,
+						"size": 1
+					},
+					"type": "number",
+					"value": 20,
+					"attr": {
+						"min": 10,
+						"max": 50
+					},
+					"label": {
+						"en": "LOW Battery level",
+						"nl": "Waarschuwingsniveau batterij"
+					},
+					"hint": {
+						"en": "Define a battery level as the “low battery”.",
+						"nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt."
+					}
         },
-        {
-          "id": "battery_interval",
-          "zwave": {
-            "index": 171,
-            "size": 4
-          },
-          "type": "number",
-          "value": 1800,
-          "attr": {
-            "min": 5,
-            "max": 2678400
-          },
-          "label": {
-            "en": " Batterij rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending battery report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the battery level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
-            "nl": "Het interval waarop batterij reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer het batterijniveau ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
-          }
+				{
+					"id": "battery_interval",
+					"zwave": {
+						"index": 171,
+						"size": 4
+					},
+					"type": "number",
+					"value": 1800,
+					"attr": {
+						"min": 5,
+						"max": 2678400
+					},
+					"label": {
+						"en": " Batterij rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending battery report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the battery level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+						"nl": "Het interval waarop batterij reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer het batterijniveau ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
+					}
         },
-        {
-          "id": "temperature_interval",
-          "zwave": {
-            "index": 172,
-            "size": 4
-          },
-          "type": "number",
-          "value": 1800,
-          "attr": {
-            "min": 5,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Temperature report interval (s)",
-            "nl": "Temperature rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending temperature report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the temperature level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
-            "nl": "Het interval waarop temperatuur reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de temperatuur ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
-          }
+				{
+					"id": "temperature_interval",
+					"zwave": {
+						"index": 172,
+						"size": 4
+					},
+					"type": "number",
+					"value": 1800,
+					"attr": {
+						"min": 5,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Temperature report interval (s)",
+						"nl": "Temperature rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending temperature report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the temperature level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+						"nl": "Het interval waarop temperatuur reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de temperatuur ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
+					}
         },
-        {
-          "id": "humidity_interval",
-          "zwave": {
-            "index": 173,
-            "size": 4
-          },
-          "type": "number",
-          "value": 1800,
-          "attr": {
-            "min": 5,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Humidity report interval (s)",
-            "nl": "Luchtvochtigheids rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending Humidity report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the humidity level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
-            "nl": "Het interval waarop luchtvochtigheid reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de luchtvochtigheid ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
-          }
+				{
+					"id": "humidity_interval",
+					"zwave": {
+						"index": 173,
+						"size": 4
+					},
+					"type": "number",
+					"value": 1800,
+					"attr": {
+						"min": 5,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Humidity report interval (s)",
+						"nl": "Luchtvochtigheids rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending Humidity report to association device (Group Lifeline). \r\nThe reports are sent even if there are no changes in the humidity level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+						"nl": "Het interval waarop luchtvochtigheid reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de luchtvochtigheid ongewijzigd is.\nStandaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
+					}
         },
-        {
-          "id": "luminance_interval",
-          "zwave": {
-            "index": 174,
-            "size": 4
-          },
-          "type": "number",
-          "value": 1800,
-          "attr": {
-            "min": 5,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Luminance report interval (s)",
-            "nl": "Lichtsterkte rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending luminance report to association device (Group Lifeline). The reports are sent even if there are no changes in the luminance level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
-            "nl": "Het interval waarop luchtvochtigheid reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de luchtvochtigheid ongewijzigd is.\n Standaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
-          }
+				{
+					"id": "luminance_interval",
+					"zwave": {
+						"index": 174,
+						"size": 4
+					},
+					"type": "number",
+					"value": 1800,
+					"attr": {
+						"min": 5,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Luminance report interval (s)",
+						"nl": "Lichtsterkte rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending luminance report to association device (Group Lifeline). The reports are sent even if there are no changes in the luminance level.\nDefault: 1800 s, Range: 0 = disabled, 5 - 2678400 s",
+						"nl": "Het interval waarop luchtvochtigheid reports naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \r\nDe reports worden ook gestuurd wanneer de luchtvochtigheid ongewijzigd is.\n Standaard: 1800 s, Bereik: 0 = uitgeschakeld, 5 - 2678400 s"
+					}
         },
-        {
-          "id": "battery_threshold",
-          "zwave": {
-            "index": 181,
-            "size": 1
-          },
-          "type": "number",
-          "value": 10,
-          "attr": {
-            "min": 0,
-            "max": 100
-          },
-          "label": {
-            "en": "Battery report threshold (%)",
-            "nl": "Battery report drempelwaarde (%)"
-          },
-          "hint": {
-            "en": "Change in battery level resulting in battery report being sent to the main controller.\nDefault: 10 %, Range: 0  = disabled, 1 - 100 %",
-            "nl": "Verandering van batterijniveau dat resulteert in een batterij rapportage naar de hoofd controller.\nStandaard: 10 %, Bereik: 0  = uitgeschakeld, 1 - 100 %"
-          }
+				{
+					"id": "battery_threshold",
+					"zwave": {
+						"index": 181,
+						"size": 1
+					},
+					"type": "number",
+					"value": 10,
+					"attr": {
+						"min": 0,
+						"max": 100
+					},
+					"label": {
+						"en": "Battery report threshold (%)",
+						"nl": "Battery report drempelwaarde (%)"
+					},
+					"hint": {
+						"en": "Change in battery level resulting in battery report being sent to the main controller.\nDefault: 10 %, Range: 0  = disabled, 1 - 100 %",
+						"nl": "Verandering van batterijniveau dat resulteert in een batterij rapportage naar de hoofd controller.\nStandaard: 10 %, Bereik: 0  = uitgeschakeld, 1 - 100 %"
+					}
         },
-        {
-          "id": "temperature_threshold",
-          "zwave": {
-            "index": 182,
-            "size": 1
-          },
-          "type": "number",
-          "value": 20,
-          "attr": {
-            "min": 0,
-            "max": 255
-          },
-          "label": {
-            "en": "Temperature report threshold (°C)",
-            "nl": "Temperatuur rapportage drempelwaarde (°C)"
-          },
-          "hint": {
-            "en": "Change in temperature level resulting in battery report being sent to the main controller.\nDefault: 20 (2,0 °C), Range: 0  = disabled, 1 - 255 (0.1 - 25,5 °C)",
-            "nl": "Verandering van temperatuur dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 20 (2,0 °C), Bereik: 0  = uitgeschakeld, 1 - 255 (0.1 - 25,5 °C)"
-          }
+				{
+					"id": "temperature_threshold",
+					"zwave": {
+						"index": 182,
+						"size": 1
+					},
+					"type": "number",
+					"value": 20,
+					"attr": {
+						"min": 0,
+						"max": 255
+					},
+					"label": {
+						"en": "Temperature report threshold (°C)",
+						"nl": "Temperatuur rapportage drempelwaarde (°C)"
+					},
+					"hint": {
+						"en": "Change in temperature level resulting in battery report being sent to the main controller.\nDefault: 20 (2,0 °C), Range: 0  = disabled, 1 - 255 (0.1 - 25,5 °C)",
+						"nl": "Verandering van temperatuur dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 20 (2,0 °C), Bereik: 0  = uitgeschakeld, 1 - 255 (0.1 - 25,5 °C)"
+					}
         },
-        {
-          "id": "humidity_threshold",
-          "zwave": {
-            "index": 183,
-            "size": 1
-          },
-          "type": "number",
-          "value": 5,
-          "attr": {
-            "min": 0,
-            "max": 255
-          },
-          "label": {
-            "en": "Humidity report threshold (%)",
-            "nl": "Luchtvochtigheids rapportage drempelwaarde (%)"
-          },
-          "hint": {
-            "en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller.\nDefault: 5 %, Range: 0 = disabled, 1 - 255 %",
-            "nl": "Verandering van luchtvochtigheid dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 5 %, Bereik: 0  = uitgeschakeld, 1 - 255 %"
-          }
+				{
+					"id": "humidity_threshold",
+					"zwave": {
+						"index": 183,
+						"size": 1
+					},
+					"type": "number",
+					"value": 5,
+					"attr": {
+						"min": 0,
+						"max": 255
+					},
+					"label": {
+						"en": "Humidity report threshold (%)",
+						"nl": "Luchtvochtigheids rapportage drempelwaarde (%)"
+					},
+					"hint": {
+						"en": "The parameter determines the change in humidity level resulting in humidity report being sent to the main controller.\nDefault: 5 %, Range: 0 = disabled, 1 - 255 %",
+						"nl": "Verandering van luchtvochtigheid dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 5 %, Bereik: 0  = uitgeschakeld, 1 - 255 %"
+					}
         },
-        {
-          "id": "illumination_threshold",
-          "zwave": {
-            "index": 184,
-            "size": 2
-          },
-          "type": "number",
-          "value": 200,
-          "attr": {
-            "min": 0,
-            "max": 65535
-          },
-          "label": {
-            "en": "Illumination report threshold (LUX)",
-            "nl": "Lichtsterkte rapportage drempelwaarde (LUX)"
-          },
-          "hint": {
-            "en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller.\nDefault: 200 Lux, Range: 0 = disabled, 1 - 65535 Lux",
-            "nl": "Verandering van lichtsterkte dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 200 Lux, Bereik: 0  = uitgeschakeld, 1 - 65535 Lux"
-          }
+				{
+					"id": "illumination_threshold",
+					"zwave": {
+						"index": 184,
+						"size": 2
+					},
+					"type": "number",
+					"value": 200,
+					"attr": {
+						"min": 0,
+						"max": 65535
+					},
+					"label": {
+						"en": "Illumination report threshold (LUX)",
+						"nl": "Lichtsterkte rapportage drempelwaarde (LUX)"
+					},
+					"hint": {
+						"en": "The parameter determines the change in luminance level resulting in luminance report being sent to the main controller.\nDefault: 200 Lux, Range: 0 = disabled, 1 - 65535 Lux",
+						"nl": "Verandering van lichtsterkte dat resulteert in een rapportage naar de hoofd controller.\nStandaard: 200 Lux, Bereik: 0  = uitgeschakeld, 1 - 65535 Lux"
+					}
         }
       ]
     },
-    {
-      "id": "HKZW-SCN01",
-      "name": {
-        "en": "Scene Controller 1"
-      },
-      "zwave": {
-        "manufacturerId": [
+		{
+			"id": "HKZW-SCN01",
+			"name": {
+				"en": "Scene Controller 1"
+			},
+			"zwave": {
+				"manufacturerId": [
           520
         ],
-        "productTypeId": [
+				"productTypeId": [
           512,
           513
         ],
-        "productId": [
+				"productId": [
           9
         ],
-        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1918/HKZW-SCN01_MANUL.pdf",
-        "pid": 1918,
-        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085175",
-        "learnmode": {
-          "image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tPress and hold the O button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
-            "nl": "1.\tHou de O knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
-          }
-        },
-        "unlearnmode": {
-          "image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tTriple clicking the  Obutton.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
-            "nl": "1.\tDruk de O-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
-          }
-        },
-        "associationGroups": [
+				"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1918/HKZW-SCN01_MANUL.pdf",
+				"pid": 1918,
+				"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16085175",
+				"learnmode": {
+					"image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tPress and hold the O button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
+						"nl": "1.\tHou de O knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
+					}
+				},
+				"unlearnmode": {
+					"image": "/drivers/HKZW-SCN01/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tTriple clicking the  Obutton.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+						"nl": "1.\tDruk de O-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
+					}
+				},
+				"associationGroups": [
           1
         ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "Scene Controller sends the central scene notification command and battery report command to the associated nodes.",
-              "nl": "Scene Controller stuurt decentral scene notification command en battery reportage naar de gekoppelde nodes."
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Scene Controller will send Basic Set command to the associated nodes.",
-              "nl": "Scene Controller stuurt Basic Set commando naar de gekoppelde nodes."
-            }
-          },
-          "3": {
-            "hint": {
-              "en": "Scene Controller will send switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes.",
-              "nl": "Scene Controller stuurt switch multilevel set, de multilevel start level change en de multilevel stop level change command naar de gekoppelde nodes."
-            }
-          }
-        }
-      },
-      "class": "zwavecontroller",
-      "capabilities": [
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "Scene Controller sends the central scene notification command and battery report command to the associated nodes.",
+							"nl": "Scene Controller stuurt decentral scene notification command en battery reportage naar de gekoppelde nodes."
+						}
+					},
+					"2": {
+						"hint": {
+							"en": "Scene Controller will send Basic Set command to the associated nodes.",
+							"nl": "Scene Controller stuurt Basic Set commando naar de gekoppelde nodes."
+						}
+					},
+					"3": {
+						"hint": {
+							"en": "Scene Controller will send switch multilevel set, the multilevel start level change and multilevel stop level change command to the associated nodes.",
+							"nl": "Scene Controller stuurt switch multilevel set, de multilevel start level change en de multilevel stop level change command naar de gekoppelde nodes."
+						}
+					}
+				}
+			},
+			"class": "sensor",
+			"capabilities": [
         "measure_battery",
         "alarm_battery"
       ],
-      "images": {
-        "large": "/drivers/HKZW-SCN01/assets/images/large.jpg",
-        "small": "/drivers/HKZW-SCN01/assets/images/small.jpg"
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon"
+			"images": {
+				"large": "/drivers/HKZW-SCN01/assets/images/large.jpg",
+				"small": "/drivers/HKZW-SCN01/assets/images/small.jpg"
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
           },
-          {
-            "id": "battery",
-            "capabilities": [
+					{
+						"id": "battery",
+						"capabilities": [
               "measure_battery"
             ],
-            "options": {
-              "showTitle": true
-            }
+						"options": {
+							"showTitle": true
+						}
           },
-          {
-            "id": "sensor",
-            "capabilities": [
+					{
+						"id": "sensor",
+						"capabilities": [
               "alarm_battery"
             ],
-            "options": {
-              "icons": {
-                "Battery_Alarm": "/drivers/HKZW-SCN01/assets/alarm_battery.svg"
-              },
-              "Battery_Alarm": {
-                "noblink": false,
-                "invert": false
-              }
-            }
+						"options": {
+							"icons": {
+								"Battery_Alarm": "/drivers/HKZW-SCN01/assets/alarm_battery.svg"
+							},
+							"Battery_Alarm": {
+								"noblink": false,
+								"invert": false
+							}
+						}
           }
         ]
-      },
-      "settings": [
-        {
-          "id": "enable_configuration",
-          "zwave": {
-            "index": 254,
-            "size": 1
-          },
-          "type": "checkbox",
-          "value": true,
-          "label": {
-            "en": "Enable configuration command",
-            "nl": "Configuration command inschakelen"
-          },
-          "hint": {
-            "en": "Lock/unlock all configuration parameters.",
-            "nl": "In or uitschakelen van alle configuratie parameters."
-          }
+			},
+			"settings": [
+				{
+					"id": "enable_configuration",
+					"zwave": {
+						"index": 254,
+						"size": 1
+					},
+					"type": "checkbox",
+					"value": true,
+					"label": {
+						"en": "Enable configuration command",
+						"nl": "Configuration command inschakelen"
+					},
+					"hint": {
+						"en": "Lock/unlock all configuration parameters.",
+						"nl": "In or uitschakelen van alle configuratie parameters."
+					}
         }
       ]
     },
-    {
-      "id": "HKZW-SCN04",
-      "name": {
-        "en": "Scene Controller 4"
-      },
-      "zwave": {
-        "manufacturerId": [
+		{
+			"id": "HKZW-SCN04",
+			"name": {
+				"en": "Scene Controller 4"
+			},
+			"zwave": {
+				"manufacturerId": [
           520
         ],
-        "productTypeId": [
+				"productTypeId": [
           512,
           513
         ],
-        "productId": [
+				"productId": [
           11
         ],
-        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1968/HKZW-SCN04%20Manual.pdf",
-        "pid": 1968,
-        "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16095219",
-        "learnmode": {
-          "image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tPress and hold the O button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
-            "nl": "1.\tHou de O knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
-          }
-        },
-        "unlearnmode": {
-          "image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
-          "instruction": {
-            "en": "1.\tTriple clicking the  Obutton.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
-            "nl": "1.\tDruk de O-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
-          }
-        },
-        "associationGroups": [
+				"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1968/HKZW-SCN04%20Manual.pdf",
+				"pid": 1968,
+				"imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16095219",
+				"learnmode": {
+					"image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tPress and hold the O button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
+						"nl": "1.\tHou de O knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
+					}
+				},
+				"unlearnmode": {
+					"image": "/drivers/HKZW-SCN04/assets/learnmode.svg",
+					"instruction": {
+						"en": "1.\tTriple clicking the  Obutton.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+						"nl": "1.\tDruk de O-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
+					}
+				},
+				"associationGroups": [
           1
         ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "Scene Controller sends the central scene notification command and battery report command to the associated nodes.",
-              "nl": "Scene Controller stuurt decentral scene notification command en battery reportage naar de gekoppelde nodes."
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 1 is pressed.",
-              "nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 1 ingedrukt is."
-            }
-          },
-          "3": {
-            "hint": {
-              "en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 1 is pressed, hold and released, respectively.",
-              "nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 1 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
-            }
-          },
-          "4": {
-            "hint": {
-              "en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 2 is pressed.",
-              "nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 2 ingedrukt is."
-            }
-          },
-          "5": {
-            "hint": {
-              "en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 2 is pressed, hold and released, respectively.",
-              "nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 2 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
-            }
-          },
-          "6": {
-            "hint": {
-              "en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 3 is pressed.",
-              "nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 3 ingedrukt is."
-            }
-          },
-          "7": {
-            "hint": {
-              "en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 3 is pressed, hold and released, respectively.",
-              "nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 3 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
-            }
-          },
-          "8": {
-            "hint": {
-              "en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 4 is pressed.",
-              "nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 4 ingedrukt is."
-            }
-          },
-          "9": {
-            "hint": {
-              "en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 3 is pressed, hold and released, respectively.",
-              "nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 3 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
-            }
-          }
-        }
-      },
-      "class": "zwavecontroller",
-      "capabilities": [
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "Scene Controller sends the central scene notification command and battery report command to the associated nodes.",
+							"nl": "Scene Controller stuurt decentral scene notification command en battery reportage naar de gekoppelde nodes."
+						}
+					},
+					"2": {
+						"hint": {
+							"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 1 is pressed.",
+							"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 1 ingedrukt is."
+						}
+					},
+					"3": {
+						"hint": {
+							"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 1 is pressed, hold and released, respectively.",
+							"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 1 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
+						}
+					},
+					"4": {
+						"hint": {
+							"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 2 is pressed.",
+							"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 2 ingedrukt is."
+						}
+					},
+					"5": {
+						"hint": {
+							"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 2 is pressed, hold and released, respectively.",
+							"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 2 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
+						}
+					},
+					"6": {
+						"hint": {
+							"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 3 is pressed.",
+							"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 3 ingedrukt is."
+						}
+					},
+					"7": {
+						"hint": {
+							"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 3 is pressed, hold and released, respectively.",
+							"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 3 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
+						}
+					},
+					"8": {
+						"hint": {
+							"en": "Scene Controller will send 'Basic Set' command to the associated nodes when button 4 is pressed.",
+							"nl": "Scene Controller stuurt 'Basic Set' commando naar de gekoppelde nodes wanneer knop 4 ingedrukt is."
+						}
+					},
+					"9": {
+						"hint": {
+							"en": "Scene Controller will send 'switch multilevel set', the 'multilevel start level change' and 'multilevel stop level change' command to the associated nodes if button 3 is pressed, hold and released, respectively.",
+							"nl": "Scene Controller stuurt 'switch multilevel set', the 'multilevel start level change' en 'multilevel stop level change' commando naar de gekoppelde nodes wanneer knop 3 respectivelijk ingedrukt is, vastgehouden wordt en losgelaten wordt."
+						}
+					}
+				}
+			},
+			"class": "sensor",
+			"capabilities": [
         "measure_battery",
         "alarm_battery"
       ],
-      "images": {
-        "large": "/drivers/HKZW-SCN04/assets/images/large.jpg",
-        "small": "/drivers/HKZW-SCN04/assets/images/small.jpg"
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon"
+			"images": {
+				"large": "/drivers/HKZW-SCN04/assets/images/large.jpg",
+				"small": "/drivers/HKZW-SCN04/assets/images/small.jpg"
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
           },
-          {
-            "id": "battery",
-            "capabilities": [
+					{
+						"id": "battery",
+						"capabilities": [
               "measure_battery"
             ],
-            "options": {
-              "showTitle": true
-            }
+						"options": {
+							"showTitle": true
+						}
           },
-          {
-            "id": "sensor",
-            "capabilities": [
+					{
+						"id": "sensor",
+						"capabilities": [
               "alarm_battery"
             ],
-            "options": {
-              "icons": {
-                "Battery_Alarm": "/drivers/HKZW-SCN04/assets/alarm_battery.svg"
-              },
-              "Battery_Alarm": {
-                "noblink": false,
-                "invert": false
-              }
-            }
+						"options": {
+							"icons": {
+								"Battery_Alarm": "/drivers/HKZW-SCN04/assets/alarm_battery.svg"
+							},
+							"Battery_Alarm": {
+								"noblink": false,
+								"invert": false
+							}
+						}
           }
         ]
-      },
-      "settings": [
-        {
-          "id": "enable_configuration",
-          "zwave": {
-            "index": 254,
-            "size": 1
-          },
-          "type": "checkbox",
-          "value": true,
-          "label": {
-            "en": "Enable configuration command",
-            "nl": "Configuration command inschakelen"
-          },
-          "hint": {
-            "en": "Lock/unlock all configuration parameters.",
-            "nl": "In or uitschakelen van alle configuratie parameters."
-          }
+			},
+			"settings": [
+				{
+					"id": "enable_configuration",
+					"zwave": {
+						"index": 254,
+						"size": 1
+					},
+					"type": "checkbox",
+					"value": true,
+					"label": {
+						"en": "Enable configuration command",
+						"nl": "Configuration command inschakelen"
+					},
+					"hint": {
+						"en": "Lock/unlock all configuration parameters.",
+						"nl": "In or uitschakelen van alle configuratie parameters."
+					}
         }
       ]
     },
-    {
-      "id": "HKZW-SO0x",
-      "name": {
-        "en": "Smart Plug"
-      },
-      "zwave": {
-        "manufacturerId": [
+		{
+			"id": "HKZW-SO0x",
+			"name": {
+				"en": "Smart Plug"
+			},
+			"zwave": {
+				"manufacturerId": [
           520
         ],
-        "productTypeId": [
+				"productTypeId": [
           256,
           257
         ],
-        "productId": [
+				"productId": [
           10
         ],
-        "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
-        "pid": 1891,
-        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16075153",
-        "learnmode": {
-          "image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
-          "instruction": {
-            "en": "1) \tPress and hold the Z-button for 3 seconds to add the device in secure mode. \r\n\tThe RGB LED indicator should blink fast in blue.\r\n2) \tSmart Plug should be recognized and included into the Z-Wave network.",
-            "nl": "1) \tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen. \r\n\tThe RGB LED indicator moet nu snel blauw knipperen.\r\n2) \tSmart Plug zou nu herkend moeten worden en toegevoegd worden aan het Z-Wave network."
-          }
-        },
-        "unlearnmode": {
-          "image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
-          "instruction": {
-            "en": "1) \tPress the Z-button 3 times to remove the device. \r\n\tThe RGB LED indicator should blink fast in blue.\r\n2) \tSmart Plug should be removed from the Z-Wave network.",
-            "nl": "1) \tDruk de Z-button drie kee in om het apparaat te verwijderen. \r\n\tThe RGB LED indicator moet nu snel blauw knipperen.\r\n2) \tSmart Plug zou nu verwijderd moeten worden uit het Z-Wave network."
-          }
-        },
-        "associationGroups": [
+				"productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
+				"pid": 1891,
+				"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16075153",
+				"learnmode": {
+					"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
+					"instruction": {
+						"en": "1) \tPress and hold the Z-button for 3 seconds to add the device in secure mode. \r\n\tThe RGB LED indicator should blink fast in blue.\r\n2) \tSmart Plug should be recognized and included into the Z-Wave network.",
+						"nl": "1) \tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen. \r\n\tThe RGB LED indicator moet nu snel blauw knipperen.\r\n2) \tSmart Plug zou nu herkend moeten worden en toegevoegd worden aan het Z-Wave network."
+					}
+				},
+				"unlearnmode": {
+					"image": "/drivers/HKZW-SO0x/assets/learnmode.svg",
+					"instruction": {
+						"en": "1) \tPress the Z-button 3 times to remove the device. \r\n\tThe RGB LED indicator should blink fast in blue.\r\n2) \tSmart Plug should be removed from the Z-Wave network.",
+						"nl": "1) \tDruk de Z-button drie kee in om het apparaat te verwijderen. \r\n\tThe RGB LED indicator moet nu snel blauw knipperen.\r\n2) \tSmart Plug zou nu verwijderd moeten worden uit het Z-Wave network."
+					}
+				},
+				"associationGroups": [
           1
         ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "Z-Wave Plus Lifeline"
-            }
-          }
-        }
-      },
-      "class": "socket",
-      "capabilities": [
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "Z-Wave Plus Lifeline"
+						}
+					}
+				}
+			},
+			"class": "socket",
+			"capabilities": [
         "onoff",
         "meter_power",
         "measure_power",
         "measure_current",
         "measure_voltage"
       ],
-      "images": {
-        "large": "/drivers/HKZW-SO0x/assets/images/large.jpg",
-        "small": "/drivers/HKZW-SO0x/assets/images/small.jpg"
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
+			"images": {
+				"large": "/drivers/HKZW-SO0x/assets/images/large.jpg",
+				"small": "/drivers/HKZW-SO0x/assets/images/small.jpg"
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon",
+						"capabilities": [
               "onoff"
             ]
           },
-          {
-            "id": "sensor",
-            "capabilities": [
+					{
+						"id": "sensor",
+						"capabilities": [
               "meter_power",
               "measure_power",
               "measure_current",
               "measure_voltage"
             ]
           },
-          {
-            "id": "toggle",
-            "capabilities": [
+					{
+						"id": "toggle",
+						"capabilities": [
               "onoff"
             ]
           }
         ]
-      },
-      "settings": [
-        {
-          "id": "Overcurrent_protection",
-          "zwave": {
-            "index": 20,
-            "size": 1
-          },
-          "type": "checkbox",
-          "value": true,
-          "label": {
-            "en": "Overcurrent protection",
-            "nl": "Overspannings beveiliging"
-          },
-          "hint": {
-            "en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off.",
-            "nl": "Smart Plug houdt actief de belasting in de gaten, wanneer de belasting 16.5A overschrijd wordt de smart plug preventief uitgeschakeld."
-          }
+			},
+			"settings": [
+				{
+					"id": "Overcurrent_protection",
+					"zwave": {
+						"index": 20,
+						"size": 1
+					},
+					"type": "checkbox",
+					"value": true,
+					"label": {
+						"en": "Overcurrent protection",
+						"nl": "Overspannings beveiliging"
+					},
+					"hint": {
+						"en": "Smart Plug keep detecting the load power, once the AC current exceeds 16.5A for more than 5s, smart plug's relay will turn off.",
+						"nl": "Smart Plug houdt actief de belasting in de gaten, wanneer de belasting 16.5A overschrijd wordt de smart plug preventief uitgeschakeld."
+					}
         },
-        {
-          "id": "Power_off_status",
-          "zwave": {
-            "index": 21,
-            "size": 1
-          },
-          "type": "dropdown",
-          "value": "0",
-          "label": {
-            "en": "State after power loss",
-            "nl": "Toestand na spanningsuitval"
-          },
-          "hint": {
-            "en": "Define how the Plug reacts after the power supply is back on.",
-            "nl": "Bepaal hoe de Plug reageert na een spanningsuitval."
-          },
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "Restores state after a power failure (default)",
-                "nl": "Herstelt toestand na spanningsuitval (default)"
-              }
+				{
+					"id": "Power_off_status",
+					"zwave": {
+						"index": 21,
+						"size": 1
+					},
+					"type": "dropdown",
+					"value": "0",
+					"label": {
+						"en": "State after power loss",
+						"nl": "Toestand na spanningsuitval"
+					},
+					"hint": {
+						"en": "Define how the Plug reacts after the power supply is back on.",
+						"nl": "Bepaal hoe de Plug reageert na een spanningsuitval."
+					},
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "Restores state after a power failure (default)",
+								"nl": "Herstelt toestand na spanningsuitval (default)"
+							}
             },
-            {
-              "id": "1",
-              "label": {
-                "en": "ON after a power failure",
-                "nl": "AAN na spanningsuitval"
-              }
+						{
+							"id": "1",
+							"label": {
+								"en": "ON after a power failure",
+								"nl": "AAN na spanningsuitval"
+							}
             },
-            {
-              "id": "2",
-              "label": {
-                "en": "OFF after a power failure",
-                "nl": "UIT na spanningsuitval"
-              }
+						{
+							"id": "2",
+							"label": {
+								"en": "OFF after a power failure",
+								"nl": "UIT na spanningsuitval"
+							}
             }
           ]
         },
-        {
-          "id": "Load_notification",
-          "zwave": {
-            "index": 24,
-            "size": 1
-          },
-          "type": "dropdown",
-          "value": "1",
-          "label": {
-            "en": "Notification when Load status change",
-            "nl": "Notificatie bij wijziging belasting"
-          },
-          "hint": {
-            "en": "Smart Plug sends notifications to association device (Group Lifeline) when state of smart plug’s load change.",
-            "nl": "Smart Plug stuurt notifications naar de gekoppelde nodes (Group Lifeline) wanner de belastingstoestand veranderd."
-          },
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "Disabled (default)",
-                "nl": "Uitgeschakeld (standaard)"
-              }
+				{
+					"id": "Load_notification",
+					"zwave": {
+						"index": 24,
+						"size": 1
+					},
+					"type": "dropdown",
+					"value": "1",
+					"label": {
+						"en": "Notification when Load status change",
+						"nl": "Notificatie bij wijziging belasting"
+					},
+					"hint": {
+						"en": "Smart Plug sends notifications to association device (Group Lifeline) when state of smart plug’s load change.",
+						"nl": "Smart Plug stuurt notifications naar de gekoppelde nodes (Group Lifeline) wanner de belastingstoestand veranderd."
+					},
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "Disabled (default)",
+								"nl": "Uitgeschakeld (standaard)"
+							}
             },
-            {
-              "id": "1",
-              "label": {
-                "en": "Send BASIC report",
-                "nl": "Stuur BASIC reportage"
-              }
+						{
+							"id": "1",
+							"label": {
+								"en": "Send BASIC report",
+								"nl": "Stuur BASIC reportage"
+							}
             },
-            {
-              "id": "2",
-              "label": {
-                "en": "Stuur BASIC report alleen wanneer de toestand handmatig is aangepast (knop ingedrukt ipv Z-wave commando)"
-              }
+						{
+							"id": "2",
+							"label": {
+								"en": "Stuur BASIC report alleen wanneer de toestand handmatig is aangepast (knop ingedrukt ipv Z-wave commando)"
+							}
             }
           ]
         },
-        {
-          "id": "Indicator_mode",
-          "zwave": {
-            "index": 27,
-            "size": 1
-          },
-          "type": "dropdown",
-          "value": "0",
-          "label": {
-            "en": "RGB indicator modes",
-            "nl": "RGB indicator modus"
-          },
-          "hint": {
-            "en": "RGB LED indicator will indicate the situation of load.",
-            "nl": "RGB LED indicator geeft belastingstoestand aan."
-          },
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "Smart plug will work in indicator mode (default)",
-                "nl": "Smart plug werkt indicator modus (default)"
-              }
+				{
+					"id": "Indicator_mode",
+					"zwave": {
+						"index": 27,
+						"size": 1
+					},
+					"type": "dropdown",
+					"value": "0",
+					"label": {
+						"en": "RGB indicator modes",
+						"nl": "RGB indicator modus"
+					},
+					"hint": {
+						"en": "RGB LED indicator will indicate the situation of load.",
+						"nl": "RGB LED indicator geeft belastingstoestand aan."
+					},
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "Smart plug will work in indicator mode (default)",
+								"nl": "Smart plug werkt indicator modus (default)"
+							}
             },
-            {
-              "id": "1",
-              "label": {
-                "en": "Smart plug will work in indicator mode for 5 seconds after a load change",
-                "nl": "Smart plug werkt in indicator mode voor 5 seconds na een wijziging van de belasting"
-              }
+						{
+							"id": "1",
+							"label": {
+								"en": "Smart plug will work in indicator mode for 5 seconds after a load change",
+								"nl": "Smart plug werkt in indicator mode voor 5 seconds na een wijziging van de belasting"
+							}
             }
           ]
         },
-        {
-          "id": "Power_Threshold_W",
-          "zwave": {
-            "index": 151,
-            "size": 2,
-            "signed": false
-          },
-          "type": "number",
-          "value": 0,
-          "attr": {
-            "min": 0,
-            "max": 65535
-          },
-          "label": {
-            "en": "Power report threshold (W)",
-            "nl": "Vermogen rapportage drempelwaarde (W)"
-          },
-          "hint": {
-            "en": "Change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 50, Range: 5 - 65535, 0 = disabled (W)",
-            "nl": "Minimale Veranderingvan vermogen overschrijd de ingestelde drempelwaarde, de smart plug stuurt een meter raport naar de gekoppelde nodes (Group Lifeline).\nStandaard: 50, Bereik: 5 - 65535, 0 = uitgeschakeld (W)"
-          }
+				{
+					"id": "Power_Threshold_W",
+					"zwave": {
+						"index": 151,
+						"size": 2,
+						"signed": false
+					},
+					"type": "number",
+					"value": 0,
+					"attr": {
+						"min": 0,
+						"max": 65535
+					},
+					"label": {
+						"en": "Power report threshold (W)",
+						"nl": "Vermogen rapportage drempelwaarde (W)"
+					},
+					"hint": {
+						"en": "Change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 50, Range: 5 - 65535, 0 = disabled (W)",
+						"nl": "Minimale Veranderingvan vermogen overschrijd de ingestelde drempelwaarde, de smart plug stuurt een meter raport naar de gekoppelde nodes (Group Lifeline).\nStandaard: 50, Bereik: 5 - 65535, 0 = uitgeschakeld (W)"
+					}
         },
-        {
-          "id": "Power_Threshold_pro",
-          "zwave": {
-            "index": 152,
-            "size": 1
-          },
-          "type": "number",
-          "value": 10,
-          "attr": {
-            "min": 0,
-            "max": 100
-          },
-          "label": {
-            "en": "Power report threshold (%)",
-            "nl": "Vermogen rapportage drempelwaarde (%)"
-          },
-          "hint": {
-            "en": "Change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 10, Range: 5 - 100, 0 = disabled (%)",
-            "nl": "Minimale Veranderingvan vermogen overschrijd de ingestelde drempelwaarde, de smart plug stuurt een meter raport naar de gekoppelde nodes (Group Lifeline).\nStandaard: 10, Bereik: 5 - 100, 0 = uitgeschakeld (%)"
-          }
+				{
+					"id": "Power_Threshold_pro",
+					"zwave": {
+						"index": 152,
+						"size": 1
+					},
+					"type": "number",
+					"value": 10,
+					"attr": {
+						"min": 0,
+						"max": 100
+					},
+					"label": {
+						"en": "Power report threshold (%)",
+						"nl": "Vermogen rapportage drempelwaarde (%)"
+					},
+					"hint": {
+						"en": "Change value of load power exceeds the setting threshold, the smart plug will send meter report to associated device (Group Lifeline).\nDefault: 10, Range: 5 - 100, 0 = disabled (%)",
+						"nl": "Minimale Veranderingvan vermogen overschrijd de ingestelde drempelwaarde, de smart plug stuurt een meter raport naar de gekoppelde nodes (Group Lifeline).\nStandaard: 10, Bereik: 5 - 100, 0 = uitgeschakeld (%)"
+					}
         },
-        {
-          "id": "Power_interval",
-          "zwave": {
-            "index": 171,
-            "size": 4
-          },
-          "type": "number",
-          "value": 30,
-          "attr": {
-            "min": 0,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Power report interval (s)",
-            "nl": "Vermogen rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline). \nDefault: 30, Range: 5 - 2678400, 0 = disabled (s)",
-            "nl": "Het interval voor het versturen van meter report (in termen van wattage) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 30, Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
-          }
+				{
+					"id": "Power_interval",
+					"zwave": {
+						"index": 171,
+						"size": 4
+					},
+					"type": "number",
+					"value": 30,
+					"attr": {
+						"min": 0,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Power report interval (s)",
+						"nl": "Vermogen rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending meter report(in term of wattage) to associated device (Group Lifeline). \nDefault: 30, Range: 5 - 2678400, 0 = disabled (s)",
+						"nl": "Het interval voor het versturen van meter report (in termen van wattage) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 30, Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
+					}
         },
-        {
-          "id": "Meter_interval",
-          "zwave": {
-            "index": 172,
-            "size": 4
-          },
-          "type": "number",
-          "value": 300,
-          "attr": {
-            "min": 0,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Meter report interval (s)",
-            "nl": "Meter rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline).\nDefault: 300, Range: 5 - 2678400, 0 = disabled (s)",
-            "nl": "Het interval voor het versturen van meter report (in termen van kWh) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 300, Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
-          }
+				{
+					"id": "Meter_interval",
+					"zwave": {
+						"index": 172,
+						"size": 4
+					},
+					"type": "number",
+					"value": 300,
+					"attr": {
+						"min": 0,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Meter report interval (s)",
+						"nl": "Meter rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending meter report(in term of kWh) to associated device (Group Lifeline).\nDefault: 300, Range: 5 - 2678400, 0 = disabled (s)",
+						"nl": "Het interval voor het versturen van meter report (in termen van kWh) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 300, Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
+					}
         },
-        {
-          "id": "Voltage_interval",
-          "zwave": {
-            "index": 173,
-            "size": 4
-          },
-          "type": "number",
-          "value": 0,
-          "attr": {
-            "min": 0,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Voltage report interval (s).",
-            "nl": "Voltage rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)",
-            "nl": "Het interval voor het versturen van meter report (in termen van voltage) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 0 (uitgeschakeld), Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
-          }
+				{
+					"id": "Voltage_interval",
+					"zwave": {
+						"index": 173,
+						"size": 4
+					},
+					"type": "number",
+					"value": 0,
+					"attr": {
+						"min": 0,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Voltage report interval (s).",
+						"nl": "Voltage rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending meter report(in term of voltage) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)",
+						"nl": "Het interval voor het versturen van meter report (in termen van voltage) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 0 (uitgeschakeld), Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
+					}
         },
-        {
-          "id": "Current_interval",
-          "zwave": {
-            "index": 174,
-            "size": 4
-          },
-          "type": "number",
-          "value": 0,
-          "attr": {
-            "min": 0,
-            "max": 2678400
-          },
-          "label": {
-            "en": "Current report interval (s).",
-            "nl": "Stroom rapportage interval (s)"
-          },
-          "hint": {
-            "en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)",
-            "nl": "Het interval voor het versturen van meter report (in termen van stroom) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 0 (uitgeschakeld), Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
-          }
+				{
+					"id": "Current_interval",
+					"zwave": {
+						"index": 174,
+						"size": 4
+					},
+					"type": "number",
+					"value": 0,
+					"attr": {
+						"min": 0,
+						"max": 2678400
+					},
+					"label": {
+						"en": "Current report interval (s).",
+						"nl": "Stroom rapportage interval (s)"
+					},
+					"hint": {
+						"en": "The interval of sending meter report(in term of current) to associated device (Group Lifeline).\nDefault: 0 (disabled), Range: 5 - 2678400, 0 = disabled (s)",
+						"nl": "Het interval voor het versturen van meter report (in termen van stroom) naar de gekoppelde nodes (Group Lifeline). \nStandaard: 0 (uitgeschakeld), Bereik: 5 - 2678400, 0 = uitgeschakeld (s)"
+					}
         }
       ]
     }
