@@ -69,10 +69,6 @@ This app and driver development has been supported by:
 Any requests please post them in the [Hank app topic on the Athom Forum](https://forum.athom.com/discussion/3708/) or contact me on [Slack](https://athomcommunity.slack.com/team/tedtolboom)    
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
-### Donate:
-If you like the app, consider a donation to support development    
-[![Paypal Donate](https://www.paypalobjects.com/en_US/NL/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5JCN4Q3XSBTBJ&lc=NL&item_name=Athom%20Homey%20apps&item_number=Hank%20app&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
-
 ## Changelog:
 ### v1.0.1
 * Change Scene Controller device class to Sensor to enable default battery triggers (re-pair required)      
