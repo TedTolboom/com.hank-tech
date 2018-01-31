@@ -781,7 +781,7 @@
     {
       "id": "HKZW-RGB01",
       "name": {
-        "en": "Color Bulb"
+        "en": "RGB Color Bulb"
       },
       "zwave": {
         "manufacturerId": [
@@ -800,15 +800,15 @@
         "learnmode": {
           "image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
           "instruction": {
-            "en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink less than 5 seconds and then keep on 3 seconds.\n\tOtherwise, the LED will blink 5 seconds and then turn off",
-            "nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
+            "en": "1.\tDisconnect the power to the Bulb for a few seconds.\n2.\tConnect the power again.",
+            "nl": "1.\tSchakel de spanning van de Lamp voor een paar seconden uit.\n2.\tSchakel de spanning weer in."
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
           "instruction": {
-            "en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
-            "nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
+            "en": "Toggle the power on and off 3 times.",
+            "nl": "Schakel de spanning 3 keer aan en uit."
           }
         },
         "associationGroups": [
@@ -817,14 +817,8 @@
         "associationGroupsOptions": {
           "1": {
             "hint": {
-              "en": "Door/Window Sensor will send notification report and battery report to the associated nodes. (Z-wave lifeline)",
-              "nl": "Door/Window Sensor stuurt notification report en battery report naar de gekoppelde nodes. (Z-wave lifeline)"
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "Door/Window Sensor will send Basic Set command to the associated nodes when the sensor body and magnet removed or combined.",
-              "nl": "Door/Window Sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer het contact alarm af gaat of reset."
+              "en": "RGB Bulb will send it's state to the associated node(s). (Z-wave lifeline)",
+              "nl": "RGB Lamp verstuurt zijn status naar de gekoppelde node(s). (Z-wave lifeline)"
             }
           }
         }
@@ -838,11 +832,102 @@
         "light_saturation",
         "light_temperature"
       ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
       "images": {
         "large": "/drivers/HKZW-RGB01/assets/images/large.png",
         "small": "/drivers/HKZW-RGB01/assets/images/small.png"
       },
-      "settings": []
+      "settings": [
+        {
+          "id": "power_failure_reaction",
+          "type": "dropdown",
+          "zwave": {
+            "index": 21,
+            "size": 1
+          },
+          "label": {
+            "en": "State after power failure",
+            "nl": "Status na stroom herstel"
+          },
+          "hint": {
+            "en": "Define the state the RGB bulb will be in after power has resumed.",
+            "nl": "Bepaal de staat van de RGB lamp bij het herstellen van de spanning."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Previous state",
+                "nl": "Laatste status"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On",
+                "nl": "Aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Off",
+                "nl": "Uit"
+              }
+            }
+          ]
+        },
+        {
+          "id": "status_change_notification",
+          "type": "dropdown",
+          "zwave": {
+            "index": 24,
+            "size": 1
+          },
+          "label": {
+            "en": "Report own state",
+            "nl": "Verzend eigen status"
+          },
+          "hint": {
+            "en": "Define when the RGB bulb will send it's own state to Homey.",
+            "nl": "Bepaal wanneer de RGB lamp zijn status verstuurd naar Homey."
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Don't send",
+                "nl": "Niet verzenden"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always send on change",
+                "nl": "Altijd verzenden bij veranderen"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Only send when not changed by Z-Wave command(s)",
+                "nl": "Alleen verzenden wanneer veranderd met niet Z-Wave commando(s)"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "HKZW-SCN01",
