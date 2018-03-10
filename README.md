@@ -70,6 +70,11 @@ Any requests please post them in the [Hank app topic on the Athom Forum](https:/
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ## Changelog:
+### v1.0.2
+* Add Homey community forum link   
+* Update meshdriver to 1.2.8    
+* Driver clean-up & SDK2 optimizations     
+
 ### v1.0.1
 * Change Scene Controller device class to Sensor to enable default battery triggers (re-pair required)      
 
