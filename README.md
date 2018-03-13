@@ -70,6 +70,9 @@ Any requests please post them in the [Hank app topic on the Athom Forum](https:/
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ## Changelog:
+### v1.0.3
+* Fix issue with SCN01 flow card trigger   
+
 ### v1.0.2
 * Add Homey community forum link   
 * Update meshdriver to 1.2.8    

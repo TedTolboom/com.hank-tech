@@ -42,7 +42,7 @@ class SceneController_SCN01 extends ZwaveDevice {
 				};
 				this.log('Triggering sequence:', rawReport['Sequence Number'], 'remoteValue', remoteValue);
 				// Trigger the trigger card with 2 dropdown options
-				triggerSCN01_scene.trigger(this, triggerSCN04_scene.getArgumentValues, remoteValue);
+				triggerSCN01_scene.trigger(this, triggerSCN01_scene.getArgumentValues, remoteValue);
 				// Trigger the trigger card with tokens
 				triggerSCN_button.trigger(this, remoteValue, null);
 			}
