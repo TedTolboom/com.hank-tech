@@ -13,8 +13,8 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1.\tDisconnect the power to the Bulb for a few seconds.\n2.\tConnect the power again.",
-				"nl": "1.\tSchakel de spanning van de Lamp voor een paar seconden uit.\n2.\tSchakel de spanning weer in."
+				"en": "To include RGB BULB as a secure device:\n\t1.Toggle the wall switch off and on 3 times quickly (within 3 seconds and the final ending position of the wall switch must be on).\n\t2. If the inclusion is successful, the RGB BULB will blink fast in green for less than 5 seconds and then keep on 3 seconds. \n\nTo include RGB BULB as a secure device:\n\t1. Insert the RGB BULB into a lamp-socket and then power on.\n\t2. Auto-inclusion will be activated. If the inclusion is successful, the RGB BULB will blink fast in blue for less than 5 seconds and then keep on for 3 seconds.\n\nRGB BULB will keep on in the color before it is included into the Z-Wave network after the inclusion procedure is finished.",
+				"nl": "Om de RGB lamp toe te voegen als secure device:\n\t1. Schakel de wandschakelaar 3 keer snel uit en aan (binnen 3 seconden, met de schakelaar eindigend in de aan positie).\n\t2. Wanneer de toevoegmodus succesvol is geactiveerd, zal de RGB lamp snel groen knipperen voor minder dan 5 seconden en daarna aanstaan voor 3 seconden.\n\nOm de RGB lamp toe te voegen als non-secure device:\n\t1. Plaats de lamp in een lampvoet en schakel in.\n\t2. De Auto-inclusion wordt geactiveerd. Wanneer de toevoegmodus succesvol is geactiveerd, zal de RGB lamp snel groen knipperen voor minder dan 5 seconden en daarna aanstaan voor 3 seconden.\n\nDe RGB lamp zal de kleur aanhouden totdat het toevoegen is voltooid."
 			}
 		},
 		"unlearnmode": {
