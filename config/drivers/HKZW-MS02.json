@@ -13,15 +13,15 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-MS02/assets/learnmode.svg",
 			"instruction": {
-				"en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink fast.",
-				"nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED snel knipperen."
+				"en": "1.\tTo add the device secure (S0 or S2), *triple click* the Z-button.\n\t2.To add the device non-secure, *hold* the Z-button for 3 seconds.\n\tIf the inclusion mode is successfully activated, the LED will blink fast.",
+				"nl": "1.\tOm de sensor beveiligd (S0 of S2) toe te voegen, druk de Z-button *drie keer snel* in\n\t2.Om de sensor niet beveiligd toe te voegen, houdt de Z-button ingedrukt voor 3 seconden.\n\tWanneer de toevoegmodus succesvol geactiveerd is, zal de LED snel knipperen."
 			}
 		},
 		"unlearnmode": {
 			"image": "/drivers/HKZW-MS02/assets/learnmode.svg",
 			"instruction": {
 				"en": "1.\tTriple clicking the Z-button, the LED should blink fast.",
-				"nl": "1.\tDruk de Z-button drie kee in, de LED knippert snel."
+				"nl": "1.\tDruk de Z-button drie keer snel in, de LED knippert snel."
 			}
 		},
 		"wakeUpInterval": 0,
@@ -41,11 +41,24 @@
 					"nl": "1. Basic Set\r\nMotion sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
 				}
 			}
-		}
+		},
+		"defaultConfiguration": [
+			{
+				"id": 14,
+				"size": 1,
+				"value": 1
+			},
+			{
+				"id": 17,
+				"size": 1,
+				"value": 1
+				 }
+			 ]
 	},
 	"class": "sensor",
 	"capabilities": [
 		"alarm_motion",
+		"alarm_tamper",
 		"alarm_battery",
 		"measure_battery"
 	],
@@ -89,7 +102,7 @@
 			},
 			"value": 0,
 			"attr": {
-				"min": 1,
+				"min": 0,
 				"max": 65535
 			},
 			"hint": {
@@ -104,7 +117,7 @@
 				"size": 1
 			},
 			"type": "checkbox",
-			"value": false,
+			"value": true,
 			"label": {
 				"en": "Enable BASIC_SET command",
 				"nl": "BASIC SET command inschakelen"
@@ -154,7 +167,7 @@
 				"size": 1
 			},
 			"type": "checkbox",
-			"value": false,
+			"value": true,
 			"label": {
 				"en": "Enable Tamper alarm",
 				"nl": "Trillingsalarm inschakelen"
