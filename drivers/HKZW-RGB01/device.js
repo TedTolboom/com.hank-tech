@@ -17,6 +17,7 @@ class ColorBulb_RGB01 extends ZwaveXYLightDevice {
 		// print the node's info to the console
 		this.printNode();
 
+		/*
 		// Add the BASIC report listener for onoff and dim capabilities as the device reports in BASIC
 		this.registerReportListener('BASIC', 'BASIC_REPORT', report => {
 			if (report.hasOwnProperty('Value')) {
@@ -24,6 +25,7 @@ class ColorBulb_RGB01 extends ZwaveXYLightDevice {
 				this.setCapabilityValue('dim', report.Value / 99);
 			}
 		});
+		*/
 	}
 }
 
