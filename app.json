@@ -4,7 +4,7 @@
   "name": {
     "en": "Hank tech Z-wave"
   },
-  "version": "1.0.3",
+  "version": "1.1.0",
   "compatibility": ">=1.5.0",
   "athomForumDiscussionId": 3708,
   "author": {
@@ -451,8 +451,8 @@
         "learnmode": {
           "image": "/drivers/HKZW-FLD01/assets/learnmode.svg",
           "instruction": {
-            "en": "1.\tClick the Z-button triple click the Z-button quickly to add the device in secure mode.\n2. \tIf the inclusion is successful, the LED will blink fast in blue.",
-            "nl": "1.\tDruk de Z-knop snel drie keep in om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED snel in het blauw knipperen."
+            "en": "1.\tTo add the device secure (S0 or S2), *triple click* the Z-button.\n\t2.To add the device non-secure, *hold* the Z-button for 3 seconds, the led will turn green.\n\tIf the inclusion mode is successfully activated, the LED will blink fast.",
+            "nl": "1.\tOm de sensor beveiligd (S0 of S2) toe te voegen, druk de Z-button *drie keer snel* in\n\t2.Om de sensor niet beveiligd toe te voegen, houdt de Z-button ingedrukt voor 3 seconden. Tijdens het indrukken wordt de LED groen.\n\tWanneer de toevoegmodus succesvol geactiveerd is, zal de LED snel knipperen."
           }
         },
         "unlearnmode": {
@@ -573,7 +573,7 @@
             "size": 1
           },
           "type": "checkbox",
-          "value": false,
+          "value": true,
           "label": {
             "en": "Enable Tamper alarm",
             "nl": "Trillingsalarm inschakelen"
@@ -591,10 +591,10 @@
             "signed": false
           },
           "type": "number",
-          "value": 10,
+          "value": 144,
           "attr": {
-            "min": 1,
-            "max": 255
+            "min": 3,
+            "max": 240
           },
           "label": {
             "en": "Temperature report interval (min)",
@@ -643,8 +643,8 @@
             "nl": "Temperature alarm lage grenswaarde"
           },
           "hint": {
-            "en": "The lower threshold of sending temperature alarm to association device (Group Lifeline). \nDefault: 40 degrees, Range: -55 - 125 degrees",
-            "nl": "Het lage grenswaarde waarop temperatuur alarm naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \nStandaard: 40 graden, Bereik: -55 - 125 graden"
+            "en": "The lower threshold of sending temperature alarm to association device (Group Lifeline). \nDefault: 0 degrees, \nRange: -55 - 125 degrees",
+            "nl": "Het lage grenswaarde waarop temperatuur alarm naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \nStandaard: 0 graden, \nBereik: -55 - 125 graden"
           }
         },
         {
@@ -654,7 +654,7 @@
             "size": 1
           },
           "type": "checkbox",
-          "value": false,
+          "value": true,
           "label": {
             "en": "Enable LED on alarm",
             "nl": "LED inschakelen bij alarm"
@@ -1058,15 +1058,15 @@
         "learnmode": {
           "image": "/drivers/HKZW-MS02/assets/learnmode.svg",
           "instruction": {
-            "en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2.\tIf the inclusion is successful, the LED will blink fast.",
-            "nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED snel knipperen."
+            "en": "1.\tTo add the device secure (S0 or S2), *triple click* the Z-button.\n\t2.To add the device non-secure, *hold* the Z-button for 3 seconds.\n\tIf the inclusion mode is successfully activated, the LED will blink fast.",
+            "nl": "1.\tOm de sensor beveiligd (S0 of S2) toe te voegen, druk de Z-button *drie keer snel* in\n\t2.Om de sensor niet beveiligd toe te voegen, houdt de Z-button ingedrukt voor 3 seconden.\n\tWanneer de toevoegmodus succesvol geactiveerd is, zal de LED snel knipperen."
           }
         },
         "unlearnmode": {
           "image": "/drivers/HKZW-MS02/assets/learnmode.svg",
           "instruction": {
             "en": "1.\tTriple clicking the Z-button, the LED should blink fast.",
-            "nl": "1.\tDruk de Z-button drie kee in, de LED knippert snel."
+            "nl": "1.\tDruk de Z-button drie keer snel in, de LED knippert snel."
           }
         },
         "wakeUpInterval": 0,
@@ -1086,11 +1086,24 @@
               "nl": "1. Basic Set\r\nMotion sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
             }
           }
-        }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 14,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "size": 1,
+            "value": 1
+          }
+        ]
       },
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
+        "alarm_tamper",
         "alarm_battery",
         "measure_battery"
       ],
@@ -1133,7 +1146,7 @@
           },
           "value": 0,
           "attr": {
-            "min": 1,
+            "min": 0,
             "max": 65535
           },
           "hint": {
@@ -1148,7 +1161,7 @@
             "size": 1
           },
           "type": "checkbox",
-          "value": false,
+          "value": true,
           "label": {
             "en": "Enable BASIC_SET command",
             "nl": "BASIC SET command inschakelen"
@@ -1198,7 +1211,7 @@
             "size": 1
           },
           "type": "checkbox",
-          "value": false,
+          "value": true,
           "label": {
             "en": "Enable Tamper alarm",
             "nl": "Trillingsalarm inschakelen"

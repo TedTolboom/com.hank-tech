@@ -48,7 +48,7 @@ MultiSensor providing motion, illumination, temperature and humidity data for Ho
   <img src="https://rawgit.com/TedTolboom/com.hank-tech/master/drivers/HKZW-MS02/assets/icon.svg" width="10%" height="10%">
 </a>  
 
-Motion sensor providing motion data for Homey.   
+Motion sensor providing motion alarm for Homey.   
 
 ### Hank Smart plug (HKZW-SO0x)      
 <a href="https://github.com/TedTolboom/com.hank-tech">
@@ -62,7 +62,7 @@ Smart plug, including 2 USB ports, providing meter data as well as RGB led indic
   <img src="https://rawgit.com/TedTolboom/com.hank-tech/master/drivers/HKZW-FLD01/assets/icon.svg" width="10%" height="10%">
 </a>  
 
-Flood Sensor providing flooding and heat alarm and temperature data for Homey.  
+Flood Sensor providing flooding-, tamper- and heat-alarm and temperature data for Homey.  
 
 ## Supported Languages:
 * English   
@@ -75,7 +75,7 @@ Flood Sensor providing flooding and heat alarm and temperature data for Homey.
 ## Acknowledgements:
 This app and driver development has been supported by:   
 
-* Robbshop by providing a the devices for debugging:   
+* Robbshop by providing the devices for debugging:   
 <a href="https://www.robbshop.nl/heat-it-wandthermostaat-zwaveplus-zwart">
   <img src="https://www.robbshop.nl/skin/frontend/robbshop/default/images/logo.svg" width="25%">
 
