@@ -1245,6 +1245,157 @@
       ]
     },
     {
+      "id": "HKZW-RGB01",
+      "name": {
+        "en": "RGB Color Bulb"
+      },
+      "zwave": {
+        "manufacturerId": [
+          520
+        ],
+        "productTypeId": [
+          256,
+          257
+        ],
+        "productId": [
+          4
+        ],
+        "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1897/HKZW-RGB01%20Manual.pdf",
+        "pid": 1897,
+        "imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16095231",
+        "learnmode": {
+          "image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
+          "instruction": {
+            "en": "To include RGB BULB as a secure device:\n\t1.Toggle the wall switch off and on 3 times quickly (within 3 seconds and the final ending position of the wall switch must be on).\n\t2. If the inclusion is successful, the RGB BULB will blink fast in green for less than 5 seconds and then keep on 3 seconds. \n\nTo include RGB BULB as a secure device:\n\t1. Insert the RGB BULB into a lamp-socket and then power on.\n\t2. Auto-inclusion will be activated. If the inclusion is successful, the RGB BULB will blink fast in blue for less than 5 seconds and then keep on for 3 seconds.\n\nRGB BULB will keep on in the color before it is included into the Z-Wave network after the inclusion procedure is finished.",
+            "nl": "Om de RGB lamp toe te voegen als secure device:\n\t1. Schakel de wandschakelaar 3 keer snel uit en aan (binnen 3 seconden, met de schakelaar eindigend in de aan positie).\n\t2. Wanneer de toevoegmodus succesvol is geactiveerd, zal de RGB lamp snel groen knipperen voor minder dan 5 seconden en daarna aanstaan voor 3 seconden.\n\nOm de RGB lamp toe te voegen als non-secure device:\n\t1. Plaats de lamp in een lampvoet en schakel in.\n\t2. De Auto-inclusion wordt geactiveerd. Wanneer de toevoegmodus succesvol is geactiveerd, zal de RGB lamp snel groen knipperen voor minder dan 5 seconden en daarna aanstaan voor 3 seconden.\n\nDe RGB lamp zal de kleur aanhouden totdat het toevoegen is voltooid."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
+          "instruction": {
+            "en": "Toggle the power on and off 3 times.",
+            "nl": "Schakel de spanning 3 keer aan en uit."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "RGB Bulb will send it's state to the associated node(s). (Z-wave lifeline)",
+              "nl": "RGB Lamp verstuurt zijn status naar de gekoppelde node(s). (Z-wave lifeline)"
+            }
+          }
+        }
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_mode",
+        "light_hue",
+        "light_saturation",
+        "light_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/HKZW-RGB01/assets/images/large.png",
+        "small": "/drivers/HKZW-RGB01/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "power_failure_reaction",
+          "type": "dropdown",
+          "zwave": {
+            "index": 21,
+            "size": 1
+          },
+          "label": {
+            "en": "State after power failure",
+            "nl": "Status na stroom herstel"
+          },
+          "hint": {
+            "en": "Define the state the RGB bulb will be in after power has resumed.",
+            "nl": "Bepaal de staat van de RGB lamp bij het herstellen van de spanning."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Previous state",
+                "nl": "Laatste status"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On",
+                "nl": "Aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Off",
+                "nl": "Uit"
+              }
+            }
+          ]
+        },
+        {
+          "id": "status_change_notification",
+          "type": "dropdown",
+          "zwave": {
+            "index": 24,
+            "size": 1
+          },
+          "label": {
+            "en": "Report own state",
+            "nl": "Verzend eigen status"
+          },
+          "hint": {
+            "en": "Define when the RGB bulb will send it's own state to Homey.",
+            "nl": "Bepaal wanneer de RGB lamp zijn status verstuurd naar Homey."
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Don't send",
+                "nl": "Niet verzenden"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always send on change",
+                "nl": "Altijd verzenden bij veranderen"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Only send when not changed by Z-Wave command(s)",
+                "nl": "Alleen verzenden wanneer veranderd met niet Z-Wave commando(s)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "HKZW-SCN01",
       "name": {
         "en": "Scene Controller 1"

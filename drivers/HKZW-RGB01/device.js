@@ -15,7 +15,7 @@ class ColorBulb_RGB01 extends ZwaveXYLightDevice {
 		this.enableDebug();
 
 		// print the node's info to the console
-		// this.printNode();
+		this.printNode();
 
 		// Add the BASIC report listener for onoff and dim capabilities as the device reports in BASIC
 		this.registerReportListener('BASIC', 'BASIC_REPORT', report => {
