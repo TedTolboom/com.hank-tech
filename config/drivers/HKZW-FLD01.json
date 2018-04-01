@@ -13,8 +13,8 @@
 		"learnmode": {
 			"image": "/drivers/HKZW-FLD01/assets/learnmode.svg",
 			"instruction": {
-				"en": "1.\tClick the Z-button triple click the Z-button quickly to add the device in secure mode.\n2. \tIf the inclusion is successful, the LED will blink fast in blue.",
-				"nl": "1.\tDruk de Z-knop snel drie keep in om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED snel in het blauw knipperen."
+				"en": "1.\tTo add the device secure (S0 or S2), *triple click* the Z-button.\n\t2.To add the device non-secure, *hold* the Z-button for 3 seconds, the led will turn green.\n\tIf the inclusion mode is successfully activated, the LED will blink fast.",
+				"nl": "1.\tOm de sensor beveiligd (S0 of S2) toe te voegen, druk de Z-button *drie keer snel* in\n\t2.Om de sensor niet beveiligd toe te voegen, houdt de Z-button ingedrukt voor 3 seconden. Tijdens het indrukken wordt de LED groen.\n\tWanneer de toevoegmodus succesvol geactiveerd is, zal de LED snel knipperen."
 			}
 		},
 		"unlearnmode": {
@@ -137,7 +137,7 @@
 				"size": 1
 			},
 			"type": "checkbox",
-			"value": false,
+			"value": true,
 			"label": {
 				"en": "Enable Tamper alarm",
 				"nl": "Trillingsalarm inschakelen"
@@ -155,10 +155,10 @@
 				"signed": false
 			},
 			"type": "number",
-			"value": 10,
+			"value": 144,
 			"attr": {
-				"min": 1,
-				"max": 255
+				"min": 3,
+				"max": 240
 			},
 			"label": {
 				"en": "Temperature report interval (min)",
@@ -207,8 +207,8 @@
 				"nl": "Temperature alarm lage grenswaarde"
 			},
 			"hint": {
-				"en": "The lower threshold of sending temperature alarm to association device (Group Lifeline). \nDefault: 40 degrees, Range: -55 - 125 degrees",
-				"nl": "Het lage grenswaarde waarop temperatuur alarm naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \nStandaard: 40 graden, Bereik: -55 - 125 graden"
+				"en": "The lower threshold of sending temperature alarm to association device (Group Lifeline). \nDefault: 0 degrees, \nRange: -55 - 125 degrees",
+				"nl": "Het lage grenswaarde waarop temperatuur alarm naar de gekoppelde nodes wordt gestuurd (Group Lifeline). \nStandaard: 0 graden, \nBereik: -55 - 125 graden"
 			}
 		},
 
@@ -219,7 +219,7 @@
 				"size": 1
 			},
 			"type": "checkbox",
-			"value": false,
+			"value": true,
 			"label": {
 				"en": "Enable LED on alarm",
 				"nl": "LED inschakelen bij alarm"
