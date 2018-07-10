@@ -283,7 +283,8 @@
 			"id": "temperature_threshold",
 			"zwave": {
 				"index": 182,
-				"size": 1
+				"size": 1,
+				"signed": false
 			},
 			"type": "number",
 			"value": 20,
@@ -304,7 +305,8 @@
 			"id": "humidity_threshold",
 			"zwave": {
 				"index": 183,
-				"size": 1
+				"size": 1,
+				"signed": false
 			},
 			"type": "number",
 			"value": 5,
@@ -325,7 +327,8 @@
 			"id": "illumination_threshold",
 			"zwave": {
 				"index": 184,
-				"size": 2
+				"size": 2,
+				"signed": false
 			},
 			"type": "number",
 			"value": 200,

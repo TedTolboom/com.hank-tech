@@ -93,7 +93,8 @@
 			"id": "motion_cancellation_delay",
 			"zwave": {
 				"index": 18,
-				"size": 2
+				"size": 2,
+				"signed": false
 			},
 			"type": "number",
 			"label": {
