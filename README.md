@@ -84,6 +84,9 @@ Any requests please post them in the [Hank app topic on the Athom Forum](https:/
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ## Changelog:
+### v1.1.1
+* Minor updates of Motion sensor parameters data ranges         
+
 ### v1.1.0
 * Add support for the new Hank motion sensor (HKZW-MS02)   
 * Add support for the new Hank flood sensor (HKZW-FLD01)   

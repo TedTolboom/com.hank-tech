@@ -4,7 +4,7 @@
   "name": {
     "en": "Hank tech Z-wave"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "compatibility": ">=1.5.0",
   "athomForumDiscussionId": 3708,
   "author": {
@@ -975,7 +975,8 @@
           "id": "temperature_threshold",
           "zwave": {
             "index": 182,
-            "size": 1
+            "size": 1,
+            "signed": false
           },
           "type": "number",
           "value": 20,
@@ -996,7 +997,8 @@
           "id": "humidity_threshold",
           "zwave": {
             "index": 183,
-            "size": 1
+            "size": 1,
+            "signed": false
           },
           "type": "number",
           "value": 5,
@@ -1017,7 +1019,8 @@
           "id": "illumination_threshold",
           "zwave": {
             "index": 184,
-            "size": 2
+            "size": 2,
+            "signed": false
           },
           "type": "number",
           "value": 200,
@@ -1137,7 +1140,8 @@
           "id": "motion_cancellation_delay",
           "zwave": {
             "index": 18,
-            "size": 2
+            "size": 2,
+            "signed": false
           },
           "type": "number",
           "label": {
