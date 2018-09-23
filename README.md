@@ -80,12 +80,15 @@ This app and driver development has been supported by:
   <img src="https://www.robbshop.nl/skin/frontend/robbshop/default/images/logo.svg" width="25%">
 
 ## Feedback:
-Any requests please post them in the [Hank app topic on the Athom Forum](https://forum.athom.com/discussion/3708/) or contact me on [Slack](https://athomcommunity.slack.com/team/tedtolboom)    
+Any requests please post them in the [Hank app topic on the Athom Community Forum](https://community.athom.com/t/162) or contact me on [Slack](https://athomcommunity.slack.com/team/tedtolboom)    
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ## Changelog:
 ### v1.1.1
-* Minor updates of Motion sensor parameters data ranges         
+* Minor updates of Motion sensor parameters data ranges        
+* Add link to [Hank app topic](https://community.athom.com/t/162) on community.athom.com   
+**update:**   
+* Update Homey meshdriver to 1.2.25     
 
 ### v1.1.0
 * Add support for the new Hank motion sensor (HKZW-MS02)   
