@@ -1,0 +1,144 @@
+{
+	"id": "HKZW-RGB01",
+	"name": {
+		"en": "RGB Color Bulb"
+	},
+	"zwave": {
+		"manufacturerId": [520],
+		"productTypeId": [256, 257],
+		"productId": [4],
+		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1897/HKZW-RGB01%20Manual.pdf",
+		"pid": 1897,
+		"imageRemotePath": "http://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-16095231",
+		"learnmode": {
+			"image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
+			"instruction": {
+				"en": "Toggle the power on and off 3 times.",
+				"nl": "Schakel de spanning 3 keer aan en uit."
+			}
+		},
+		"unlearnmode": {
+			"image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
+			"instruction": {
+				"en": "Toggle the power on and off 3 times.",
+				"nl": "Schakel de spanning 3 keer in en uit."
+			}
+		},
+		"associationGroups": [
+			1
+		],
+		"associationGroupsOptions": {
+			"1": {
+				"hint": {
+					"en": "RGB Bulb will send it's state to these associated node(s). (Z-wave lifeline)",
+					"nl": "RGB Lamp verstuurt zijn status naar deze gekoppelde node(s). (Z-wave lifeline)"
+				}
+			}
+		}
+	},
+	"class": "light",
+	"capabilities": [
+		"onoff",
+		"dim",
+		"light_mode",
+		"light_hue",
+		"light_saturation",
+		"light_temperature"
+	],
+	"capabilitiesOptions": {
+		"onoff": {
+			"setOnDim": false
+		},
+		"dim": {
+			"opts": {
+				"duration": true
+			}
+		}
+	},
+	"images": {
+		"large": "/drivers/HKZW-RGB01/assets/images/large.png",
+		"small": "/drivers/HKZW-RGB01/assets/images/small.png"
+	},
+	"settings": [
+		{
+			"id": "power_failure_reaction",
+			"type": "dropdown",
+			"zwave": {
+				"index": 21,
+				"size": 1
+			},
+			"label": {
+				"en": "State after power failure",
+				"nl": "Status na stroom herstel"
+			},
+			"hint": {
+				"en": "Define the state the RGB bulb will be in after power has resumed.",
+				"nl": "Bepaal de staat van de RGB lamp bij het herstellen van de spanning."
+			},
+			"value": "0",
+			"values": [
+				{
+					"id": "0",
+					"label": {
+						"en": "Previous state",
+						"nl": "Laatste status"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "On",
+						"nl": "Aan"
+					}
+				},
+				{
+					"id": "2",
+					"label": {
+						"en": "Off",
+						"nl": "Uit"
+					}
+				}
+			]
+		},
+		{
+			"id": "status_change_notification",
+			"type": "dropdown",
+			"zwave": {
+				"index": 24,
+				"size": 1
+			},
+			"label": {
+				"en": "Report own state",
+				"nl": "Verzend eigen status"
+			},
+			"hint": {
+				"en": "Define when the RGB bulb will send it's own state to Homey.",
+				"nl": "Bepaal wanneer de RGB lamp zijn status verstuurd naar Homey."
+			},
+			"value": "1",
+			"values": [
+				{
+					"id": "0",
+					"label": {
+						"en": "Don't send",
+						"nl": "Niet verzenden"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "Always send on change",
+						"nl": "Altijd verzenden bij veranderen"
+					}
+				},
+				{
+					"id": "2",
+					"label": {
+						"en": "Only send when not changed by Z-Wave command(s)",
+						"nl": "Alleen verzenden wanneer veranderd met niet Z-Wave commando(s)"
+					}
+				}
+			]
+		}
+	]
+}
