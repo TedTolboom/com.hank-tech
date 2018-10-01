@@ -1279,7 +1279,7 @@
           "image": "/drivers/HKZW-RGB01/assets/learnmode.svg",
           "instruction": {
             "en": "Toggle the power on and off 3 times.",
-            "nl": "Schakel de spanning 3 keer aan en uit."
+            "nl": "Schakel de spanning 3 keer in en uit."
           }
         },
         "associationGroups": [
