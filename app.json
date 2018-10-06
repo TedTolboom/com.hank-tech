@@ -4,7 +4,7 @@
   "name": {
     "en": "Hank tech Z-wave"
   },
-  "version": "1.1.1",
+  "version": "1.1.2",
   "compatibility": ">=1.5.0",
   "athomForumDiscussionId": 3708,
   "homeyCommunityTopicId": 162,
@@ -18,6 +18,18 @@
         "username": "TedTolboom"
       }
     }
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Remco Mengers",
+        "email": "caseda08@hotmail.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
+      }
+    ]
   },
   "description": {
     "en": "Support for Hank Z-wave devices",
