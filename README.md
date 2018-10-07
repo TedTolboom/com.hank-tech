@@ -94,7 +94,7 @@ If possible, please report issues at the [issues section on Github](https://gith
 ### v1.1.2
 * Add support for the Hank HKZW-RGB01 bulb (thanks to @caseda)              
 **update:**   
-* Update Homey meshdriver to 1.2.27    
+* Update Homey meshdriver to 1.2.27#zwave-light-device    
 
 ### v1.1.1
 * Minor updates of Motion sensor parameters data ranges        
