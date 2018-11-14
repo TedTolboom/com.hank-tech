@@ -64,6 +64,13 @@ Smart plug, including 2 USB ports, providing meter data as well as RGB led indic
 
 Flood Sensor providing flooding-, tamper- and heat-alarm and temperature data for Homey.  
 
+### Hank RGB Color Bulb (HKZW-RGB01)      
+<a href="https://github.com/TedTolboom/com.hank-tech">
+  <img src="https://rawgit.com/TedTolboom/com.hank-tech/master/drivers/HKZW-RGB01/assets/icon.svg" width="10%" height="10%">
+</a>  
+
+RGB bulb.  
+
 ## Supported Languages:
 * English   
 * Dutch    
@@ -84,6 +91,12 @@ Any requests please post them in the [Hank app topic on the Athom Community Foru
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ## Changelog:
+### v1.1.2
+* Add support for the Hank HKZW-RGB01 bulb (thanks to @caseda)         
+* Add start-level and stop-level dim action cards for the Hank HKZW-RGB01 bulb        
+**update:**   
+* Update Homey meshdriver to 1.2.28
+
 ### v1.1.1
 * Minor updates of Motion sensor parameters data ranges        
 * Add link to [Hank app topic](https://community.athom.com/t/162) on community.athom.com   
