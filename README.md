@@ -92,9 +92,10 @@ If possible, please report issues at the [issues section on Github](https://gith
 
 ## Changelog:
 ### v1.1.2
-* Add support for the Hank HKZW-RGB01 bulb (thanks to @caseda)              
+* Add support for the Hank HKZW-RGB01 bulb (thanks to @caseda)         
+* Add start-level and stop-level dim action cards for the Hank HKZW-RGB01 bulb        
 **update:**   
-* Update Homey meshdriver to 1.2.27#zwave-light-device    
+* Update Homey meshdriver to 1.2.28
 
 ### v1.1.1
 * Minor updates of Motion sensor parameters data ranges        
