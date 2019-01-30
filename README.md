@@ -91,8 +91,8 @@ Any requests please post them in the [Hank app topic on the Athom Community Foru
 If possible, please report issues at the [issues section on Github](https://github.com/TedTolboom/com.hank-tech/issues) otherwise in the above mentioned topic.     
 
 ## Changelog:
-### v.1.1.3
-* Added extra firmware [see](https://community.athom.com/t/hank-tech-app-v1-1-2/162/9)
+### v1.1.3
+* Add missing productTypeID for the HKZW-MS02[see](https://community.athom.com/t/162/9)   
 
 ### v1.1.2
 * Add support for the Hank HKZW-RGB01 bulb (thanks to @caseda)         
