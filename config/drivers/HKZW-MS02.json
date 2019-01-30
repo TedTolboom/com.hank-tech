@@ -5,7 +5,7 @@
 	},
 	"zwave": {
 		"manufacturerId": [520],
-		"productTypeId": [512, 513],
+		"productTypeId": [512, 513, 768],
 		"productId": [18],
 		"productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2578/HKZW-MS02-ProductManual.pdf",
 		"pid": 2578,
