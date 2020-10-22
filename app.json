@@ -1,11 +1,12 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.hank-tech",
   "sdk": 2,
   "name": {
     "en": "Hank tech Z-wave"
   },
-  "version": "1.1.3",
-  "compatibility": ">=1.5.0",
+  "version": "1.2.0",
+  "compatibility": ">=4.0.0",
   "athomForumDiscussionId": 3708,
   "homeyCommunityTopicId": 162,
   "author": {
@@ -79,6 +80,20 @@
   "flow": {
     "triggers": [
       {
+        "id": "battery_alarm",
+        "title": {
+          "en": "The battery alarm turned on",
+          "nl": "De batterijwaarschuwing gaat aan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=HKZW-SCN01|HKZW-SCN04"
+          }
+        ]
+      },
+      {
         "id": "SCN_button",
         "title": {
           "en": "A button has been pressed",
@@ -117,20 +132,6 @@
         ]
       },
       {
-        "id": "battery_alarm",
-        "title": {
-          "en": "The battery alarm turned on",
-          "nl": "De batterijwaarschuwing gaat aan"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=HKZW-SCN01|HKZW-SCN04"
-          }
-        ]
-      },
-      {
         "id": "SCN01_scene",
         "title": {
           "en": "Scene is activated",
@@ -142,8 +143,8 @@
         },
         "args": [
           {
-            "name": "device",
             "type": "device",
+            "name": "device",
             "filter": "driver_id=HKZW-SCN01"
           },
           {
@@ -200,8 +201,8 @@
         },
         "args": [
           {
-            "name": "device",
             "type": "device",
+            "name": "device",
             "filter": "driver_id=HKZW-SCN04"
           },
           {
@@ -338,8 +339,8 @@
         },
         "args": [
           {
-            "name": "device",
             "type": "device",
+            "name": "device",
             "filter": "driver_id=HKZW-SO0x"
           }
         ]
@@ -348,7 +349,6 @@
   },
   "drivers": [
     {
-      "id": "HKZW-DWS01",
       "name": {
         "en": "Door/Window Sensor"
       },
@@ -405,10 +405,17 @@
         "alarm_battery",
         "measure_battery"
       ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
       "images": {
         "large": "/drivers/HKZW-DWS01/assets/images/large.png",
         "small": "/drivers/HKZW-DWS01/assets/images/small.png"
       },
+      "id": "HKZW-DWS01",
       "settings": [
         {
           "id": "BASIC_SET_command",
@@ -500,7 +507,6 @@
       ]
     },
     {
-      "id": "HKZW-FLD01",
       "name": {
         "en": "Flood Sensor"
       },
@@ -560,10 +566,16 @@
         "alarm_battery",
         "measure_battery"
       ],
+      "energy": {
+        "batteries": [
+          "LS14250"
+        ]
+      },
       "images": {
         "large": "/drivers/HKZW-FLD01/assets/images/large.png",
         "small": "/drivers/HKZW-FLD01/assets/images/small.png"
       },
+      "id": "HKZW-FLD01",
       "settings": [
         {
           "id": "BASIC_SET_command",
@@ -758,7 +770,6 @@
       ]
     },
     {
-      "id": "HKZW-MS01",
       "name": {
         "en": "Multisensor"
       },
@@ -819,10 +830,16 @@
         "alarm_battery",
         "measure_battery"
       ],
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
       "images": {
         "large": "/drivers/HKZW-MS01/assets/images/large.png",
         "small": "/drivers/HKZW-MS01/assets/images/small.png"
       },
+      "id": "HKZW-MS01",
       "settings": [
         {
           "id": "PIR_sensitivity",
@@ -1110,7 +1127,6 @@
       ]
     },
     {
-      "id": "HKZW-MS02",
       "name": {
         "en": "Motion sensor"
       },
@@ -1181,10 +1197,16 @@
         "alarm_battery",
         "measure_battery"
       ],
+      "energy": {
+        "batteries": [
+          "LS14250"
+        ]
+      },
       "images": {
         "large": "/drivers/HKZW-MS02/assets/images/large.png",
         "small": "/drivers/HKZW-MS02/assets/images/small.png"
       },
+      "id": "HKZW-MS02",
       "settings": [
         {
           "id": "PIR_sensitivity",
@@ -1320,7 +1342,6 @@
       ]
     },
     {
-      "id": "HKZW-RGB01",
       "name": {
         "en": "RGB Color Bulb"
       },
@@ -1383,10 +1404,17 @@
           }
         }
       },
+      "energy": {
+        "approximation": {
+          "usageOn": 7,
+          "usageOff": 1
+        }
+      },
       "images": {
         "large": "/drivers/HKZW-RGB01/assets/images/large.png",
         "small": "/drivers/HKZW-RGB01/assets/images/small.png"
       },
+      "id": "HKZW-RGB01",
       "settings": [
         {
           "id": "power_failure_reaction",
@@ -1471,7 +1499,6 @@
       ]
     },
     {
-      "id": "HKZW-SCN01",
       "name": {
         "en": "Scene Controller 1"
       },
@@ -1532,41 +1559,16 @@
         "measure_battery",
         "alarm_battery"
       ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
       "images": {
         "large": "/drivers/HKZW-SCN01/assets/images/large.png",
         "small": "/drivers/HKZW-SCN01/assets/images/small.png"
       },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon"
-          },
-          {
-            "id": "battery",
-            "capabilities": [
-              "measure_battery"
-            ],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "alarm_battery"
-            ],
-            "options": {
-              "icons": {
-                "Battery_Alarm": "/drivers/HKZW-SCN01/assets/alarm_battery.svg"
-              },
-              "Battery_Alarm": {
-                "noblink": false,
-                "invert": false
-              }
-            }
-          }
-        ]
-      },
+      "id": "HKZW-SCN01",
       "settings": [
         {
           "id": "enable_configuration",
@@ -1588,7 +1590,6 @@
       ]
     },
     {
-      "id": "HKZW-SCN04",
       "name": {
         "en": "Scene Controller 4"
       },
@@ -1685,41 +1686,16 @@
         "measure_battery",
         "alarm_battery"
       ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
       "images": {
         "large": "/drivers/HKZW-SCN04/assets/images/large.png",
         "small": "/drivers/HKZW-SCN04/assets/images/small.png"
       },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon"
-          },
-          {
-            "id": "battery",
-            "capabilities": [
-              "measure_battery"
-            ],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "alarm_battery"
-            ],
-            "options": {
-              "icons": {
-                "Battery_Alarm": "/drivers/HKZW-SCN04/assets/alarm_battery.svg"
-              },
-              "Battery_Alarm": {
-                "noblink": false,
-                "invert": false
-              }
-            }
-          }
-        ]
-      },
+      "id": "HKZW-SCN04",
       "settings": [
         {
           "id": "enable_configuration",
@@ -1741,7 +1717,6 @@
       ]
     },
     {
-      "id": "HKZW-SO0x",
       "name": {
         "en": "Smart Plug"
       },
@@ -1792,35 +1767,16 @@
         "measure_current",
         "measure_voltage"
       ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "approximated": true
+        }
+      },
       "images": {
         "large": "/drivers/HKZW-SO0x/assets/images/large.png",
         "small": "/drivers/HKZW-SO0x/assets/images/small.png"
       },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "meter_power",
-              "measure_power",
-              "measure_current",
-              "measure_voltage"
-            ]
-          },
-          {
-            "id": "toggle",
-            "capabilities": [
-              "onoff"
-            ]
-          }
-        ]
-      },
+      "id": "HKZW-SO0x",
       "settings": [
         {
           "id": "Overcurrent_protection",

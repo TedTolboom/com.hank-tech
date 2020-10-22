@@ -1,0 +1,79 @@
+{
+  "id": "com.hank-tech",
+  "sdk": 2,
+  "name": {
+    "en": "Hank tech Z-wave"
+  },
+  "version": "1.2.0",
+  "compatibility": ">=4.0.0",
+  "athomForumDiscussionId": 3708,
+  "homeyCommunityTopicId": 162,
+  "author": {
+    "name": "Ted Tolboom",
+    "email": "dTNL.Homey@gmail.com"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "TedTolboom"
+      }
+    }
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Remco Mengers",
+        "email": "caseda08@hotmail.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
+      }
+    ]
+  },
+  "description": {
+    "en": "Support for Hank Z-wave devices",
+    "nl": "Ondersteuning voor Hank Z-wave apparaten"
+  },
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "tags": {
+    "en": [
+      "scene controller",
+      "remote",
+      "remote control",
+      "central scene",
+      "scenes",
+      "motion detection",
+      "motion",
+      "alarm",
+      "door",
+      "window",
+      "sensor",
+      "switch",
+      "smart plug",
+      "USB"
+    ],
+    "nl": [
+      "scene controller",
+      "afstandsbediening",
+      "central scene",
+      "scenes",
+      "bewegingsdetectie",
+      "beweging",
+      "alarm",
+      "deur",
+      "raam",
+      "sensor",
+      "schakelaar",
+      "USB"
+    ]
+  },
+  "category": [
+    "appliances",
+    "lights",
+    "security"
+  ]
+}
