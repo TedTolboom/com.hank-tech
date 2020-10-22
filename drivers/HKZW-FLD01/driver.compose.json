@@ -1,0 +1,68 @@
+{
+  "name": {
+    "en": "Flood Sensor"
+  },
+  "zwave": {
+    "manufacturerId": [
+      520
+    ],
+    "productTypeId": [
+      512,
+      513
+    ],
+    "productId": [
+      15
+    ],
+    "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2649/Flood%20Sensor%20Specification%20zwave%20authentication.pdf",
+    "pid": 2641,
+    "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-17125902",
+    "learnmode": {
+      "image": "/drivers/HKZW-FLD01/assets/learnmode.svg",
+      "instruction": {
+        "en": "1.\tTo add the device secure (S0 or S2), *triple click* the Z-button.\n\t2.To add the device non-secure, *hold* the Z-button for 3 seconds, the led will turn green.\n\tIf the inclusion mode is successfully activated, the LED will blink fast.",
+        "nl": "1.\tOm de sensor beveiligd (S0 of S2) toe te voegen, druk de Z-button *drie keer snel* in\n\t2.Om de sensor niet beveiligd toe te voegen, houdt de Z-button ingedrukt voor 3 seconden. Tijdens het indrukken wordt de LED groen.\n\tWanneer de toevoegmodus succesvol geactiveerd is, zal de LED snel knipperen."
+      }
+    },
+    "unlearnmode": {
+      "image": "/drivers/HKZW-FLD01/assets/learnmode.svg",
+      "instruction": {
+        "en": "1.\tClick the Z-button triple click the Z-button quickly to remove the device.\n2. \tIf the removal is successful, the LED will blink fast in orange.",
+        "nl": "1.\tDruk de Z-knop snel drie keep in om het apparaat te verwijderen\n2.\tWanneer het verwijderen succesvol is, zal de LED snel in het oranje knipperen."
+      }
+    },
+    "wakeUpInterval": 0,
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Flood Sensor is removed or/and sensor is triggered.\r\n3. Sensor Multilevel Report.\r\nFlood Sensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n4. Battery Report.\r\nFlood Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n5. Device Reset Locally Notification.\r\n",
+          "nl": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor stuurt het Notification report naar de gekoppelde nodes wanneer de Flood Sensor verplaatst wordt en of de sensor geactiveerd wordt.\r\n3. Sensor Multilevel Report.\r\nFlood Sensor stuur het Sensor Multilevel Report naar de gekoppelde nodes op de ingestelde intervallen.\r\n4. Battery Report.\r\nFlood Sensor stuurt het Battery Report wanneer het battery niveau te laag is.\r\n5. Device Reset Locally Notification.\r\n"
+        }
+      },
+      "2": {
+        "hint": {
+          "en": "1. Basic Set\r\nFlood Sensor will send Basic Set to associated nodes when the sensor is triggered.",
+          "nl": "1. Basic Set\r\nFlood Sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de sensor geactiveerd is."
+        }
+      }
+    }
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "alarm_water",
+    "alarm_heat",
+    "alarm_tamper",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [ "LS14250"]
+  },
+  "images": {
+    "large": "/drivers/HKZW-FLD01/assets/images/large.png",
+    "small": "/drivers/HKZW-FLD01/assets/images/small.png"
+  }
+}

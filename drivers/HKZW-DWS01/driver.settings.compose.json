@@ -1,0 +1,89 @@
+[
+  {
+    "id": "BASIC_SET_command",
+    "zwave": {
+      "index": 14,
+      "size": 1
+    },
+    "type": "dropdown",
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "BASIC_SET is not send during alarm (default)",
+          "nl": "BASIC_SET wordt niet gestuurd tijdens een alarm (standaard)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "BASIC_SET is send during alarm",
+          "nl": "BASIC_SET wordt gestuurd tijdens een alarm"
+        }
+      }
+    ],
+    "label": {
+      "en": "Enable BASIC SET command",
+      "nl": "BASIC SET command inschakelen"
+    },
+    "hint": {
+      "en": "Door/Window Sensor can send BASIC SET command to nodes associated with group 2.",
+      "nl": "Door/Window Sensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
+    }
+  },
+  {
+    "id": "BASIC_SET_reversed",
+    "zwave": {
+      "index": 15,
+      "size": 1
+    },
+    "type": "dropdown",
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "ON when contact opened, OFF when closed (default)",
+          "nl": "AAN bij open contact, UIT bij gesloten (standaard)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "OFF when contact opened, ON when closed",
+          "nl": "UIT bij open contact, AAN bij gesloten"
+        }
+      }
+    ],
+    "label": {
+      "en": "Reverse BASIC SET command",
+      "nl": "BASIC SET command logica"
+    },
+    "hint": {
+      "en": "Door/Window Sensor can reverse its value of BASIC SET when the alarm is triggered.",
+      "nl": "Door/Window Sensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
+    }
+  },
+  {
+    "id": "low_battery",
+    "zwave": {
+      "index": 32,
+      "size": 1
+    },
+    "type": "number",
+    "value": 20,
+    "attr": {
+      "min": 10,
+      "max": 50
+    },
+    "label": {
+      "en": "Low battery warning level",
+      "nl": "Waarschuwingsniveau batterij"
+    },
+    "hint": {
+      "en": "This parameter defines a battery level to trigger the battery alarm.\nDefault: 20 %, Range: 10 - 50 %",
+      "nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt.\nStandaard: 20 %, Bereik: 10 - 50 %"
+    }
+  }
+]

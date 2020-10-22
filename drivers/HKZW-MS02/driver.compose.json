@@ -1,0 +1,79 @@
+{
+  "name": {
+    "en": "Motion sensor"
+  },
+  "zwave": {
+    "manufacturerId": [
+      520
+    ],
+    "productTypeId": [
+      512,
+      513,
+      768
+    ],
+    "productId": [
+      18
+    ],
+    "productDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2578/HKZW-MS02-ProductManual.pdf",
+    "pid": 2578,
+    "imageRemotePath": "https://products.z-wavealliance.org/ProductImages/Index?productName=ZC10-17115852",
+    "learnmode": {
+      "image": "/drivers/HKZW-MS02/assets/learnmode.svg",
+      "instruction": {
+        "en": "1.\tTo add the device secure (S0 or S2), *triple click* the Z-button.\n\t2.To add the device non-secure, *hold* the Z-button for 3 seconds.\n\tIf the inclusion mode is successfully activated, the LED will blink fast.",
+        "nl": "1.\tOm de sensor beveiligd (S0 of S2) toe te voegen, druk de Z-button *drie keer snel* in\n\t2.Om de sensor niet beveiligd toe te voegen, houdt de Z-button ingedrukt voor 3 seconden.\n\tWanneer de toevoegmodus succesvol geactiveerd is, zal de LED snel knipperen."
+      }
+    },
+    "unlearnmode": {
+      "image": "/drivers/HKZW-MS02/assets/learnmode.svg",
+      "instruction": {
+        "en": "1.\tTriple clicking the Z-button, the LED should blink fast.",
+        "nl": "1.\tDruk de Z-button drie keer snel in, de LED knippert snel."
+      }
+    },
+    "wakeUpInterval": 0,
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor will send Notification Report to the associated nodes when the PIR is triggered.\r\n3. Battery Report.\r\nMotion sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n4. Device Reset Locally Notification.\r\n",
+          "nl": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor stuurt het Notification report naar de gekoppelde nodes wanneer de PIR geactiveerd wordt.\r\n3. Battery Report.\r\nMotion sensor stuurt het Battery Report wanneer het battery niveau te laag is.\r\n4. Device Reset Locally Notification.\r\n"
+        }
+      },
+      "2": {
+        "hint": {
+          "en": "1. Basic Set\r\nMotion sensor will send Basic Set to associated nodes when the PIR is triggered.",
+          "nl": "1. Basic Set\r\nMotion sensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
+        }
+      }
+    },
+    "defaultConfiguration": [
+      {
+        "id": 14,
+        "size": 1,
+        "value": 1
+      },
+      {
+        "id": 17,
+        "size": 1,
+        "value": 1
+      }
+    ]
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "alarm_tamper",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [ "LS14250"]
+  },
+  "images": {
+    "large": "/drivers/HKZW-MS02/assets/images/large.png",
+    "small": "/drivers/HKZW-MS02/assets/images/small.png"
+  }
+}

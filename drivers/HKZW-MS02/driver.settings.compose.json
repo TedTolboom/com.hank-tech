@@ -1,0 +1,133 @@
+[
+  {
+    "id": "PIR_sensitivity",
+    "zwave": {
+      "index": 12,
+      "size": 1
+    },
+    "type": "number",
+    "value": 8,
+    "attr": {
+      "min": 0,
+      "max": 8
+    },
+    "label": {
+      "en": "Motion sensor sensitivity.",
+      "nl": "Motion sensor gevoeligheid."
+    },
+    "hint": {
+      "en": "Hoe hoger de waarde is, hoe gevoeliger de PIR sensor reageert.\nStandaard: 8\nBereik: 0 (uitgeschakeld), 1 - 8"
+    },
+    "_size": 1
+  },
+  {
+    "id": "motion_cancellation_delay",
+    "zwave": {
+      "index": 18,
+      "size": 2,
+      "signed": false
+    },
+    "type": "number",
+    "label": {
+      "en": "Motion alarm cancellation delay (seconds)",
+      "nl": "Bewegingsalarm annuleringsperiode vertraging (seconden)"
+    },
+    "value": 0,
+    "attr": {
+      "min": 0,
+      "max": 65535
+    },
+    "hint": {
+      "en": "The Motion alarm will be cancelled in Homey and the associated devices after 3 seconds. The alarm cancellation can be delayed by this parameter. \nAny motion detected during the cancellation delay time countdown will result in the countdown being restarted. \nRange: 0 - 65535 \ndefault value: 0",
+      "nl": "Het bewegingsalarm wordt in Homey en de gekoppelde apparaten geannuleerd na 3 secondsn. Het annuleren kan worden vertraagd door deze parameter. \nIedere beweging die tijdens deze tijd gedetecteerd wordt, reset the timer. \nBereik: 0 - 65535, standaard value: 0."
+    }
+  },
+  {
+    "id": "BASIC_SET_command",
+    "zwave": {
+      "index": 14,
+      "size": 1
+    },
+    "type": "checkbox",
+    "value": true,
+    "label": {
+      "en": "Enable BASIC_SET command",
+      "nl": "BASIC SET command inschakelen"
+    },
+    "hint": {
+      "en": "Motion sensor can send BASIC ON/OFF COMMAND CLASS to nodes associated with group 2.",
+      "nl": "Motion sensor kan BASIC SET commando's versturen naar nodes gekoppeld aan groep 2."
+    }
+  },
+  {
+    "id": "BASIC_SET_reversed",
+    "zwave": {
+      "index": 15,
+      "size": 1
+    },
+    "type": "dropdown",
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "ON when motion alarm triggered, OFF when canceled (default)",
+          "nl": "AAN bij bewegingsdetectie, UIT bij annulering (standaard)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "OFF when motion alarm triggered, ON when canceled (default)",
+          "nl": "UIT bij bewegingsdetectie, AAN bij annulering (standaard)"
+        }
+      }
+    ],
+    "label": {
+      "en": "Reverse BASIC SET command",
+      "nl": "BASIC SET command logica"
+    },
+    "hint": {
+      "en": "Motion sensor can reverse its value of BASIC SET when the alarm is triggered.",
+      "nl": "Motion sensor kan de waarde van het BASIC SET commando omwisselen wanneer een alarm geactiveerd wordt."
+    }
+  },
+  {
+    "id": "Enable_tamper_alarm",
+    "zwave": {
+      "index": 17,
+      "size": 1
+    },
+    "type": "checkbox",
+    "value": true,
+    "label": {
+      "en": "Enable Tamper alarm",
+      "nl": "Trillingsalarm inschakelen"
+    },
+    "hint": {
+      "en": "Motion sensor can send a tamper alarm when a vibration / shock is detected.",
+      "nl": "Motion sensor kan een trillingsalarm versturen wanneer een trilling / schok gedetecteerd wordt."
+    }
+  },
+  {
+    "id": "low_battery",
+    "zwave": {
+      "index": 32,
+      "size": 1
+    },
+    "type": "number",
+    "value": 20,
+    "attr": {
+      "min": 10,
+      "max": 50
+    },
+    "label": {
+      "en": "LOW Battery level",
+      "nl": "Waarschuwingsniveau batterij"
+    },
+    "hint": {
+      "en": "Define a battery level as the “low battery”.",
+      "nl": "Deze parameter bepaald het batterijniveau waarop het batterij alarm ingeschakeld wordt."
+    }
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "name": {
+    "en": "Multisensor"
+  },
+  "zwave": {
+    "manufacturerId": [
+      520
+    ],
+    "productTypeId": [
+      512,
+      513
+    ],
+    "productId": [
+      6
+    ],
+    "productDocumentation": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1891/HKZW-SO05%20Manual.pdf",
+    "pid": 2305,
+    "imageRemotePath": "http://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2305/HKZW-MS01%20MANUL.pdf",
+    "learnmode": {
+      "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
+      "instruction": {
+        "en": "1.\tPress and hold the Z-button for 3 seconds to add the device in secure mode.\n2. \tIf the inclusion is successful, the LED will blink fast for less than 5 seconds and then keep on for 3 seconds. \n\totherwise the LED will blink fast for 5 seconds and then turn off",
+        "nl": "1.\tHou de Z-knop ingedrukt voor 3 seconden om het apparaat in secure modus toe te voegen\n2.\tWanneer het toevoegen succesvol is, zal de LED minder dan 5 seconds knipperen en daarna aanblijven voor 3 seconden.\n\tIndien niet succesvol zal de LED 5 seconden knipperen en daarna uitblijven"
+      }
+    },
+    "unlearnmode": {
+      "image": "/drivers/HKZW-MS01/assets/learnmode.svg",
+      "instruction": {
+        "en": "1.\tTriple clicking the Z-button.\n2.\tIf successful excluded, the LED will turn off within 1 second.\n\tOtherwise, the LED will blink 5 seconds and then turn off.",
+        "nl": "1.\tDruk de Z-button drie kee in.\n2.\tWanneer succesvol verwijderd zal zal de LED uit gaan binnen 1 seconde\n\tWanneer niet succesvol, zal de LED 5 seconden knipperen en daarna uitblijven."
+      }
+    },
+    "wakeUpInterval": 0,
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor will send Notification Report to the associated nodes when Multisensor is removed or/and PIR is triggered.\r\n3. Sensor Multilevel Report.\r\nMultisensor will send Sensor Multilevel Report to the associated nodes at setting interval.\r\n4. Battery Report.\r\nMultisensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.\r\n5. Device Reset Locally Notification.\r\n",
+          "nl": "1. Z-wave lifeline.\n\n2. Notification Report.\r\nSensor stuurt het Notification report naar de gekoppelde nodes wanneer de Multisensor verplaatst wordt en or de PIR geactiveerd wordt.\r\n3. Sensor Multilevel Report.\r\nMultisensor stuur het Sensor Multilevel Report naar de gekoppelde nodes op de ingestelde intervallen.\r\n4. Battery Report.\r\nMultisensor stuurt het Battery Report wanneer het battery niveau te laag is.\r\n5. Device Reset Locally Notification.\r\n"
+        }
+      },
+      "2": {
+        "hint": {
+          "en": "1. Basic Set\r\nMultisensor will send Basic Set to associated nodes when the PIR is triggered.",
+          "nl": "1. Basic Set\r\nMultisensor stuurt Basic Set commando naar de gekoppelde nodes wanneer de PIR geactiveerd is."
+        }
+      }
+    }
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_tamper",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [ "CR123A"]
+  },
+  "images": {
+    "large": "/drivers/HKZW-MS01/assets/images/large.png",
+    "small": "/drivers/HKZW-MS01/assets/images/small.png"
+  }
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "enable_configuration",
+    "zwave": {
+      "index": 254,
+      "size": 1
+    },
+    "type": "checkbox",
+    "value": true,
+    "label": {
+      "en": "Enable configuration command",
+      "nl": "Configuration command inschakelen"
+    },
+    "hint": {
+      "en": "Lock/unlock all configuration parameters.",
+      "nl": "In or uitschakelen van alle configuratie parameters."
+    }
+  }
+]

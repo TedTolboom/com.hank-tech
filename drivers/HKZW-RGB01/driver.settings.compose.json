@@ -1,0 +1,82 @@
+[
+  {
+    "id": "power_failure_reaction",
+    "type": "dropdown",
+    "zwave": {
+      "index": 21,
+      "size": 1
+    },
+    "label": {
+      "en": "State after power failure",
+      "nl": "Status na stroom herstel"
+    },
+    "hint": {
+      "en": "Define the state the RGB bulb will be in after power has resumed.",
+      "nl": "Bepaal de staat van de RGB lamp bij het herstellen van de spanning."
+    },
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Previous state",
+          "nl": "Laatste status"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "On",
+          "nl": "Aan"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Off",
+          "nl": "Uit"
+        }
+      }
+    ]
+  },
+  {
+    "id": "status_change_notification",
+    "type": "dropdown",
+    "zwave": {
+      "index": 24,
+      "size": 1
+    },
+    "label": {
+      "en": "Report own state",
+      "nl": "Verzend eigen status"
+    },
+    "hint": {
+      "en": "Define when the RGB bulb will send it's own state to Homey.",
+      "nl": "Bepaal wanneer de RGB lamp zijn status verstuurd naar Homey."
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Don't send",
+          "nl": "Niet verzenden"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Always send on change",
+          "nl": "Altijd verzenden bij veranderen"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Only send when not changed by Z-Wave command(s)",
+          "nl": "Alleen verzenden wanneer veranderd met niet Z-Wave commando(s)"
+        }
+      }
+    ]
+  }
+]

@@ -7,10 +7,10 @@ class SmartPlug_SO0x extends ZwaveDevice {
 	onMeshInit() {
 
 		// enable debugging
-		this.enableDebug();
+		// this.enableDebug();
 
 		// print the node's info to the console
-		this.printNode();
+		// this.printNode();
 
 		// register capabilities for this device
 		this.registerCapability('onoff', 'BASIC');

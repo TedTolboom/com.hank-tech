@@ -7,10 +7,10 @@ class ColorBulb_RGB01 extends ZwaveLightDevice {
 		await super.onMeshInit();
 
 		// enable debugging
-		this.enableDebug();
+		// this.enableDebug();
 
 		// print the node's info to the console
-		this.printNode();
+		// this.printNode();
 
 		// register a report listener
 		this.registerReportListener('BASIC', 'BASIC_REPORT', (rawReport, parsedReport) => {
