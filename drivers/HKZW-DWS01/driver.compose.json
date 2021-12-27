@@ -56,7 +56,7 @@
     "measure_battery"
   ],
   "energy": {
-    "batteries": [ "AA", "AA"]
+    "batteries": [ "AAA", "AAA"]
   },
   "images": {
     "large": "/drivers/HKZW-DWS01/assets/images/large.png",
