@@ -6,6 +6,10 @@
         "en": "Scene is activated",
         "nl": "Scene is geactiveerd"
       },
+      "titleFormatted": {
+    		"en": "A scene ([[scene]]) has been activated with [[button]]",
+    		"nl": "Een scene ([[scene]]) is geactiveerd met [[button]]"
+    	},
       "hint": {
         "en": "This card will only get triggered if the button and scene match the state of the dropdown fields.",
         "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en scene overeenkomen met de toestand van de gekozen opties."
@@ -13,6 +17,10 @@
       "args": [
         {
           "name": "button",
+          "title": {
+    				"en": "button",
+    				"nl": "knop"
+    			},
           "type": "dropdown",
           "values": [
             {
@@ -47,6 +55,10 @@
         },
         {
           "name": "scene",
+          "title": {
+    				"en": "scene",
+    				"nl": "scene"
+    			},
           "type": "dropdown",
           "values": [
             {

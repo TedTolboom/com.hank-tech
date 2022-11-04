@@ -2,6 +2,8 @@
   "name": {
     "en": "Smart Plug"
   },
+  "platforms": ["local"],
+	"connectivity": [ "zwave" ],
   "zwave": {
     "manufacturerId": [
       520

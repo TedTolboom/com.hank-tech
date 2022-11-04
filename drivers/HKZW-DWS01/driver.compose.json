@@ -2,6 +2,8 @@
   "name": {
     "en": "Door/Window Sensor"
   },
+  "platforms": ["local"],
+	"connectivity": [ "zwave" ],
   "zwave": {
     "manufacturerId": [
       520
@@ -56,7 +58,7 @@
     "measure_battery"
   ],
   "energy": {
-    "batteries": [ "AA", "AA"]
+    "batteries": [ "AAA", "AAA"]
   },
   "images": {
     "large": "/drivers/HKZW-DWS01/assets/images/large.png",
