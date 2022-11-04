@@ -4,9 +4,6 @@
 	"description": "This app adds support for the Z-wave devices made by [HANK](http://www.hank-tech.com).",
 	"main": "app.js",
 	"requires": true,
-	"dependencies": {
-		"homey-meshdriver": "^2.0.1"
-	},
 	"devDependencies": {
 		"eslint": "^6.8.0",
 		"eslint-config-athom": "^2.1.0"
@@ -27,5 +24,8 @@
 	"bugs": {
 		"url": "https://github.com/TedTolboom/com.hank-tech/issues"
 	},
-	"homepage": "https://forum.athom.com/discussion/3708/"
+	"homepage": "https://forum.athom.com/discussion/3708/",
+	"dependencies": {
+		"homey-zwavedriver": "^2.1.10"
+	}
 }

@@ -1,13 +1,18 @@
 {
   "id": "com.hank-tech",
-  "sdk": 2,
+  "sdk": 3,
   "name": {
     "en": "Hank tech Z-wave"
   },
-  "version": "1.2.0",
-  "compatibility": ">=4.0.0",
+  "version": "1.3.1",
+  "compatibility": ">=5.0.0",
+  "platforms": [
+    "local"
+  ],
   "athomForumDiscussionId": 3708,
   "homeyCommunityTopicId": 162,
+  "support": "https://homey.app/a/com.hank-tech/",
+  "brandColor": "#5A5A5A",
   "author": {
     "name": "Ted Tolboom",
     "email": "dTNL.Homey@gmail.com"
